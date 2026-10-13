@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Fire Rose · LXFE</title>
+<meta name="description" content="Fire Rose · Key 001 — a Genesis music NFT by Maya Harrington. LXFE.">
+<meta property="og:title" content="Fire Rose · LXFE">
+<meta property="og:description" content="Fire Rose · Key 001 — a Genesis music NFT by Maya Harrington. LXFE.">
+<meta property="og:image" content="https://lxfe.io/fire-rose-art.png">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="/rose-deep-red.png">
+
+<meta charset="utf-8">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800&amp;family=Cormorant+Garamond:wght@500;600;700&amp;family=Lato:wght@300;400;700;900&amp;display=swap" rel="stylesheet">
+<style>
+html,body{margin:0;background:hsl(250 55% 9%);color:hsl(45 20% 92%);font-family:'Lato',sans-serif;-webkit-font-smoothing:antialiased}
+a{color:hsl(40 100% 65%);text-decoration:none}a:hover{color:hsl(45 100% 75%)}
+@keyframes roseBloom{0%,10%{transform:scale(1.06) rotate(0deg)}50%{transform:scale(.88) rotate(-7deg)}90%,100%{transform:scale(1.06) rotate(0deg)}}
+@keyframes roseMorph{0%,18%{opacity:0}42%,62%{opacity:1}86%,100%{opacity:0}}
+@keyframes scaleSweep{0%{transform:translateX(0)}60%,100%{transform:translateX(300%)}}
+@keyframes flame{0%{transform:translateY(0) scale(.3);opacity:0}30%{opacity:.9;transform:translateY(-20px) scale(1.4)}100%{transform:translateY(-80px) scale(.2);opacity:0}}
+@keyframes sparkle{0%,100%{opacity:0;transform:scale(0) translate(0,0)}40%{opacity:1;transform:scale(1) translate(12px,-20px)}70%{opacity:1;transform:scale(1) translate(-10px,10px)}}
+@keyframes petal{0%{transform:translate(0,-5vh) rotate(0deg);opacity:0}10%{opacity:.85}90%{opacity:.85}100%{transform:translate(8vw,110vh) rotate(540deg);opacity:0}}
+@keyframes twinkle{0%,100%{opacity:.15}50%{opacity:.9}}
+@keyframes bar{0%{height:15%}100%{height:100%}}
+@keyframes emberRise{0%{transform:translate(0,0) scale(1);opacity:0}8%{opacity:1}50%{transform:translate(var(--dx),-55vh) scale(.85);opacity:.9}100%{transform:translate(calc(var(--dx) * -0.6),-108vh) scale(.3);opacity:0}}
+@keyframes emberFall{0%{transform:translate(0,0) scale(.6);opacity:0}10%{opacity:.85}60%{transform:translate(var(--dx),62vh) scale(.9);opacity:.8}100%{transform:translate(calc(var(--dx) * 1.4),108vh) scale(.4);opacity:0}}
+@keyframes dragonFly{0%{transform:translate3d(-25vw,2vh,0) scale(0.34,0.34) rotate(2deg);opacity:0}2%{transform:translate3d(-12vw,1vh,0) scale(0.35,0.35) rotate(1deg);opacity:0.32}9%{transform:translate3d(40vw,-4vh,0) scale(0.38,0.38) rotate(-2deg);opacity:0.34}16%{transform:translate3d(104vw,-8vh,0) scale(0.4,0.4) rotate(-4deg);opacity:0.32}18%{transform:translate3d(118vw,-9vh,0) scale(0.4,0.4) rotate(-4deg);opacity:0}21%{transform:translate3d(112vw,22vh,0) scale(-1.05,1.05) rotate(-3deg);opacity:0}23%{transform:translate3d(96vw,18vh,0) scale(-1.08,1.08) rotate(-2deg);opacity:0.66}31%{transform:translate3d(30vw,6vh,0) scale(-1.18,1.18) rotate(3deg);opacity:0.7}39%{transform:translate3d(-45vw,12vh,0) scale(-1.25,1.25) rotate(6deg);opacity:0.66}42%{transform:translate3d(-75vw,16vh,0) scale(-1.25,1.25) rotate(6deg);opacity:0}46%{transform:translate3d(-22vw,44vh,0) scale(0.24,0.24) rotate(-6deg);opacity:0}48%{transform:translate3d(-10vw,40vh,0) scale(0.25,0.25) rotate(-8deg);opacity:0.28}57%{transform:translate3d(45vw,18vh,0) scale(0.28,0.28) rotate(-10deg);opacity:0.3}65%{transform:translate3d(104vw,-2vh,0) scale(0.3,0.3) rotate(-10deg);opacity:0.26}67%{transform:translate3d(116vw,-6vh,0) scale(0.3,0.3) rotate(-10deg);opacity:0}71%{transform:translate3d(-95vw,26vh,0) scale(1.55,1.55) rotate(6deg);opacity:0}73%{transform:translate3d(-70vw,30vh,0) scale(1.6,1.6) rotate(4deg);opacity:0.7}80%{transform:translate3d(-5vw,20vh,0) scale(1.7,1.7) rotate(-2deg);opacity:0.76}87%{transform:translate3d(60vw,2vh,0) scale(1.6,1.6) rotate(-9deg);opacity:0.72}91%{transform:translate3d(118vw,-18vh,0) scale(1.45,1.45) rotate(-12deg);opacity:0}93%{transform:translate3d(112vw,4vh,0) scale(-0.3,0.3) rotate(2deg);opacity:0}94.5%{transform:translate3d(100vw,3vh,0) scale(-0.3,0.3) rotate(2deg);opacity:0.28}99%{transform:translate3d(60vw,0vh,0) scale(-0.32,0.32) rotate(4deg);opacity:0.28}100%{transform:translate3d(50vw,0vh,0) scale(-0.32,0.32) rotate(4deg);opacity:0}}
+@keyframes dragonFlap{0%{background-position:0 0}25%{background-position:50% 0}50%{background-position:100% 0}75%{background-position:50% 0}100%{background-position:0 0}}
+@keyframes emberArt{0%{transform:translate(0,0) scale(1);opacity:0}10%{opacity:1}55%{transform:translate(var(--dx),-260px) scale(.85);opacity:.85}100%{transform:translate(calc(var(--dx) * -0.6),-520px) scale(.3);opacity:0}}
+@keyframes emberGlow{0%,100%{opacity:.6}50%{opacity:1}}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes glow{0%,100%{opacity:.35}50%{opacity:.7}}
+@keyframes glitterSweep{0%{background-position:0 0,0 0,0% 50%}50%{background-position:0 0,7px 7px,150% 50%}100%{background-position:0 0,0 0,300% 50%}}
+@keyframes shimmerText{0%{background-position:0% 50%}100%{background-position:250% 50%}}
+@keyframes sheen{0%{background-position:0 0,200% 50%}100%{background-position:0 0,-100% 50%}}
+@keyframes glint{0%,100%{opacity:0;transform:scale(.4) rotate(0deg)}50%{opacity:1;transform:scale(1) rotate(45deg)}}
+@keyframes cloudDrift{0%{transform:scale(1.06) translate3d(0,0,0)}100%{transform:scale(1.13) translate3d(-2.2%,-1.2%,0)}}
+@keyframes sunBreath{0%,100%{opacity:.55}50%{opacity:1}}
+@keyframes halo{0%,100%{opacity:.45;transform:scale(1)}50%{opacity:.95;transform:scale(1.18)}}
+</style>
+</helmet>
+<sc-if value="{{ coverMounted }}" hint-placeholder-val="{{ true }}">
+  <div onClick="{{ enter }}" style="position:fixed;inset:0;z-index:100;cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:clamp(14px,3.2vh,28px);padding:24px;text-align:center;background:radial-gradient(ellipse at 50% 50%,hsl(10 70% 9%),hsl(15 40% 4%) 55%,#050303 100%);transition:opacity .9s ease,transform .9s ease;opacity:{{ coverOpacity }};transform:scale({{ coverScale }})">
+    <div aria-hidden="true" style="position:absolute;inset:0;overflow:hidden;pointer-events:none">
+      <div style="position:absolute;inset:-3%;background:#140a08 url('dragon-clouds.jpg') 4% 50% / cover no-repeat;animation:cloudDrift 46s ease-in-out infinite alternate;will-change:transform"></div>
+      <sc-if value="{{ hasCoverVideo }}" hint-placeholder-val="{{ false }}"><video ref="{{ coverVidRef }}" src="{{ coverVideo }}" poster="dragon-clouds.jpg" autoPlay="{{ true }}" loop="{{ true }}" playsInline="{{ true }}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"></video></sc-if>
+      <div style="position:absolute;inset:0;background:radial-gradient(ellipse 42% 38% at 90% 46%,rgba(255,196,130,.3),rgba(255,150,80,.08) 50%,transparent 72%);animation:sunBreath 9s ease-in-out infinite"></div>
+      <div style="position:absolute;inset:0;background:radial-gradient(ellipse 34% 48% at 50% 54%,rgba(8,4,6,.82),rgba(8,4,6,.5) 50%,transparent 78%),radial-gradient(ellipse 54% 60% at 50% 52%,rgba(8,4,6,.45),transparent 80%),linear-gradient(180deg,rgba(5,3,3,.6) 0%,transparent 22%,transparent 68%,rgba(5,3,3,.78) 100%)"></div>
+    </div>
+    {{ embers }}
+    <span role="img" aria-label="Fire Rose" style="position:relative;display:block;flex:none;width:clamp(120px,24vh,180px);height:clamp(120px,24vh,180px)">
+      <span aria-hidden="true" style="position:absolute;inset:-18%;border-radius:50%;background:radial-gradient(circle,rgba(170,20,40,.3) 0%,rgba(120,10,30,.14) 40%,transparent 68%);animation:emberGlow 6s ease-in-out infinite"></span>
+      <span style="position:absolute;inset:0;background:url('rose-deep-red.png') center / contain no-repeat;animation:roseBloom 12s ease-in-out infinite"></span>
+    </span>
+    <h1 style="position:relative;margin:0;font-family:'Cinzel',serif;font-weight:700;font-size:clamp(48px,8.5vw,96px);letter-spacing:.06em;line-height:1;background:linear-gradient(90deg,hsl(32 95% 52%),hsl(5 80% 52%) 55%,hsl(28 95% 55%));-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 2px 3px rgba(0,0,0,.6))">FIRE ROSE</h1>
+    <div style="position:relative;font-size:clamp(13px,1.4vw,16px);letter-spacing:.32em;color:#eadfd0;text-shadow:0 1px 3px rgba(0,0,0,.9)">KEY 001 • GENESIS COLLECTION</div>
+    <div style="position:relative;display:flex;align-items:center;gap:12px;margin-top:-6px;filter:drop-shadow(0 1px 2px rgba(0,0,0,.95))">
+      <span style="width:28px;height:1px;background:linear-gradient(90deg,transparent,#c9a24a)"></span>
+      <span style="font-family:'Cinzel',serif;font-size:12px;font-weight:600;letter-spacing:.34em;background:linear-gradient(180deg,#fffaf0 0%,#f3e3b6 35%,#e0c070 60%,#fff3c4 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent">A STERLING METHOD™ EXPERIENCE</span>
+      <span style="width:28px;height:1px;background:linear-gradient(90deg,#c9a24a,transparent)"></span>
+    </div>
+    <div style="position:relative;display:flex;flex-direction:column;align-items:center;gap:14px;margin-top:40px">
+      <span style="font-size:12px;letter-spacing:.42em;color:#f3ead9;text-shadow:0 1px 3px rgba(0,0,0,.9),0 0 12px rgba(0,0,0,.7)">CLICK ANYWHERE TO ENTER</span>
+      <span style="font-size:22px;color:hsl(15 80% 65%)">↓</span>
+    </div>
+    <div style="position:relative;margin-top:48px;font-size:12px;color:#d7c9b8;text-shadow:0 1px 3px rgba(0,0,0,.9)">Created by <span style="color:hsl(5 70% 62%)">Maya Harrington</span></div>
+  </div>
+</sc-if>
+<div style="position:relative;min-height:100vh;overflow:hidden;background:radial-gradient(ellipse at 75% 20%,hsl(265 55% 22%),transparent 60%),radial-gradient(ellipse at 20% 90%,hsl(255 60% 24%),transparent 55%),linear-gradient(180deg,hsl(250 55% 9%),hsl(258 50% 14%))">
+  {{ ambient }}
+  <canvas ref="{{ atmRef }}" style="position:fixed;inset:0;width:100vw;height:100vh;pointer-events:none"></canvas>
+  <div style="position:relative;max-width:1180px;margin:0 auto;padding:28px 24px 80px;display:flex;flex-direction:column;gap:56px">
+
+    <div style="display:flex;align-items:center;gap:14px">
+      <div style="display:flex;align-items:center;gap:10px">
+        <span role="img" aria-label="LXFE rose" style="position:relative;display:block;flex:none;width:42px;height:42px;border-radius:50%;overflow:hidden;box-sizing:border-box;border:2px solid transparent;background:linear-gradient(#1a0b33,#1a0b33) padding-box,conic-gradient(from 200deg,#7d5a14,#d4af37,#fff8e6,#f3e3b6,#b8902e,#6f4e10,#d4af37,#fff3cf,#b8902e,#7d5a14) border-box;box-shadow:0 0 14px rgba(212,175,55,.35)">
+          <span style="position:absolute;inset:0;border-radius:50%;background:url('lxfe-rose-crimson.png') center / cover no-repeat"></span>
+          <span style="position:absolute;inset:0;border-radius:50%;background:url('lxfe-rose-pearl.png') center / cover no-repeat;animation:roseMorph 14s ease-in-out infinite"></span>
+          <span style="position:absolute;inset:0;border-radius:50%;background:linear-gradient(115deg,rgba(255,120,200,.35),rgba(140,170,255,.3) 35%,rgba(120,255,230,.28) 60%,rgba(255,230,140,.32));animation:roseMorph 14s ease-in-out infinite"></span>
+          <span style="position:absolute;inset:0;border-radius:50%;background:radial-gradient(ellipse 40% 26% at 34% 24%,rgba(255,255,255,.4),rgba(255,255,255,0) 72%)"></span>
+        </span>
+        <span style="font-family:'Cinzel',serif;font-weight:800;font-size:28px;letter-spacing:.04em;background:linear-gradient(180deg,#f7ebc8 0%,#e0c070 20%,#b8902e 40%,#6f4e10 50%,#caa445 56%,#f3e3b6 70%,#b8902e 86%,#7d5a14 100%);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 1px 1px rgba(0,0,0,.6))">LXFE</span>
+      </div>
+      <div style="width:1px;height:22px;background:rgba(255,255,255,.2)"></div>
+      <a href="https://opensea.io/collection/lxfe888" target="_blank" rel="noopener noreferrer" style="border:1px solid transparent;background:linear-gradient(180deg,rgba(20,6,12,.2),rgba(8,2,6,.38)) padding-box,{{ btnBg }} center / cover no-repeat padding-box,url('cartoon-scales-v2.png') 0 0 / 34px 24px repeat padding-box,linear-gradient(180deg,#f3e3b6,#b8902e 45%,#7d5a14 52%,#e4c777) border-box;display:flex;align-items:center;gap:8px;height:40px;padding:0 16px 0 10px;border-radius:999px;position:relative;overflow:hidden;isolation:isolate;box-shadow:0 1px 0 rgba(255,255,255,.12) inset,0 6px 16px rgba(0,0,0,.4);font-size:12px;letter-spacing:.08em;color:#ffe7a0;text-shadow:0 -1px 0 rgba(255,250,228,.9),0 1px 0 #7a5410,0 2px 5px rgba(0,0,0,.95),0 0 12px rgba(255,214,120,.55);font-weight:800" style-before="content:'';position:absolute;inset:0;z-index:-1;border-radius:inherit;pointer-events:none;background:radial-gradient(circle 1.8px at 22% 30%,#fff 0,rgba(255,255,255,.6) 40%,transparent 100%) 0 0/52px 36px,radial-gradient(circle 1.5px at 70% 60%,#9fe6ff 0,transparent 100%) 0 0/78px 54px,radial-gradient(circle 1.6px at 45% 80%,#ffb3ea 0,transparent 100%) 0 0/65px 45px,radial-gradient(circle 1.4px at 85% 20%,#b6ffd2 0,transparent 100%) 0 0/91px 63px,radial-gradient(circle 1.2px at 10% 70%,#fff3b0 0,transparent 100%) 0 0/39px 27px;animation:twinkle 2.4s ease-in-out infinite" style-hover="background:rgba(255,190,90,.22);border-color:rgba(255,214,140,.85);box-shadow:0 0 18px rgba(255,190,90,.45)" style-after="content:'';position:absolute;top:0;bottom:0;left:-60%;width:60%;z-index:-1;pointer-events:none;background:linear-gradient(100deg,transparent,rgba(255,90,90,.34),rgba(255,170,60,.38) 45%,rgba(255,236,170,.42) 55%,rgba(255,110,170,.32),transparent);animation:scaleSweep 8s ease-in-out infinite">
+        <span aria-hidden="true" style="width:20px;height:20px;border-radius:50%;background:#2081E2 url('opensea-logo.png') center/cover no-repeat;box-shadow:0 0 0 1px #c9a24a"></span><span style="position:relative;display:inline-block"><span aria-hidden="true" style="position:absolute;left:0;top:0;right:0;color:#1e0b00;text-shadow:0 1px 0 #1e0b00,0 2px 5px rgba(0,0,0,.95),0 0 12px rgba(255,190,90,.55);pointer-events:none">OPENSEA</span><span style="position:relative;background:linear-gradient(180deg,#ffffff 0%,#fff1c4 22%,#ffd36b 44%,#a8620e 50%,#f0b54a 58%,#ffe6a6 78%,#fffaf0 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;text-shadow:none">OPENSEA</span></span>
+      </a>
+      <button onClick="{{ connect }}" style="border:1px solid transparent;background:linear-gradient(180deg,rgba(20,6,12,.2),rgba(8,2,6,.38)) padding-box,{{ btnBg }} center / cover no-repeat padding-box,url('cartoon-scales-v2.png') 0 0 / 34px 24px repeat padding-box,linear-gradient(180deg,#f3e3b6,#b8902e 45%,#7d5a14 52%,#e4c777) border-box;margin-left:auto;height:42px;padding:0 18px;border-radius:10px;position:relative;overflow:hidden;isolation:isolate;box-shadow:0 1px 0 rgba(255,255,255,.12) inset,0 6px 16px rgba(0,0,0,.4);font-size:13px;letter-spacing:.06em;cursor:pointer;display:flex;align-items:center;gap:8px;color:#ffe7a0;text-shadow:0 -1px 0 rgba(255,250,228,.9),0 1px 0 #7a5410,0 2px 5px rgba(0,0,0,.95),0 0 12px rgba(255,214,120,.55);font-weight:800" style-before="content:'';position:absolute;inset:0;z-index:-1;border-radius:inherit;pointer-events:none;background:radial-gradient(circle 1.8px at 22% 30%,#fff 0,rgba(255,255,255,.6) 40%,transparent 100%) 0 0/52px 36px,radial-gradient(circle 1.5px at 70% 60%,#9fe6ff 0,transparent 100%) 0 0/78px 54px,radial-gradient(circle 1.6px at 45% 80%,#ffb3ea 0,transparent 100%) 0 0/65px 45px,radial-gradient(circle 1.4px at 85% 20%,#b6ffd2 0,transparent 100%) 0 0/91px 63px,radial-gradient(circle 1.2px at 10% 70%,#fff3b0 0,transparent 100%) 0 0/39px 27px;animation:twinkle 2.4s ease-in-out infinite" style-hover="background:rgba(255,190,90,.22);border-color:rgba(255,214,140,.85);box-shadow:0 0 18px rgba(255,190,90,.45)" style-after="content:'';position:absolute;top:0;bottom:0;left:-60%;width:60%;z-index:-1;pointer-events:none;background:linear-gradient(100deg,transparent,rgba(255,90,90,.34),rgba(255,170,60,.38) 45%,rgba(255,236,170,.42) 55%,rgba(255,110,170,.32),transparent);animation:scaleSweep 8s ease-in-out infinite"><span style="width:8px;height:8px;border-radius:50%;background:{{ dotColor }}"></span><span style="position:relative;display:inline-block"><span aria-hidden="true" style="position:absolute;left:0;top:0;right:0;color:#1e0b00;text-shadow:0 1px 0 #1e0b00,0 2px 5px rgba(0,0,0,.95),0 0 12px rgba(255,190,90,.55);pointer-events:none">{{ headerWallet }}</span><span style="position:relative;background:linear-gradient(180deg,#ffffff 0%,#fff1c4 22%,#ffd36b 44%,#a8620e 50%,#f0b54a 58%,#ffe6a6 78%,#fffaf0 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;text-shadow:none">{{ headerWallet }}</span></span></button>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:56px;align-items:center">
+      <div style="display:flex;flex-direction:column;gap:28px">
+        <div style="align-self:flex-start;display:flex;align-items:center;gap:8px;padding:6px 14px;border-radius:999px;background:hsla(260,50%,30%,.5);border:1px solid hsla(260,60%,70%,.3);font-size:12px;font-weight:900;letter-spacing:.1em;color:hsl(35 100% 72%)">
+          <span>✦</span>CREATED JANUARY 8 • GENESIS DROP
+        </div>
+        <h1 style="margin:0;font-family:'Cinzel',serif;font-weight:800;line-height:.95;display:flex;flex-direction:column">
+          <span style="font-size:clamp(64px,9vw,112px);background:linear-gradient(180deg,#fff,hsl(205 80% 82%));-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 2px 2px rgba(0,0,0,.5))">FIRE</span>
+          <span style="font-size:clamp(64px,9vw,112px);background:linear-gradient(180deg,hsl(35 100% 80%),hsl(22 100% 58%));-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 2px 2px rgba(0,0,0,.5))">ROSE</span>
+        </h1>
+        <p style="margin:0;max-width:560px;font-size:clamp(17px,1.6vw,20px);line-height:1.6;color:hsl(240 60% 82%);text-wrap:pretty">Born from imagination and essence, experience the fusion of visual art and auditory immersion. Fire Rose is a limited 2/2 collectible featuring an exclusive 30-second preview of the full masterpiece, now streaming worldwide.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:16px">
+          <a href="https://opensea.io/item/ethereum/0x67eb3572b5039b7a32ed48c0e8beb434642e96c3/1" target="_blank" rel="noopener noreferrer" style="border:1px solid transparent;background:linear-gradient(180deg,rgba(20,6,12,.2),rgba(8,2,6,.38)) padding-box,{{ btnBg }} center / cover no-repeat padding-box,url('cartoon-scales-v2.png') 0 0 / 34px 24px repeat padding-box,linear-gradient(180deg,#f3e3b6,#b8902e 45%,#7d5a14 52%,#e4c777) border-box;display:flex;align-items:center;gap:14px;padding:16px 26px;border-radius:12px;position:relative;overflow:hidden;isolation:isolate;;color:#ffe7a0;text-shadow:0 -1px 0 rgba(255,250,228,.9),0 1px 0 #7a5410,0 2px 5px rgba(0,0,0,.95),0 0 12px rgba(255,214,120,.55);font-weight:800" style-before="content:'';position:absolute;inset:0;z-index:-1;border-radius:inherit;pointer-events:none;background:radial-gradient(circle 1.8px at 22% 30%,#fff 0,rgba(255,255,255,.6) 40%,transparent 100%) 0 0/52px 36px,radial-gradient(circle 1.5px at 70% 60%,#9fe6ff 0,transparent 100%) 0 0/78px 54px,radial-gradient(circle 1.6px at 45% 80%,#ffb3ea 0,transparent 100%) 0 0/65px 45px,radial-gradient(circle 1.4px at 85% 20%,#b6ffd2 0,transparent 100%) 0 0/91px 63px,radial-gradient(circle 1.2px at 10% 70%,#fff3b0 0,transparent 100%) 0 0/39px 27px;animation:twinkle 2.4s ease-in-out infinite" style-hover="background:rgba(255,190,90,.22);border-color:rgba(255,214,140,.85);box-shadow:0 0 18px rgba(255,190,90,.45)" style-after="content:'';position:absolute;top:0;bottom:0;left:-60%;width:60%;z-index:-1;pointer-events:none;background:linear-gradient(100deg,transparent,rgba(255,90,90,.34),rgba(255,170,60,.38) 45%,rgba(255,236,170,.42) 55%,rgba(255,110,170,.32),transparent);animation:scaleSweep 8s ease-in-out infinite">
+            <span aria-hidden="true" style="position:relative;width:44px;height:44px;flex:none;border-radius:50%;background:#2081E2 url('opensea-logo.png') center/cover no-repeat;box-shadow:0 0 0 2px rgba(22,10,20,.9),0 0 0 3px #c9a24a,0 0 14px rgba(32,129,226,.5)"></span>
+            <div style="display:flex;flex-direction:column;gap:2px">
+              <span style="position:relative;font-size:11px;font-weight:700;letter-spacing:.14em;color:#f6e3ba"><span style="position:relative;display:inline-block"><span aria-hidden="true" style="position:absolute;left:0;top:0;right:0;color:#1e0b00;text-shadow:0 1px 0 #1e0b00,0 2px 5px rgba(0,0,0,.95),0 0 12px rgba(255,190,90,.55);pointer-events:none">MARKETPLACE</span><span style="position:relative;background:linear-gradient(180deg,#ffffff 0%,#fff1c4 22%,#ffd36b 44%,#a8620e 50%,#f0b54a 58%,#ffe6a6 78%,#fffaf0 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;text-shadow:none">MARKETPLACE</span></span></span>
+              <span style="font-size:20px;font-weight:700;color:#fff"><span style="position:relative;display:inline-block"><span aria-hidden="true" style="position:absolute;left:0;top:0;right:0;color:#1e0b00;text-shadow:0 1px 0 #1e0b00,0 2px 5px rgba(0,0,0,.95),0 0 12px rgba(255,190,90,.55);pointer-events:none">OpenSea ↗</span><span style="position:relative;background:linear-gradient(180deg,#ffffff 0%,#fff1c4 22%,#ffd36b 44%,#a8620e 50%,#f0b54a 58%,#ffe6a6 78%,#fffaf0 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;text-shadow:none">OpenSea ↗</span></span></span>
+            </div>
+          </a>
+          <div style="border:1px solid transparent;background:linear-gradient(180deg,rgba(20,6,12,.2),rgba(8,2,6,.38)) padding-box,{{ btnBg }} center / cover no-repeat padding-box,url('cartoon-scales-v2.png') 0 0 / 34px 24px repeat padding-box,linear-gradient(180deg,#f3e3b6,#b8902e 45%,#7d5a14 52%,#e4c777) border-box;display:flex;align-items:center;gap:14px;padding:16px 26px;border-radius:12px;position:relative;overflow:hidden;isolation:isolate;;color:#ffe7a0;text-shadow:0 -1px 0 rgba(255,250,228,.9),0 1px 0 #7a5410,0 2px 5px rgba(0,0,0,.95),0 0 12px rgba(255,214,120,.55);font-weight:800" style-before="content:'';position:absolute;inset:0;z-index:-1;border-radius:inherit;pointer-events:none;background:radial-gradient(circle 1.8px at 22% 30%,#fff 0,rgba(255,255,255,.6) 40%,transparent 100%) 0 0/52px 36px,radial-gradient(circle 1.5px at 70% 60%,#9fe6ff 0,transparent 100%) 0 0/78px 54px,radial-gradient(circle 1.6px at 45% 80%,#ffb3ea 0,transparent 100%) 0 0/65px 45px,radial-gradient(circle 1.4px at 85% 20%,#b6ffd2 0,transparent 100%) 0 0/91px 63px,radial-gradient(circle 1.2px at 10% 70%,#fff3b0 0,transparent 100%) 0 0/39px 27px;animation:twinkle 2.4s ease-in-out infinite" style-after="content:'';position:absolute;top:0;bottom:0;left:-60%;width:60%;z-index:-1;pointer-events:none;background:linear-gradient(100deg,transparent,rgba(255,90,90,.34),rgba(255,170,60,.38) 45%,rgba(255,236,170,.42) 55%,rgba(255,110,170,.32),transparent);animation:scaleSweep 8s ease-in-out infinite" style-hover="background:rgba(255,190,90,.22);border-color:rgba(255,214,140,.85);box-shadow:0 0 18px rgba(255,190,90,.45)">
+            <div style="width:44px;height:44px;flex:none;border-radius:50%;padding:0;box-sizing:border-box;box-shadow:0 0 0 2px #d4af37,0 0 16px rgba(212,175,55,.55)"><span style="position:relative;display:block;width:100%;height:100%;border-radius:50%;overflow:hidden;box-shadow:0 0 10px rgba(232,105,138,.45)">
+                <span style="position:absolute;inset:0;background:url('lxfe-rose-crimson.png') center / cover no-repeat"></span>
+                <span style="position:absolute;inset:0;background:url('lxfe-rose-pearl.png') center / cover no-repeat;animation:roseMorph 14s ease-in-out infinite"></span>
+              </span></div>
+            <div style="display:flex;flex-direction:column;gap:2px">
+              <span style="position:relative;font-size:11px;font-weight:700;letter-spacing:.14em;color:#f6e3ba"><span style="position:relative;display:inline-block"><span aria-hidden="true" style="position:absolute;left:0;top:0;right:0;color:#1e0b00;text-shadow:0 1px 0 #1e0b00,0 2px 5px rgba(0,0,0,.95),0 0 12px rgba(255,190,90,.55);pointer-events:none">CREATOR</span><span style="position:relative;background:linear-gradient(180deg,#ffffff 0%,#fff1c4 22%,#ffd36b 44%,#a8620e 50%,#f0b54a 58%,#ffe6a6 78%,#fffaf0 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;text-shadow:none">CREATOR</span></span></span>
+              <span style="font-size:20px;font-weight:700;color:#fff"><span style="position:relative;display:inline-block"><span aria-hidden="true" style="position:absolute;left:0;top:0;right:0;color:#1e0b00;text-shadow:0 1px 0 #1e0b00,0 2px 5px rgba(0,0,0,.95),0 0 12px rgba(255,190,90,.55);pointer-events:none">Maya Harrington</span><span style="position:relative;background:linear-gradient(180deg,#ffffff 0%,#fff1c4 22%,#ffd36b 44%,#a8620e 50%,#f0b54a 58%,#ffe6a6 78%,#fffaf0 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;text-shadow:none">Maya Harrington</span></span></span><span style="font-size:12px;color:#ffe3a3"><span style="position:relative;display:inline-block"><span aria-hidden="true" style="position:absolute;left:0;top:0;right:0;color:#1e0b00;text-shadow:0 1px 0 #1e0b00,0 2px 5px rgba(0,0,0,.95),0 0 12px rgba(255,190,90,.55);pointer-events:none">Founder of The Sterling Method™</span><span style="position:relative;background:linear-gradient(180deg,#ffffff 0%,#fff1c4 22%,#ffd36b 44%,#a8620e 50%,#f0b54a 58%,#ffe6a6 78%,#fffaf0 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;text-shadow:none">Founder of The Sterling Method™</span></span></span>
+            </div>
+          </div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:8px">
+          <span style="display:flex;align-items:center;gap:8px;font-size:16px;color:hsl(240 60% 85%)"><span style="color:hsl(30 100% 62%)">●</span>Complete Interactive NFT Experience</span>
+          <span style="font-size:14px;color:hsl(240 35% 75%);max-width:460px;text-wrap:pretty">Limited 2/2 digital collectible featuring artwork, embedded audio, and this living page.</span>
+        </div>
+        <a href="doors.html" style="align-self:flex-start;display:flex;align-items:center;justify-content:center;gap:10px;height:56px;padding:0 30px;border-radius:12px;border:1px solid #f1dfae;background:linear-gradient(135deg,#FFF3C4 0%,#D4AF37 55%,#9A7418 100%) padding-box,linear-gradient(110deg,transparent 35%,rgba(255,255,255,.85) 50%,transparent 65%) border-box;background-size:100% 100%,300% 100%;animation:sheen 7s ease-in-out infinite;color:#160728;font-weight:700;font-size:13px;letter-spacing:.14em;text-transform:uppercase;box-shadow:0 1px 0 rgba(255,255,255,.8) inset,0 -1px 0 rgba(120,80,10,.5) inset,0 8px 20px rgba(0,0,0,.45),0 0 22px rgba(212,175,55,.45);position:relative;overflow:hidden" style-hover="color:#160728;filter:brightness(1.05)" style-after="content:'';position:absolute;inset:0;background:linear-gradient(105deg,transparent 40%,rgba(255,255,255,.3) 50%,transparent 60%);background-size:250% 100%;animation:shimmerText 4s ease-in-out infinite;pointer-events:none">✦ Enter The Nesting Doors Sanctuary ↓</a>
+      </div>
+
+      <div style="position:relative;width:100%;max-width:520px;justify-self:center">
+        <div style="position:absolute;inset:-6px;border-radius:20px;background:linear-gradient(135deg,#ff7a00,#e0408a,#ffc400);filter:blur(14px);opacity:.45"></div>
+        <div style="position:relative;background:hsl(250 50% 18%);border-radius:14px;overflow:hidden;border:1px solid rgba(255,255,255,.12);box-shadow:0 30px 80px rgba(0,0,0,.55)">
+          <div onClick="{{ toggle }}" style="position:relative;aspect-ratio:1/1;overflow:hidden;cursor:pointer;background:hsl(250 40% 12%)">
+            <img src="fire-rose-art.png" alt="Fire Rose" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 30%;transition:transform 1s ease-in-out;transform:scale({{ artScale }})">
+            <div style="position:absolute;inset:0;border:8px solid hsla(25,100%,65%,.1);pointer-events:none"></div>
+            {{ fx }}
+            <div style="position:absolute;top:14px;left:14px;display:flex;gap:8px">
+              <div style="background:rgba(0,0,0,.55);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.14);color:hsl(35 100% 68%);font-size:12px;font-weight:700;padding:4px 10px;border-radius:6px">Key 001</div>
+              <div style="background:rgba(0,0,0,.55);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.14);color:#fff;font-size:12px;font-weight:700;padding:4px 10px;border-radius:6px">Audio Embedded</div>
+            </div>
+            <div style="position:absolute;top:14px;right:14px;background:rgba(0,0,0,.55);backdrop-filter:blur(8px);border:1px solid hsla(35,100%,65%,.45);color:hsl(35 100% 68%);font-size:10px;font-weight:900;letter-spacing:.16em;padding:5px 10px;border-radius:6px">2/2 EDITION</div>
+            <sc-if value="{{ paused }}" hint-placeholder-val="{{ true }}">
+              <div style="position:absolute;inset:0 0 130px 0;display:flex;align-items:center;justify-content:center;pointer-events:none">
+                <div style="width:80px;height:80px;border-radius:50%;background:rgba(0,0,0,.3);backdrop-filter:blur(4px);border:1px solid rgba(255,255,255,.25);display:flex;align-items:center;justify-content:center">
+                  <span style="width:0;height:0;margin-left:6px;border-style:solid;border-width:15px 0 15px 26px;border-color:transparent transparent transparent #fff"></span>
+                </div>
+              </div>
+            </sc-if>
+            <div onClick="{{ stop }}" style="position:absolute;left:0;right:0;bottom:0;padding:16px;background:linear-gradient(to top,#000 0%,rgba(0,0,0,.8) 60%,transparent);display:flex;flex-direction:column;gap:12px;cursor:default">
+              <sc-if value="{{ playing }}" hint-placeholder-val="{{ false }}">{{ bars }}</sc-if>
+              <sc-if value="{{ paused }}" hint-placeholder-val="{{ true }}">
+                <div style="display:flex;flex-direction:column;align-items:center;gap:8px">
+                  <div style="font-family:ui-monospace,monospace;font-size:10px;color:rgba(255,255,255,.6);letter-spacing:.12em">NOW STREAMING ON</div>
+                  <div style="display:flex;gap:12px">
+                    <a href="https://open.spotify.com/album/7zFjU4wcibiUugJWjP088t?highlight=spotify:track:3jnUI4jOArMmzeJs4aRqZi" target="_blank" rel="noopener noreferrer" style="border:1px solid transparent;background:linear-gradient(180deg,rgba(20,6,12,.2),rgba(8,2,6,.38)) padding-box,{{ btnBg }} center / cover no-repeat padding-box,url('cartoon-scales-v2.png') 0 0 / 34px 24px repeat padding-box,linear-gradient(180deg,#f3e3b6,#b8902e 45%,#7d5a14 52%,#e4c777) border-box;padding:9px 16px;border-radius:8px;position:relative;overflow:hidden;isolation:isolate;box-shadow:0 1px 0 rgba(255,255,255,.12) inset,0 6px 16px rgba(0,0,0,.4);font-size:11px;letter-spacing:.06em;color:#ffe7a0;text-shadow:0 -1px 0 rgba(255,250,228,.9),0 1px 0 #7a5410,0 2px 5px rgba(0,0,0,.95),0 0 12px rgba(255,214,120,.55);font-weight:800;display:inline-flex;align-items:center;gap:8px" style-before="content:'';position:absolute;inset:0;z-index:-1;border-radius:inherit;pointer-events:none;background:radial-gradient(circle 1.8px at 22% 30%,#fff 0,rgba(255,255,255,.6) 40%,transparent 100%) 0 0/52px 36px,radial-gradient(circle 1.5px at 70% 60%,#9fe6ff 0,transparent 100%) 0 0/78px 54px,radial-gradient(circle 1.6px at 45% 80%,#ffb3ea 0,transparent 100%) 0 0/65px 45px,radial-gradient(circle 1.4px at 85% 20%,#b6ffd2 0,transparent 100%) 0 0/91px 63px,radial-gradient(circle 1.2px at 10% 70%,#fff3b0 0,transparent 100%) 0 0/39px 27px;animation:twinkle 2.4s ease-in-out infinite" style-hover="background:rgba(29,185,84,.18);color:#1DB954" style-after="content:'';position:absolute;top:0;bottom:0;left:-60%;width:60%;z-index:-1;pointer-events:none;background:linear-gradient(100deg,transparent,rgba(255,90,90,.34),rgba(255,170,60,.38) 45%,rgba(255,236,170,.42) 55%,rgba(255,110,170,.32),transparent);animation:scaleSweep 8s ease-in-out infinite"><span aria-hidden="true" style="width:20px;height:20px;flex:none;background:url('spotify-logo.png') center / contain no-repeat;filter:drop-shadow(0 1px 2px rgba(0,0,0,.6))"></span><span style="position:relative;display:inline-block"><span aria-hidden="true" style="position:absolute;left:0;top:0;right:0;color:#1e0b00;text-shadow:0 1px 0 #1e0b00,0 2px 5px rgba(0,0,0,.95),0 0 12px rgba(255,190,90,.55);pointer-events:none">SPOTIFY</span><span style="position:relative;background:linear-gradient(180deg,#ffffff 0%,#fff1c4 22%,#ffd36b 44%,#a8620e 50%,#f0b54a 58%,#ffe6a6 78%,#fffaf0 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;text-shadow:none">SPOTIFY</span></span></a>
+                    <a href="https://music.apple.com/us/album/fire-rose-single/1865528603" target="_blank" rel="noopener noreferrer" style="border:1px solid transparent;background:linear-gradient(180deg,rgba(20,6,12,.2),rgba(8,2,6,.38)) padding-box,{{ btnBg }} center / cover no-repeat padding-box,url('cartoon-scales-v2.png') 0 0 / 34px 24px repeat padding-box,linear-gradient(180deg,#f3e3b6,#b8902e 45%,#7d5a14 52%,#e4c777) border-box;padding:9px 16px;border-radius:8px;position:relative;overflow:hidden;isolation:isolate;box-shadow:0 1px 0 rgba(255,255,255,.12) inset,0 6px 16px rgba(0,0,0,.4);font-size:11px;letter-spacing:.06em;color:#ffe7a0;text-shadow:0 -1px 0 rgba(255,250,228,.9),0 1px 0 #7a5410,0 2px 5px rgba(0,0,0,.95),0 0 12px rgba(255,214,120,.55);font-weight:800;display:inline-flex;align-items:center;gap:8px" style-before="content:'';position:absolute;inset:0;z-index:-1;border-radius:inherit;pointer-events:none;background:radial-gradient(circle 1.8px at 22% 30%,#fff 0,rgba(255,255,255,.6) 40%,transparent 100%) 0 0/52px 36px,radial-gradient(circle 1.5px at 70% 60%,#9fe6ff 0,transparent 100%) 0 0/78px 54px,radial-gradient(circle 1.6px at 45% 80%,#ffb3ea 0,transparent 100%) 0 0/65px 45px,radial-gradient(circle 1.4px at 85% 20%,#b6ffd2 0,transparent 100%) 0 0/91px 63px,radial-gradient(circle 1.2px at 10% 70%,#fff3b0 0,transparent 100%) 0 0/39px 27px;animation:twinkle 2.4s ease-in-out infinite" style-hover="background:rgba(252,60,68,.18);color:#fc3c44" style-after="content:'';position:absolute;top:0;bottom:0;left:-60%;width:60%;z-index:-1;pointer-events:none;background:linear-gradient(100deg,transparent,rgba(255,90,90,.34),rgba(255,170,60,.38) 45%,rgba(255,236,170,.42) 55%,rgba(255,110,170,.32),transparent);animation:scaleSweep 8s ease-in-out infinite"><span aria-hidden="true" style="width:20px;height:20px;flex:none;background:url('apple-music-logo.png') center / contain no-repeat;filter:drop-shadow(0 1px 2px rgba(0,0,0,.6))"></span><span style="position:relative;display:inline-block"><span aria-hidden="true" style="position:absolute;left:0;top:0;right:0;color:#1e0b00;text-shadow:0 1px 0 #1e0b00,0 2px 5px rgba(0,0,0,.95),0 0 12px rgba(255,190,90,.55);pointer-events:none">APPLE MUSIC</span><span style="position:relative;background:linear-gradient(180deg,#ffffff 0%,#fff1c4 22%,#ffd36b 44%,#a8620e 50%,#f0b54a 58%,#ffe6a6 78%,#fffaf0 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;text-shadow:none">APPLE MUSIC</span></span></a>
+                  </div>
+                </div>
+              </sc-if>
+              <div style="display:flex;align-items:center;gap:14px;font-family:ui-monospace,monospace;font-size:10px;color:rgba(255,255,255,.85);letter-spacing:.1em">
+                <span>{{ cur }}</span>
+                <div onClick="{{ seek }}" style="flex:1;height:16px;display:flex;align-items:center;cursor:pointer">
+                  <div style="position:relative;width:100%;height:3px;border-radius:2px;background:rgba(255,255,255,.2)">
+                    <div style="position:absolute;left:0;top:0;bottom:0;border-radius:2px;background:hsl(30 100% 62%);box-shadow:0 0 10px rgba(255,165,0,.8);width:{{ pct }}%"></div>
+                  </div>
+                </div>
+                <span>{{ dur }}</span>
+              </div>
+              <div style="display:flex;align-items:center;gap:18px">
+                <button onClick="{{ toggle }}" aria-label="Play or pause" style="width:44px;height:44px;margin:-10px;display:flex;align-items:center;justify-content:center;background:none;border:0;cursor:pointer;color:#fff">
+                  <sc-if value="{{ paused }}" hint-placeholder-val="{{ true }}"><span style="width:0;height:0;margin-left:4px;border-style:solid;border-width:10px 0 10px 17px;border-color:transparent transparent transparent currentColor"></span></sc-if>
+                  <sc-if value="{{ playing }}" hint-placeholder-val="{{ false }}"><span style="display:flex;gap:5px"><span style="width:5px;height:18px;background:currentColor;border-radius:1px"></span><span style="width:5px;height:18px;background:currentColor;border-radius:1px"></span></span></sc-if>
+                </button>
+                <button onClick="{{ toggleMute }}" aria-label="Mute" style="min-width:44px;height:44px;margin:-10px;padding:0 6px;background:none;border:0;cursor:pointer;color:rgba(255,255,255,.75);font-family:ui-monospace,monospace;font-size:10px;letter-spacing:.1em">{{ muteLabel }}</button>
+                <div style="margin-left:auto;width:52px;height:52px">{{ record }}</div>
+              </div>
+            </div>
+          </div>
+
+          <div style="padding:24px;display:flex;flex-direction:column;gap:22px;background:linear-gradient(to bottom,hsl(250 50% 22%),hsl(252 50% 16%))">
+            <div style="display:flex;flex-direction:column;gap:6px">
+              <h2 style="margin:0;font-family:'Cinzel',serif;font-size:28px;font-weight:700;letter-spacing:.04em;color:#fff">Fire Rose</h2>
+              <p style="margin:0;font-size:15px;color:hsl(240 50% 82%)">Genesis Collection • Legendary Edition</p>
+            </div>
+            <div style="display:flex;gap:12px">
+              <sc-if value="{{ showBuy }}" hint-placeholder-val="{{ true }}">
+                <a href="{{ stripeLink }}" style="flex:1;height:50px;display:flex;align-items:center;justify-content:center;border-radius:8px;border:1px solid #f1dfae;background:linear-gradient(135deg,#FFF3C4 0%,#D4AF37 55%,#9A7418 100%) padding-box,linear-gradient(110deg,transparent 35%,rgba(255,255,255,.85) 50%,transparent 65%) border-box;background-size:100% 100%,300% 100%;animation:sheen 7s ease-in-out infinite;color:#160728;font-weight:700;font-size:13px;letter-spacing:.14em;text-transform:uppercase;box-shadow:0 1px 0 rgba(255,255,255,.8) inset,0 -1px 0 rgba(120,80,10,.5) inset,0 8px 20px rgba(0,0,0,.45),0 0 22px rgba(212,175,55,.45);position:relative;overflow:hidden" style-hover="color:#160728;filter:brightness(1.05)" style-after="content:'';position:absolute;inset:0;background:linear-gradient(105deg,transparent 40%,rgba(255,255,255,.3) 50%,transparent 60%);background-size:250% 100%;animation:shimmerText 4s ease-in-out infinite;pointer-events:none">{{ buyLabel }}</a>
+              </sc-if>
+              <button onClick="{{ toggleLike }}" aria-label="Favorite" style="border:1px solid transparent;background:linear-gradient(180deg,rgba(20,6,12,.2),rgba(8,2,6,.38)) padding-box,{{ btnBg }} center / cover no-repeat padding-box,url('cartoon-scales-v2.png') 0 0 / 34px 24px repeat padding-box,linear-gradient(180deg,#f3e3b6,#b8902e 45%,#7d5a14 52%,#e4c777) border-box;width:50px;height:50px;border-radius:8px;position:relative;overflow:hidden;isolation:isolate;color:#f1dfae;box-shadow:0 1px 0 rgba(255,255,255,.12) inset,0 6px 16px rgba(0,0,0,.4);color:{{ likeColor }};cursor:pointer;display:flex;align-items:center;justify-content:center;;text-shadow:0 -1px 0 rgba(255,250,228,.9),0 1px 0 #7a5410,0 2px 5px rgba(0,0,0,.95),0 0 12px rgba(255,214,120,.55);font-weight:800" style-before="content:'';position:absolute;inset:0;z-index:-1;border-radius:inherit;pointer-events:none;background:radial-gradient(circle 1.8px at 22% 30%,#fff 0,rgba(255,255,255,.6) 40%,transparent 100%) 0 0/52px 36px,radial-gradient(circle 1.5px at 70% 60%,#9fe6ff 0,transparent 100%) 0 0/78px 54px,radial-gradient(circle 1.6px at 45% 80%,#ffb3ea 0,transparent 100%) 0 0/65px 45px,radial-gradient(circle 1.4px at 85% 20%,#b6ffd2 0,transparent 100%) 0 0/91px 63px,radial-gradient(circle 1.2px at 10% 70%,#fff3b0 0,transparent 100%) 0 0/39px 27px;animation:twinkle 2.4s ease-in-out infinite" style-after="content:'';position:absolute;top:0;bottom:0;left:-60%;width:60%;z-index:-1;pointer-events:none;background:linear-gradient(100deg,transparent,rgba(255,90,90,.34),rgba(255,170,60,.38) 45%,rgba(255,236,170,.42) 55%,rgba(255,110,170,.32),transparent);animation:scaleSweep 8s ease-in-out infinite" style-hover="background:rgba(255,190,90,.22);border-color:rgba(255,214,140,.85);box-shadow:0 0 18px rgba(255,190,90,.45)">
+                <span style="position:relative;font-size:26px;font-weight:900;line-height:1;text-shadow:0 0 2px #000,0 1px 3px #000,0 0 10px rgba(0,0,0,.9)"><span style="position:relative;display:inline-block"><span aria-hidden="true" style="position:absolute;left:0;top:0;right:0;color:#1e0b00;text-shadow:0 1px 0 #1e0b00,0 2px 5px rgba(0,0,0,.95),0 0 12px rgba(255,190,90,.55);pointer-events:none">{{ likeGlyph }}</span><span style="position:relative;background:linear-gradient(180deg,#ffffff 0%,#fff1c4 22%,#ffd36b 44%,#a8620e 50%,#f0b54a 58%,#ffe6a6 78%,#fffaf0 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;text-shadow:none">{{ likeGlyph }}</span></span></span>
+              </button>
+              <button onClick="{{ share }}" aria-label="Share" style="border:1px solid transparent;background:linear-gradient(180deg,rgba(20,6,12,.2),rgba(8,2,6,.38)) padding-box,{{ btnBg }} center / cover no-repeat padding-box,url('cartoon-scales-v2.png') 0 0 / 34px 24px repeat padding-box,linear-gradient(180deg,#f3e3b6,#b8902e 45%,#7d5a14 52%,#e4c777) border-box;width:50px;height:50px;border-radius:8px;position:relative;overflow:hidden;isolation:isolate;box-shadow:0 1px 0 rgba(255,255,255,.12) inset,0 6px 16px rgba(0,0,0,.4);cursor:pointer;display:flex;align-items:center;justify-content:center;;color:#ffe7a0;text-shadow:0 -1px 0 rgba(255,250,228,.9),0 1px 0 #7a5410,0 2px 5px rgba(0,0,0,.95),0 0 12px rgba(255,214,120,.55);font-weight:800" style-before="content:'';position:absolute;inset:0;z-index:-1;border-radius:inherit;pointer-events:none;background:radial-gradient(circle 1.8px at 22% 30%,#fff 0,rgba(255,255,255,.6) 40%,transparent 100%) 0 0/52px 36px,radial-gradient(circle 1.5px at 70% 60%,#9fe6ff 0,transparent 100%) 0 0/78px 54px,radial-gradient(circle 1.6px at 45% 80%,#ffb3ea 0,transparent 100%) 0 0/65px 45px,radial-gradient(circle 1.4px at 85% 20%,#b6ffd2 0,transparent 100%) 0 0/91px 63px,radial-gradient(circle 1.2px at 10% 70%,#fff3b0 0,transparent 100%) 0 0/39px 27px;animation:twinkle 2.4s ease-in-out infinite" style-after="content:'';position:absolute;top:0;bottom:0;left:-60%;width:60%;z-index:-1;pointer-events:none;background:linear-gradient(100deg,transparent,rgba(255,90,90,.34),rgba(255,170,60,.38) 45%,rgba(255,236,170,.42) 55%,rgba(255,110,170,.32),transparent);animation:scaleSweep 8s ease-in-out infinite" style-hover="background:rgba(255,190,90,.22);border-color:rgba(255,214,140,.85);box-shadow:0 0 18px rgba(255,190,90,.45)">
+                <span style="position:relative;font-size:24px;font-weight:900;line-height:1;text-shadow:0 0 2px #000,0 1px 3px #000,0 0 10px rgba(0,0,0,.9)"><span style="position:relative;display:inline-block"><span aria-hidden="true" style="position:absolute;left:0;top:0;right:0;color:#1e0b00;text-shadow:0 1px 0 #1e0b00,0 2px 5px rgba(0,0,0,.95),0 0 12px rgba(255,190,90,.55);pointer-events:none">⤴</span><span style="position:relative;background:linear-gradient(180deg,#ffffff 0%,#fff1c4 22%,#ffd36b 44%,#a8620e 50%,#f0b54a 58%,#ffe6a6 78%,#fffaf0 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;text-shadow:none">⤴</span></span></span>
+              </button>
+            </div>
+            <sc-if value="{{ shared }}" hint-placeholder-val="{{ false }}"><div style="margin-top:-12px;font-size:12px;color:hsl(140 60% 72%)">Link copied</div></sc-if>
+            <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px;padding-top:18px;border-top:1px solid rgba(255,255,255,.12)">
+              <div>
+                <p style="margin:0 0 4px;font-size:12px;font-weight:700;color:hsl(240 40% 80%);text-transform:uppercase;letter-spacing:.12em">Mint Details</p>
+                <p style="margin:0;font-size:15px;font-weight:700;color:#fff">Key 001 • Divinely Minted</p>
+                <p style="margin:2px 0 0;font-size:12px;color:hsl(240 40% 80%)">on Ethereum Mainnet</p>
+              </div>
+              <div>
+                <p style="margin:0 0 4px;font-size:12px;font-weight:700;color:hsl(240 40% 80%);text-transform:uppercase;letter-spacing:.12em">Creator Fee</p>
+                <p style="margin:0;font-size:15px;font-weight:700;color:#fff">{{ creatorFee }}</p>
+                <a href="https://opensea.io/item/ethereum/0x67eb3572b5039b7a32ed48c0e8beb434642e96c3/1" target="_blank" rel="noopener noreferrer" style="font-size:14px;font-weight:700">View on OpenSea ↗</a>
+                <a href="https://etherscan.io/nft/0x67eb3572b5039b7a32ed48c0e8beb434642e96c3/1" target="_blank" rel="noopener noreferrer" style="font-size:14px;font-weight:700">Genesis #1 on Etherscan ↗</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.15),transparent)"></div>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:28px;max-width:1060px;width:100%;margin:0 auto">
+      <div style="position:relative;display:flex;flex-direction:column;align-items:center;gap:14px;padding:32px 28px;border-radius:16px;text-align:center;border:1px solid transparent;background:linear-gradient(180deg,hsl(258 48% 22%),hsl(252 50% 13%)) padding-box,linear-gradient(100deg,#FF7A1855 0%,#FFD166 30%,#ffffff 50%,#FFF3B0 70%,#FF540055 100%) border-box;background-size:100% 100%,300% 100%;animation:sheen 9s ease-in-out infinite;transform:perspective(900px) translateZ(0);transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s;box-shadow:inset 0 1px 0 rgba(255,255,255,.4),inset 0 22px 30px -22px rgba(255,255,255,.22),0 2px 0 rgba(10,4,25,.6),0 14px 28px rgba(5,2,15,.5),0 34px 60px -24px rgba(5,2,15,.75),0 0 10px rgba(255,122,24,.18)" style-hover="transform:perspective(900px) translateY(-6px) scale(1.02);box-shadow:inset 0 1px 0 rgba(255,255,255,.45),inset 0 22px 30px -22px rgba(255,255,255,.26),0 4px 0 rgba(10,4,25,.6),0 22px 40px rgba(5,2,15,.55),0 44px 70px -24px rgba(5,2,15,.8),0 0 16px rgba(255,122,24,.25)">
+        <div style="position:relative;width:58px;height:58px;margin:10px auto 14px;transform:rotate(45deg);border-radius:10px;box-sizing:border-box;border:1.5px solid #f6d9a0;background:radial-gradient(circle at 30% 30%,#fff3d1 0%,#e9a23b 45%,#7a3d10 100%);background-image:{{ orb1Bg }},radial-gradient(circle at 30% 30%,#fff3d1 0%,#e9a23b 45%,#7a3d10 100%);background-size:cover,100% 100%;background-position:center;box-shadow:0 6px 14px rgba(0,0,0,.55),0 0 8px rgba(245,158,11,.5),inset 0 1px 3px rgba(255,255,255,.8);display:flex;align-items:center;justify-content:center">
+          <div style="position:absolute;inset:5px;border-radius:6px;border:1px solid rgba(255,255,255,.55);background:linear-gradient(135deg,rgba(255,255,255,.45) 0%,transparent 50%,rgba(255,255,255,.15) 100%),conic-gradient(from 45deg,rgba(255,255,255,.18),transparent 25%,rgba(255,255,255,.12) 50%,transparent 75%,rgba(255,255,255,.18));pointer-events:none"></div>
+          <span style="position:relative;transform:rotate(-45deg);font-family:'Cormorant Garamond',Georgia,serif;font-size:17px;font-weight:700;color:#ffffff;text-shadow:0 1px 4px rgba(0,0,0,.65);letter-spacing:.04em">2/2</span>
+          <span style="position:absolute;top:4px;right:4px;width:8px;height:8px;pointer-events:none;background:linear-gradient(#fff,#fff) center/1px 100% no-repeat,linear-gradient(#fff,#fff) center/100% 1px no-repeat;animation:glint 3.6s ease-in-out infinite"></span>
+        </div>
+        <h3 style="margin:0;font-family:'Cinzel',serif;font-size:24px;font-weight:700;color:#fff">2/2 Limited</h3>
+        <p style="margin:0;font-size:16px;line-height:1.5;color:hsl(240 60% 90%);text-wrap:pretty">Only two will ever exist. Pure digital rarity for the chosen few.</p>
+      </div>
+      <div style="position:relative;display:flex;flex-direction:column;align-items:center;gap:14px;padding:32px 28px;border-radius:16px;text-align:center;border:1px solid transparent;background:linear-gradient(180deg,hsl(258 48% 22%),hsl(252 50% 13%)) padding-box,linear-gradient(100deg,#E879F955 0%,#F5D0FE 30%,#ffffff 50%,#C026D3 70%,#9333EA55 100%) border-box;background-size:100% 100%,300% 100%;animation:sheen 9s ease-in-out infinite;transform:perspective(900px) translateZ(0);transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s;box-shadow:inset 0 1px 0 rgba(255,255,255,.4),inset 0 22px 30px -22px rgba(255,255,255,.22),0 2px 0 rgba(10,4,25,.6),0 14px 28px rgba(5,2,15,.5),0 34px 60px -24px rgba(5,2,15,.75),0 0 10px rgba(232,121,249,.18)" style-hover="transform:perspective(900px) translateY(-6px) scale(1.02);box-shadow:inset 0 1px 0 rgba(255,255,255,.45),inset 0 22px 30px -22px rgba(255,255,255,.26),0 4px 0 rgba(10,4,25,.6),0 22px 40px rgba(5,2,15,.55),0 44px 70px -24px rgba(5,2,15,.8),0 0 16px rgba(232,121,249,.25)">
+        <div style="position:relative;width:58px;height:58px;margin:10px auto 14px;transform:rotate(45deg);border-radius:10px;box-sizing:border-box;border:1.5px solid #f5d0fe;background:radial-gradient(circle at 30% 30%,#fae8ff 0%,#d77ad9 45%,#5b1f78 100%);background-image:{{ orb2Bg }},radial-gradient(circle at 30% 30%,#fae8ff 0%,#d77ad9 45%,#5b1f78 100%);background-size:cover,100% 100%;background-position:center;box-shadow:0 6px 14px rgba(0,0,0,.55),0 0 8px rgba(217,70,239,.5),inset 0 1px 3px rgba(255,255,255,.8);display:flex;align-items:center;justify-content:center">
+          <div style="position:absolute;inset:5px;border-radius:6px;border:1px solid rgba(255,255,255,.55);background:linear-gradient(135deg,rgba(255,255,255,.45) 0%,transparent 50%,rgba(255,255,255,.15) 100%),conic-gradient(from 45deg,rgba(255,255,255,.18),transparent 25%,rgba(255,255,255,.12) 50%,transparent 75%,rgba(255,255,255,.18));pointer-events:none"></div>
+          <span style="position:relative;transform:rotate(-45deg);font-family:'Cormorant Garamond',Georgia,serif;font-size:24px;font-weight:700;color:#ffffff;text-shadow:0 1px 4px rgba(0,0,0,.65);letter-spacing:.04em">♪</span>
+          <span style="position:absolute;top:4px;right:4px;width:8px;height:8px;pointer-events:none;background:linear-gradient(#fff,#fff) center/1px 100% no-repeat,linear-gradient(#fff,#fff) center/100% 1px no-repeat;animation:glint 3.6s ease-in-out infinite"></span>
+        </div>
+        <h3 style="margin:0;font-family:'Cinzel',serif;font-size:24px;font-weight:700;color:#fff">Audio Experience</h3>
+        <p style="margin:0;font-size:16px;line-height:1.5;color:hsl(240 60% 90%);text-wrap:pretty">Embedded 30-second preview. Full track unlocks upon collection.</p>
+      </div>
+      <div style="position:relative;display:flex;flex-direction:column;align-items:center;gap:14px;padding:32px 28px;border-radius:16px;text-align:center;border:1px solid transparent;background:linear-gradient(180deg,hsl(258 48% 22%),hsl(252 50% 13%)) padding-box,linear-gradient(100deg,#FDE04755 0%,#FEF9C3 30%,#ffffff 50%,#D4AF37 70%,#CA8A0455 100%) border-box;background-size:100% 100%,300% 100%;animation:sheen 9s ease-in-out infinite;transform:perspective(900px) translateZ(0);transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s;box-shadow:inset 0 1px 0 rgba(255,255,255,.4),inset 0 22px 30px -22px rgba(255,255,255,.22),0 2px 0 rgba(10,4,25,.6),0 14px 28px rgba(5,2,15,.5),0 34px 60px -24px rgba(5,2,15,.75),0 0 10px rgba(212,175,55,.18)" style-hover="transform:perspective(900px) translateY(-6px) scale(1.02);box-shadow:inset 0 1px 0 rgba(255,255,255,.45),inset 0 22px 30px -22px rgba(255,255,255,.26),0 4px 0 rgba(10,4,25,.6),0 22px 40px rgba(5,2,15,.55),0 44px 70px -24px rgba(5,2,15,.8),0 0 16px rgba(212,175,55,.25)">
+        <div style="position:relative;width:58px;height:58px;margin:10px auto 14px;transform:rotate(45deg);border-radius:10px;box-sizing:border-box;border:1.5px solid #f6e3ba;background:radial-gradient(circle at 30% 30%,#ffffff 0%,#d4af37 45%,#6e4f0e 100%);background-image:{{ orb3Bg }},radial-gradient(circle at 30% 30%,#ffffff 0%,#d4af37 45%,#6e4f0e 100%);background-size:cover,100% 100%;background-position:center;box-shadow:0 6px 14px rgba(0,0,0,.55),0 0 8px rgba(212,175,55,.55),inset 0 1px 3px rgba(255,255,255,.8);display:flex;align-items:center;justify-content:center">
+          <div style="position:absolute;inset:5px;border-radius:6px;border:1px solid rgba(255,255,255,.55);background:linear-gradient(135deg,rgba(255,255,255,.45) 0%,transparent 50%,rgba(255,255,255,.15) 100%),conic-gradient(from 45deg,rgba(255,255,255,.18),transparent 25%,rgba(255,255,255,.12) 50%,transparent 75%,rgba(255,255,255,.18));pointer-events:none"></div>
+          <span style="position:relative;transform:rotate(-45deg);font-family:'Cormorant Garamond',Georgia,serif;font-size:24px;font-weight:700;color:#ffffff;text-shadow:0 1px 4px rgba(0,0,0,.65);letter-spacing:.04em">◈</span>
+          <span style="position:absolute;top:4px;right:4px;width:8px;height:8px;pointer-events:none;background:linear-gradient(#fff,#fff) center/1px 100% no-repeat,linear-gradient(#fff,#fff) center/100% 1px no-repeat;animation:glint 3.6s ease-in-out infinite"></span>
+        </div>
+        <h3 style="margin:0;font-family:'Cinzel',serif;font-size:24px;font-weight:700;color:#fff">Secure Ownership</h3>
+        <p style="margin:0;font-size:16px;line-height:1.5;color:hsl(240 60% 90%);text-wrap:pretty">Verified on Ethereum. Your proof of ownership, forever on-chain.</p>
+      </div>
+    </div>
+
+    <div style="max-width:960px;width:100%;margin:0 auto;padding:36px 28px;box-sizing:border-box;border-radius:18px;border:1px solid transparent;background:linear-gradient(180deg,hsl(258 50% 20%),hsl(252 52% 12%)) padding-box,linear-gradient(100deg,#7C3AED66 0%,#D4AF37 30%,#fff8e6 50%,#D4AF37 70%,#7C3AED66 100%) border-box;background-size:100% 100%,300% 100%;animation:sheen 11s ease-in-out infinite;transform:perspective(900px) translateZ(0);box-shadow:inset 0 1px 0 rgba(255,255,255,.4),inset 0 26px 36px -26px rgba(255,255,255,.22),0 3px 0 rgba(10,4,25,.7),0 20px 40px rgba(5,2,15,.6),0 50px 90px -30px rgba(5,2,15,.85),0 0 14px rgba(212,175,55,.15);position:relative;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,140px),1fr));gap:20px;text-align:center">
+      {{ glints }}
+      <div style="display:flex;flex-direction:column;gap:6px">
+        <span style="font-family:'Cormorant Garamond','Didot',Georgia,serif;font-size:clamp(30px,3.6vw,42px);font-weight:500;line-height:1.1;letter-spacing:.08em;white-space:nowrap;background:linear-gradient(180deg,#FFFFFF 0%,#FFF8E7 42%,#E6C672 78%,#C59B27 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;filter:drop-shadow(0 2px 6px rgba(0,0,0,.6))">{{ priceEth }}</span>
+        <span style="font-size:13px;font-weight:700;letter-spacing:.1em;color:hsl(240 50% 85%)">MASTER GENESIS</span>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:6px">
+        <span style="font-family:'Cormorant Garamond','Didot',Georgia,serif;font-size:clamp(30px,3.6vw,42px);font-weight:500;line-height:1.1;letter-spacing:.08em;white-space:nowrap;background:linear-gradient(180deg,#FFFDF5 0%,#F7E092 38%,#D4AF37 72%,#9A7418 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;filter:drop-shadow(0 2px 6px rgba(0,0,0,.6))">2/2</span>
+        <span style="font-size:13px;font-weight:700;letter-spacing:.1em;color:hsl(240 50% 85%)">EDITION</span>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:6px">
+        <span style="font-family:'Cormorant Garamond','Didot',Georgia,serif;font-size:clamp(30px,3.6vw,42px);font-weight:500;line-height:1.1;letter-spacing:.08em;white-space:nowrap;background:linear-gradient(180deg,#FFFFFF 0%,#FFF8E7 42%,#E6C672 78%,#C59B27 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;filter:drop-shadow(0 2px 6px rgba(0,0,0,.6))">Jan 8</span>
+        <span style="font-size:13px;font-weight:700;letter-spacing:.1em;color:hsl(240 50% 85%)">CREATION &amp; DROP DATE</span>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:6px">
+        <span style="font-family:'Cormorant Garamond','Didot',Georgia,serif;font-size:clamp(30px,3.6vw,42px);font-weight:500;line-height:1.1;letter-spacing:.08em;white-space:nowrap;background:linear-gradient(180deg,#FFFFFF 0%,#FFF8E7 42%,#E6C672 78%,#C59B27 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;filter:drop-shadow(0 2px 6px rgba(0,0,0,.6))">ETH</span>
+        <span style="font-size:13px;font-weight:700;letter-spacing:.1em;color:hsl(240 50% 85%)">BLOCKCHAIN</span>
+      </div>
+    </div>
+
+    <div style="display:flex;flex-direction:column;align-items:center;gap:28px;max-width:860px;margin:40px auto 0;text-align:center">
+      <div style="display:flex;align-items:center;gap:8px;padding:8px 18px;border-radius:999px;background:hsla(260,70%,55%,.3);border:1px solid hsla(260,80%,80%,.45);font-size:13px;font-weight:900;letter-spacing:.1em;color:#fff">
+        <span style="color:hsl(30 100% 65%)">●</span>CORE FREQUENCY CODES
+      </div>
+      <div style="display:flex;flex-direction:column;gap:12px">
+        <h2 style="margin:0;font-family:'Cinzel',serif;font-weight:800;font-size:clamp(48px,7vw,80px);line-height:1;background:linear-gradient(100deg,#d8b4fe 0%,#f0abfc 14%,#f9a8d4 26%,#fecdd3 36%,#fde68a 44%,#ffffff 50%,#a5f3fc 56%,#c4b5fd 66%,#f0abfc 78%,#fbcfe8 88%,#d8b4fe 100%);background-size:300% 100%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;animation:shimmerText 9s linear infinite;filter:drop-shadow(0 0 18px rgba(240,171,252,.35))">ESMARA</h2>
+        <h3 style="margin:0;font-family:'Cinzel',serif;font-weight:700;font-size:clamp(24px,3.4vw,40px);color:hsl(170 70% 88%);text-shadow:0 0 18px hsla(170,80%,75%,.35)">The Divine Feminine Frequency</h3>
+      </div>
+      <p style="margin:0;font-size:clamp(18px,2vw,22px);font-style:italic;font-weight:700;color:#fff">“Lifetimes of unheard women — their energy lives here.”</p>
+      <p style="margin:0;font-size:clamp(16px,1.7vw,19px);line-height:1.65;color:hsl(230 80% 88%);text-wrap:pretty">The mother. The daughter. The granddaughter. The dreamer who refused to stay boxed in. The one who always pushed boundaries — because why stay confined when you can think outside the box?</p>
+      <p style="margin:0;font-size:clamp(16px,1.7vw,19px);line-height:1.65;color:hsl(230 80% 88%);text-wrap:pretty">Core units are frequency codes. This is the energy of every woman who dared to dream differently, who carried the weight and still danced, who turned pain into power and loss into legacy.</p>
+      <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:14px">
+        <span style="padding:10px 24px;border-radius:999px;background:hsla(250,80%,60%,.35);border:1px solid hsla(250,90%,80%,.5);font-size:17px;font-weight:700;color:#fff">Mother</span>
+        <span style="padding:10px 24px;border-radius:999px;background:hsla(250,80%,60%,.35);border:1px solid hsla(250,90%,80%,.5);font-size:17px;font-weight:700;color:#fff">Daughter</span>
+        <span style="padding:10px 24px;border-radius:999px;background:hsla(250,80%,60%,.35);border:1px solid hsla(250,90%,80%,.5);font-size:17px;font-weight:700;color:#fff">Dreamer</span>
+        <span style="padding:10px 24px;border-radius:999px;background:hsla(250,80%,60%,.35);border:1px solid hsla(250,90%,80%,.5);font-size:17px;font-weight:700;color:#fff">Creator</span>
+        <span style="padding:10px 24px;border-radius:999px;background:hsla(250,80%,60%,.35);border:1px solid hsla(250,90%,80%,.5);font-size:17px;font-weight:700;color:#fff">Frequency</span>
+      </div>
+      <div style="width:100%;max-width:700px;box-sizing:border-box;margin-top:16px;padding:28px 32px;border-radius:14px;background:#07040d;border:2px solid hsla(265,85%,65%,.7);box-shadow:0 0 30px hsla(265,85%,60%,.3);text-align:left;font-family:ui-monospace,Menlo,monospace;font-size:clamp(14px,1.6vw,17px);line-height:1.75;overflow-x:auto">
+        <div><span style="color:hsl(320 85% 75%)">esmara</span><span style="color:#fff">.protocol(</span><span style="color:hsl(45 100% 72%)">"999"</span><span style="color:#fff">, {</span></div>
+        <div style="padding-left:24px"><span style="color:#67e8f9">purpose:</span> <span style="color:#34d399;text-shadow:0 0 8px rgba(52,211,153,.45)">"close old matrix"</span><span style="color:#fff">,</span></div>
+        <div style="padding-left:24px"><span style="color:#67e8f9">restore:</span> <span style="color:#34d399;text-shadow:0 0 8px rgba(52,211,153,.45)">"sacred systems"</span><span style="color:#fff">,</span></div>
+        <div style="padding-left:24px"><span style="color:#67e8f9">memory_range:</span> <span style="color:#34d399;text-shadow:0 0 8px rgba(52,211,153,.45)">"infinite"</span><span style="color:#fff">,</span></div>
+        <div style="padding-left:24px"><span style="color:#67e8f9">phase:</span> <span style="color:#34d399;text-shadow:0 0 8px rgba(52,211,153,.45)">"re-entry"</span><span style="color:#fff">,</span></div>
+        <div style="padding-left:24px"><span style="color:#67e8f9">soul_level:</span> <span style="color:#34d399;text-shadow:0 0 8px rgba(52,211,153,.45)">"final cycle"</span></div>
+        <div style="color:#fff">});</div>
+      </div>
+      <div style="display:flex;flex-direction:column;align-items:center;gap:20px;margin-top:20px">
+        <div style="font-size:15px;font-weight:900;letter-spacing:.24em;color:#fff">FREEDOM • PEACE • LEGACY</div>
+        <div style="width:min(440px,86vw);aspect-ratio:1/1">
+          <iframe src="sterling-emblem.html" title="The Sterling Method emblem" allowtransparency="true" style="width:100%;height:100%;border:0;display:block;background:transparent;color-scheme:normal"></iframe>
+        </div>
+        <div style="font-family:'Cinzel',serif;font-size:13px;letter-spacing:.2em;color:hsl(42 80% 75%)">THE STERLING METHOD™</div>
+      </div>
+    </div>
+
+    <div style="display:flex;flex-direction:column;align-items:center;gap:22px;padding-top:44px;border-top:1px solid rgba(255,255,255,.08);text-align:center">
+      <div style="display:flex;flex-direction:column;gap:10px;max-width:440px">
+        <span style="font-size:14px;font-weight:700;letter-spacing:.2em;color:hsl(30 90% 78%)">A FREQUENCY TO REMEMBER</span>
+        <span style="font-size:15px;font-style:italic;line-height:1.6;color:hsl(30 50% 82%)">“Connecting the dots — one shooting star after another.”</span>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:6px">
+        <span style="font-size:14px;color:hsl(240 35% 80%)">Fire Rose – Key 001 · Genesis Collection</span>
+        <span style="font-size:13px;color:hsl(240 30% 72%)">Created by Maya Harrington • Conceived &amp; Created January 8</span>
+      </div>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script data-dc-script type="text/x-dc-logic" data-props="{&quot;customButtonBgUrl&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Custom artwork&quot;},&quot;customOrb1Url&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Custom artwork&quot;},&quot;customOrb2Url&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Custom artwork&quot;},&quot;customOrb3Url&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Custom artwork&quot;},&quot;showCover&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Cover&quot;},&quot;stripeLink&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Stripe&quot;},&quot;showBuyButton&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Stripe&quot;},&quot;buyLabel&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Collect Fire Rose&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Stripe&quot;},&quot;priceEth&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;8.88 ETH&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Details&quot;},&quot;creatorFee&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;10%&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Details&quot;},&quot;audioSrc&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;fire-rose.mp3&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Music&quot;},&quot;coverVideoUrl&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Entrance&quot;}}">
+class Component extends DCLogic {
+  state = { playing: false, t: 0, d: 0, muted: false, liked: false, shared: false };
+  componentDidMount() {
+    const a = this.audio = new Audio(this.props.audioSrc ?? 'fire-rose.mp3');
+    a.preload = 'metadata';
+    a.addEventListener('loadedmetadata', () => this.setState({ d: a.duration }));
+    a.addEventListener('timeupdate', () => this.setState({ t: a.currentTime }));
+    a.addEventListener('ended', () => this.setState({ playing: false }));
+    const R = React.createElement;
+    const fc = ['#ff6b00', '#ff8c00', '#ffa500', '#ff4500', '#ffcc00'];
+    const flames = [...Array(18)].map((_, i) => R('div', { key: 'f' + i, style: { position: 'absolute', left: (10 + (i * 5) % 80) + '%', top: (3 + (i * 3) % 30) + '%', width: 6 + (i % 4) * 2, height: 12 + (i % 5) * 4, borderRadius: '50%', background: `linear-gradient(to top, ${fc[i % 5]}, transparent)`, filter: 'blur(1px)', opacity: 0, animation: `flame ${1.2 + (i % 4) * 0.3}s ease-out ${(i * 0.15) % 1.5}s infinite` } }));
+    const sparks = [...Array(15)].map((_, i) => R('svg', { key: 's' + i, width: 12, height: 12, viewBox: '0 0 24 24', style: { position: 'absolute', left: (10 + (i * 6) % 80) + '%', top: (5 + (i * 7) % 85) + '%', opacity: 0, animation: `sparkle ${3 + (i % 3) * 0.8}s ease-in-out ${i * 0.3}s infinite` } }, R('path', { d: 'M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z', fill: '#fef08a' })));
+    const ec = [['#fff1d6', 'rgba(255,140,40,.9)'], ['#ffd9a8', 'rgba(255,90,30,.85)'], ['#ffc2a0', 'rgba(232,80,90,.8)'], ['#fff8e6', 'rgba(212,175,55,.85)']];
+    const mkEmbers = (n, seed, vh) => [...Array(n)].map((_, i) => { const j = (i * 37 + seed) % 100, s = 2 + (i % 4), c = ec[i % 4]; return R('span', { key: 'e' + seed + i, style: { position: 'absolute', left: j + '%', bottom: (-4 - (i % 5) * 3) + '%', width: s, height: s, borderRadius: '50%', background: c[0], boxShadow: '0 0 ' + (s * 2) + 'px ' + c[1] + ',0 0 ' + (s * 4) + 'px ' + c[1], '--dx': ((i % 7) - 3) * 14 + 'px', animation: (vh ? 'emberRise ' : 'emberArt ') + (5 + (i % 6) * 1.1) + 's linear ' + ((i * 0.47) % 6) + 's infinite', willChange: 'transform,opacity' } }); });
+    this.embers = R('div', { 'aria-hidden': true, style: { position: 'absolute', inset: 0, pointerEvents: 'none', overflow: 'hidden' } }, mkEmbers(42, 3, true));
+    const artEmbers = mkEmbers(26, 11, false);
+    this.fx = R('div', { style: { position: 'absolute', inset: 0, pointerEvents: 'none', overflow: 'hidden' } }, flames, sparks, artEmbers);
+    this.ambient = null;
+    this.bars = R('div', { style: { height: 16, display: 'flex', alignItems: 'flex-end', justifyContent: 'center', gap: 2, opacity: 0.85 } }, [...Array(30)].map((_, i) => R('div', { key: i, style: { width: 4, borderRadius: '2px 2px 0 0', background: 'linear-gradient(to top, hsl(30 100% 62%), transparent)', animation: `bar ${0.4 + ((i * 37) % 10) / 25}s ease-in-out ${((i * 13) % 10) / 50}s infinite alternate` } })));
+    this.forceUpdate();
+    const isDoors = h => /Nesting%20Doors%20v4\.dc\.html|Nesting Doors v4\.dc\.html|doors(\.html)?$/.test(h || '');
+    setTimeout(() => { const a = [...document.querySelectorAll('a[href]')].find(x => isDoors(x.getAttribute('href'))); if (!a) return; for (const [href, as] of [[a.getAttribute('href')], ['dragon-door.jpg', 'image']]) { const l = document.createElement('link'); l.rel = 'prefetch'; l.href = href; if (as) l.as = as; document.head.appendChild(l); } }, 1500);
+    this.onDoorsClick = e => {
+      const a = e.target.closest && e.target.closest('a[href]'); if (!a || !isDoors(a.getAttribute('href')) || e.metaKey || e.ctrlKey || e.shiftKey || a.target === '_blank') return;
+      e.preventDefault(); const href = a.href;
+      const o = document.createElement('div'); o.style.cssText = 'position:fixed;inset:0;z-index:9999;background:#0c0519;opacity:0;transition:opacity .45s ease;pointer-events:none'; document.body.appendChild(o);
+      requestAnimationFrame(() => { o.style.opacity = '1'; }); setTimeout(() => { location.href = href; }, 460);
+    };
+    document.addEventListener('click', this.onDoorsClick);
+  }
+  componentWillUnmount() { this.endWings(); document.removeEventListener('click', this.onDoorsClick); this.audio && this.audio.pause(); clearTimeout(this.st); this.stopAtm && this.stopAtm(); }
+  endWings() {}
+  atmRef = el => { if (el && !this.atmEl) { this.atmEl = el; import('./atmosphere.js').then(m => { this.stopAtm = m.startAtmosphere(el, { embers: 34, shootingStars: true }); }).catch(() => {}); } };
+  async connectWallet() {
+    const eth = window.ethereum;
+    if (!eth) {
+      const mobile = /iPhone|iPad|Android/i.test(navigator.userAgent);
+      window.open(mobile ? 'https://metamask.app.link/dapp/' + location.host + location.pathname : 'https://metamask.io/download/', '_blank', 'noopener');
+      return;
+    }
+    try {
+      const acc = await eth.request({ method: 'eth_requestAccounts' });
+      const chain = await eth.request({ method: 'eth_chainId' });
+      this.setState({ wallet: acc[0] || null, chain, walletMsg: '' });
+      if (!this.ethBound) {
+        this.ethBound = true;
+        eth.on && eth.on('accountsChanged', a => this.setState({ wallet: a[0] || null }));
+        eth.on && eth.on('chainChanged', c => this.setState({ chain: c }));
+      }
+    } catch (e) { this.setState({ walletMsg: 'Wallet connection was cancelled.' }); }
+  }
+  fmt(s) { s = s || 0; return Math.floor(s / 60) + ':' + String(Math.floor(s % 60)).padStart(2, '0'); }
+  renderVals() {
+    const { playing, t, d, muted, liked, shared } = this.state;
+    const R = React.createElement;
+    const dur = d || 30;
+    const coverOn = (this.props.showCover ?? true) && !this.state.coverGone;
+    const w = this.state.wallet, chain = this.state.chain;
+    const hasEth = typeof window !== 'undefined' && !!window.ethereum;
+    const mainnet = chain === '0x1';
+    return {
+      hasCoverVideo: !!(this.props.coverVideoUrl || '').trim(), coverVideo: (this.props.coverVideoUrl || '').trim(), coverVidRef: el => { if (el) { el.muted = true; const p = el.play(); p && p.catch(() => {}); } },
+      noWallet: !w, hasWallet: !!w, wrongNet: !!w && !mainnet,
+      walletShort: w ? w.slice(0, 6) + '…' + w.slice(-4) : '',
+      netLabel: mainnet ? 'Ethereum Mainnet' : 'Wrong network', netColor: mainnet ? 'hsl(140 60% 72%)' : 'hsl(45 100% 70%)',
+      connectLabel: hasEth ? 'Connect wallet' : 'Get MetaMask to connect',
+      headerWallet: w ? w.slice(0, 6) + '…' + w.slice(-4) : 'Connect Wallet',
+      dotColor: w ? 'hsl(140 70% 55%)' : 'hsl(25 100% 60%)',
+      walletMsg: this.state.walletMsg || '',
+      connect: () => this.connectWallet(),
+      switchNet: () => window.ethereum && window.ethereum.request({ method: 'wallet_switchEthereumChain', params: [{ chainId: '0x1' }] }).catch(() => this.setState({ walletMsg: 'Switch to Ethereum Mainnet inside MetaMask.' })),
+      coverMounted: coverOn, coverOpacity: this.state.entering ? 0 : 1, coverScale: this.state.entering ? 1.04 : 1,
+      embers: this.embers || null,
+      enter: () => { if (this.state.entering) return; this.setState({ entering: true }); this.ct = setTimeout(() => { this.endWings(); this.setState({ coverGone: true }); }, 900); },
+      atmRef: this.atmRef,
+      glints: R('div', { style: { position: 'absolute', inset: 0, pointerEvents: 'none' } }, [[8, 12, 10, 0], [92, 18, 8, 1.2], [30, 84, 7, 2.1], [70, 78, 9, .7], [50, 6, 6, 1.6]].map(([x, y, s, d], i) => R('div', { key: i, style: { position: 'absolute', left: x + '%', top: y + '%', width: s, height: s, background: 'linear-gradient(#fff8e6,#fff8e6) center/1px 100% no-repeat,linear-gradient(#fff8e6,#fff8e6) center/100% 1px no-repeat', filter: 'drop-shadow(0 0 2px #f6e3ba)', animation: 'glint ' + (3.2 + i * .5) + 's ease-in-out ' + d + 's infinite' } }))),
+      btnBg: this.props.customButtonBgUrl ? 'url(' + JSON.stringify(this.props.customButtonBgUrl) + ')' : 'none',
+      orb1Bg: this.props.customOrb1Url ? 'url(' + JSON.stringify(this.props.customOrb1Url) + ')' : 'none',
+      orb2Bg: this.props.customOrb2Url ? 'url(' + JSON.stringify(this.props.customOrb2Url) + ')' : 'none',
+      orb3Bg: this.props.customOrb3Url ? 'url(' + JSON.stringify(this.props.customOrb3Url) + ')' : 'none',
+      playing, paused: !playing, shared,
+      artScale: playing ? 1.08 : 1,
+      fx: this.fx || null, bars: this.bars || null, ambient: this.ambient || null,
+      record: R('div', { style: { position: 'relative', width: '100%', height: '100%', borderRadius: '50%', boxShadow: playing ? '0 0 22px hsla(25,100%,55%,.6)' : '0 4px 12px rgba(0,0,0,.6)', transition: 'box-shadow .6s' } },
+        R('div', { style: { position: 'absolute', inset: 0, borderRadius: '50%', background: 'repeating-radial-gradient(circle, #0b0a0d 0 1px, #1c1a21 1px 2px)', border: '1px solid rgba(255,255,255,.18)', animation: 'spin 3s linear infinite', animationPlayState: playing ? 'running' : 'paused' } },
+          R('div', { style: { position: 'absolute', inset: 0, borderRadius: '50%', background: 'conic-gradient(from 30deg, transparent 0 40deg, rgba(255,255,255,.12) 60deg, transparent 80deg 220deg, rgba(255,255,255,.08) 240deg, transparent 260deg)' } }),
+          R('div', { style: { position: 'absolute', inset: '24%', borderRadius: '50%', background: 'url(fire-rose-label.png) 50% 32% / 135% no-repeat' } }),
+          R('div', { style: { position: 'absolute', left: '50%', top: '50%', width: 4, height: 4, transform: 'translate(-50%,-50%)', borderRadius: '50%', background: '#000' } }))),
+      cur: this.fmt(t), dur: this.fmt(dur), pct: Math.min(100, (t / dur) * 100),
+      muteLabel: muted ? 'UNMUTE' : 'MUTE',
+      likeGlyph: liked ? '♥' : '♡', likeColor: liked ? '#ff6b88' : '#fff8e6',
+      showBuy: this.props.showBuyButton ?? true,
+      stripeLink: this.props.stripeLink || 'doors.html#collect-genesis-1',
+      buyLabel: this.props.buyLabel ?? 'Collect Fire Rose',
+      creatorFee: this.props.creatorFee ?? '10%',
+      priceEth: this.props.priceEth ?? '8.88 ETH',
+      stop: e => e.stopPropagation(),
+      toggle: e => {
+        e && e.stopPropagation();
+        const a = this.audio; if (!a) return;
+        if (playing) { a.pause(); this.setState({ playing: false }); }
+        else a.play().then(() => this.setState({ playing: true })).catch(() => this.setState({ playing: false }));
+      },
+      toggleMute: e => { e.stopPropagation(); this.audio.muted = !muted; this.setState({ muted: !muted }); },
+      toggleLike: () => this.setState({ liked: !liked }),
+      share: () => {
+        const u = location.href;
+        if (navigator.share) navigator.share({ title: 'Fire Rose – Key 001', url: u }).catch(() => {});
+        else if (navigator.clipboard) navigator.clipboard.writeText(u).then(() => { this.setState({ shared: true }); clearTimeout(this.st); this.st = setTimeout(() => this.setState({ shared: false }), 2000); });
+      },
+      seek: e => {
+        e.stopPropagation();
+        const r = e.currentTarget.getBoundingClientRect();
+        const v = Math.max(0, Math.min(1, (e.clientX - r.left) / r.width)) * dur;
+        if (this.audio) this.audio.currentTime = v;
+        this.setState({ t: v });
+      },
+    };
+  }
+}
+</script>
+</body>
+</html>

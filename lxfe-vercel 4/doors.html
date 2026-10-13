@@ -1,0 +1,1344 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>The Nesting Doors · LXFE</title>
+<meta name="description" content="One door inside another, forever. Claim the open door in the Fire Rose lineage.">
+<meta property="og:title" content="The Nesting Doors · LXFE">
+<meta property="og:description" content="One door inside another, forever. Claim the open door in the Fire Rose lineage.">
+<meta property="og:image" content="https://lxfe.io/fire-rose-art.png">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="/rose-deep-red.png">
+
+<meta charset="utf-8">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&amp;family=Cormorant+Garamond:ital,wght@0,500;0,700;1,500;1,600&amp;family=Lato:wght@300;400;700;900&amp;display=swap" rel="stylesheet">
+<style>
+html,body{margin:0;background:#0e0620;color:#f3ece0;font-family:'Lato',sans-serif;-webkit-font-smoothing:antialiased;scroll-behavior:smooth}
+a{color:#e2c16b;text-decoration:none}a:hover{color:#f6e3ba}
+input,textarea{font-family:inherit}
+@keyframes scaleSweep{0%{transform:translateX(0)}60%,100%{transform:translateX(300%)}}
+@keyframes galaxySpin{to{transform:rotate(360deg)}}
+@keyframes galaxySpinR{to{transform:rotate(-360deg)}}
+@keyframes roseMorph{0%,18%{opacity:0}42%,62%{opacity:1}86%,100%{opacity:0}}
+@keyframes emberGlow{0%,100%{opacity:.55;transform:scale(1)}50%{opacity:1;transform:scale(1.25)}}
+@keyframes vineGlow{0%,100%{opacity:.6}50%{opacity:1}}
+@keyframes twinkle{0%,100%{opacity:.25}50%{opacity:1}}
+@keyframes cloudDrift{0%{transform:translate3d(-4%,0,0) scale(1)}50%{transform:translate3d(4%,-2%,0) scale(1.06)}100%{transform:translate3d(-4%,0,0) scale(1)}}
+@keyframes heavenPulse{0%,100%{opacity:.75}50%{opacity:1}}
+@keyframes scaleWeigh{0%{transform:rotate(-9deg)}18%{transform:rotate(6deg)}36%{transform:rotate(-3.5deg)}54%{transform:rotate(2deg)}72%{transform:rotate(-1deg)}100%{transform:rotate(0deg)}}
+@keyframes scaleWeighInv{0%{transform:rotate(8deg)}18%{transform:rotate(-5.2deg)}36%{transform:rotate(3deg)}54%{transform:rotate(-1.7deg)}72%{transform:rotate(.8deg)}100%{transform:rotate(0deg)}}
+@keyframes scaleSway{0%,100%{transform:rotate(0deg)}25%{transform:rotate(-1.6deg)}75%{transform:rotate(1.6deg)}}
+@keyframes scaleSwayInv{0%,100%{transform:rotate(0deg)}25%{transform:rotate(1.25deg)}75%{transform:rotate(-1.25deg)}}
+@keyframes sheen{0%{background-position:0 0,200% 50%}100%{background-position:0 0,-100% 50%}}
+@keyframes shimmerText{0%{background-position:0% 50%}100%{background-position:250% 50%}}
+@keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+</style>
+<link rel="preload" as="image" href="dragon-door.jpg">
+</helmet>
+<div style="position:relative;min-height:100vh;overflow:hidden;background:linear-gradient(180deg,#0c0519 0%,#1c0c38 26%,#3a1650 50%,#6e2b58 70%,#a0484f 86%,#c86d4a 100%)">
+  <div style="position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse at 50% 100%,rgba(255,170,110,.28),transparent 50%),radial-gradient(ellipse at 20% 10%,rgba(90,40,140,.5),transparent 55%),linear-gradient(180deg,rgba(6,2,16,.5),transparent 40%,transparent 62%,rgba(20,8,40,.85) 84%,#0e0620 100%)"></div>
+  <canvas ref="{{ atmRef }}" style="position:fixed;inset:0;width:100vw;height:100vh;pointer-events:none"></canvas>
+  <div style="position:relative;max-width:1120px;margin:0 auto;padding:28px 20px 100px;display:flex;flex-direction:column;gap:72px">
+
+    <div style="display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap">
+      <div style="display:flex;align-items:center;gap:10px">
+        <span role="img" aria-label="LXFE rose" style="position:relative;display:block;flex:none;width:42px;height:42px;border-radius:50%;overflow:hidden;box-sizing:border-box;border:2px solid transparent;background:linear-gradient(#1a0b33,#1a0b33) padding-box,conic-gradient(#f3e3b6,#b8902e,#e8698a,#f3e3b6) border-box;box-shadow:0 0 16px rgba(232,105,138,.35)">
+          <span style="position:absolute;inset:0;border-radius:50%;background:url('lxfe-rose-crimson.png') center / cover no-repeat"></span>
+          <span style="position:absolute;inset:0;border-radius:50%;background:url('lxfe-rose-pearl.png') center / cover no-repeat;animation:roseMorph 14s ease-in-out infinite"></span>
+          <span style="position:absolute;inset:0;border-radius:50%;background:linear-gradient(115deg,rgba(255,120,200,.35),rgba(140,170,255,.3) 35%,rgba(120,255,230,.28) 60%,rgba(255,230,140,.32));animation:roseMorph 14s ease-in-out infinite"></span>
+        </span>
+        <span style="font-family:'Cinzel',serif;font-weight:700;font-size:26px;letter-spacing:.06em;background:linear-gradient(180deg,#f7ebc8 0%,#e0c070 20%,#b8902e 40%,#6f4e10 50%,#caa445 56%,#f3e3b6 70%,#b8902e 86%,#7d5a14 100%);-webkit-background-clip:text;background-clip:text;color:transparent">LXFE</span>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;align-items:center;gap:22px;font-size:12px;font-weight:700;letter-spacing:.16em">
+        <a href="#portal" style="color:#eadfd0" style-hover="color:#fff">THE PORTAL</a>
+        <a href="#engine" style="color:#eadfd0" style-hover="color:#fff">CLAIM CHAIN</a>
+        <a href="index.html" style="color:#f6e3ba">FIRE ROSE</a>
+        <button onClick="{{ connect }}" style="border:1px solid transparent;background:linear-gradient(180deg,rgba(20,6,12,.2),rgba(8,2,6,.38)) padding-box,{{ btnBg }} center / cover no-repeat padding-box,url('cartoon-scales-v2.png') 0 0 / 34px 24px repeat padding-box,linear-gradient(180deg,#f3e3b6,#b8902e 45%,#7d5a14 52%,#e4c777) border-box;height:40px;padding:0 16px;border-radius:10px;position:relative;overflow:hidden;isolation:isolate;box-shadow:0 1px 0 rgba(255,255,255,.12) inset,0 6px 16px rgba(0,0,0,.4);font-size:12px;letter-spacing:.08em;cursor:pointer;display:flex;align-items:center;gap:8px;color:#ffe7a0;text-shadow:0 -1px 0 rgba(255,250,228,.9),0 1px 0 #7a5410,0 2px 5px rgba(0,0,0,.95),0 0 12px rgba(255,214,120,.55);font-weight:800" style-before="content:'';position:absolute;inset:0;z-index:-1;border-radius:inherit;pointer-events:none;background:radial-gradient(circle 1.8px at 22% 30%,#fff 0,rgba(255,255,255,.6) 40%,transparent 100%) 0 0/52px 36px,radial-gradient(circle 1.5px at 70% 60%,#9fe6ff 0,transparent 100%) 0 0/78px 54px,radial-gradient(circle 1.6px at 45% 80%,#ffb3ea 0,transparent 100%) 0 0/65px 45px,radial-gradient(circle 1.4px at 85% 20%,#b6ffd2 0,transparent 100%) 0 0/91px 63px,radial-gradient(circle 1.2px at 10% 70%,#fff3b0 0,transparent 100%) 0 0/39px 27px;animation:twinkle 2.4s ease-in-out infinite" style-hover="background:rgba(255,190,90,.22);border-color:rgba(255,214,140,.85);box-shadow:0 0 18px rgba(255,190,90,.45)" style-after="content:'';position:absolute;top:0;bottom:0;left:-60%;width:60%;z-index:-1;pointer-events:none;background:linear-gradient(100deg,transparent,rgba(255,90,90,.34),rgba(255,170,60,.38) 45%,rgba(255,236,170,.42) 55%,rgba(255,110,170,.32),transparent);animation:scaleSweep 8s ease-in-out infinite"><span style="width:7px;height:7px;border-radius:50%;background:{{ dotColor }}"></span><span style="position:relative;display:inline-block"><span aria-hidden="true" style="position:absolute;left:0;top:0;right:0;color:#1e0b00;text-shadow:0 1px 0 #1e0b00,0 2px 5px rgba(0,0,0,.95),0 0 12px rgba(255,190,90,.55);pointer-events:none">{{ walletLabel }}</span><span style="position:relative;background:linear-gradient(180deg,#ffffff 0%,#fff1c4 22%,#ffd36b 44%,#a8620e 50%,#f0b54a 58%,#ffe6a6 78%,#fffaf0 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;text-shadow:none">{{ walletLabel }}</span></span></button>
+      </div>
+    </div>
+
+    <div style="display:flex;flex-direction:column;align-items:center;gap:18px;text-align:center;max-width:820px;margin:0 auto">
+      <span style="display:flex;align-items:center;gap:12px;font-size:11px;font-weight:700;letter-spacing:.3em;color:#e2c16b"><span style="width:6px;height:6px;transform:rotate(45deg);background:#e8698a;box-shadow:0 0 8px #e8698a"></span>RECURSIVE PARENT-CHILD NFT · CASCADING REVENUE SPLITS<span style="width:6px;height:6px;transform:rotate(45deg);background:#e8698a;box-shadow:0 0 8px #e8698a"></span></span>
+      <h1 style="margin:0;font-family:'Cinzel',serif;font-weight:700;line-height:1.05;font-size:clamp(38px,6vw,72px);letter-spacing:.05em;color:#fff8e6;text-shadow:0 -1px 0 #f6e3ba">The Nesting Doors</h1>
+      <p style="margin:0;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(22px,2.6vw,30px);color:#f6e3ba">One door inside another, forever.</p>
+      <div aria-hidden="true" style="display:flex;align-items:center;justify-content:center;gap:14px;width:min(420px,70vw);margin:0 auto">
+      <span style="flex:1;height:1px;background:linear-gradient(90deg,transparent,#c9a24a 40%,#f3e3b6)"></span>
+      <span aria-hidden="true" style="position:relative;width:12px;height:12px;flex:none;transform:rotate(45deg);border-radius:1.5px;background:linear-gradient(135deg,rgba(255,255,255,.9) 0%,rgba(255,255,255,0) 40%),conic-gradient(#ffffff 0 45deg,#bcd3e6 45deg 90deg,#f7fcff 90deg 135deg,#8ea4ba 135deg 180deg,#e9f5ff 180deg 225deg,#a6bccf 225deg 270deg,#ffffff 270deg 315deg,#7d93aa 315deg 360deg);box-shadow:0 0 0 .5px rgba(255,255,255,.95),0 0 6px rgba(200,230,255,.8),0 0 14px rgba(255,255,255,.35)">
+            <span style="position:absolute;inset:3.24px;border-radius:1px;background:linear-gradient(135deg,#ffffff,#dcefff 40%,#9fb6cc 62%,#ffffff);box-shadow:0 0 0 .5px rgba(110,140,170,.55)"></span>
+            <span style="position:absolute;left:50%;top:50%;width:20px;height:20px;margin:-10px 0 0 -10px;transform:rotate(-45deg);background:linear-gradient(#fff,#fff) center/1px 100% no-repeat,linear-gradient(#fff,#fff) center/100% 1px no-repeat;opacity:.9;animation:twinkle 2.8s ease-in-out infinite"></span>
+          </span>
+      <span aria-hidden="true" style="position:relative;display:inline-block;width:46px;height:59px;flex:none;margin:0 10px">
+            <span style="position:absolute;inset:-18px -22px;border-radius:50%;background:radial-gradient(ellipse at 50% 50%,rgba(255,220,140,.6),rgba(212,175,55,.2) 42%,transparent 70%);animation:emberGlow 3.6s ease-in-out infinite"></span>
+            <span style="position:absolute;left:-15px;right:-15px;top:31px;height:15px;margin-top:-7px;border-radius:50%;border:1px dashed rgba(255,236,190,.45);transform:rotate(-14deg)"></span>
+            <span style="position:absolute;inset:0;border-radius:50% 50% 50% 50% / 60% 60% 40% 40%;overflow:hidden;background:radial-gradient(ellipse at 50% 55%,#2a1a04 0%,#140b02 60%,#0a0501 100%);box-shadow:inset 0 0 0 1.5px #f6e3ba,inset 0 0 8px rgba(255,214,120,.95),inset 0 -6px 12px rgba(212,175,55,.55),0 0 14px rgba(255,214,120,.85),0 0 36px rgba(212,175,55,.5)">
+              <span style="position:absolute;left:-30%;top:-14%;width:160%;height:128%;background:url('gold-galaxy.png') center / contain no-repeat;animation:galaxySpinR 16s linear infinite"></span>
+              <span style="position:absolute;left:-10%;top:4%;width:120%;height:92%;background:url('gold-galaxy.png') center / contain no-repeat;opacity:.55;transform:scaleX(-1);animation:galaxySpinR 26s linear infinite"></span>
+              <span style="position:absolute;inset:0;background:radial-gradient(ellipse at 50% 56%,transparent 48%,rgba(90,56,8,.35) 78%,rgba(212,175,55,.55) 100%)"></span>
+              <span style="position:absolute;inset:0;background:radial-gradient(ellipse 26% 16% at 34% 20%,rgba(255,255,255,.75),rgba(255,255,255,0) 72%),linear-gradient(115deg,transparent 30%,rgba(255,250,230,.35) 45%,transparent 58%);background-size:100% 100%,260% 100%;animation:sheen 6s ease-in-out infinite"></span>
+              <span style="position:absolute;left:58%;top:8%;width:12px;height:16px;clip-path:polygon(0 0,18% 0,46% 34%,30% 40%,70% 72%,52% 76%,100% 100%,86% 100%,40% 80%,58% 76%,16% 44%,34% 38%);background:linear-gradient(180deg,#fff,#fff3c4 50%,rgba(255,214,120,.2));filter:drop-shadow(0 0 2px #fff3c4);animation:emberGlow 2.4s ease-in-out infinite"></span>
+            </span>
+            <span style="position:absolute;left:-15px;right:-15px;top:31px;height:15px;margin-top:-7px;border-radius:50%;border:1px dashed transparent;border-bottom-color:rgba(255,244,210,.95);transform:rotate(-14deg)"></span>
+            <span style="position:absolute;right:-14px;top:24px;width:10px;height:10px;background:linear-gradient(#fff,#fff) center/1px 100% no-repeat,linear-gradient(#fff,#fff) center/100% 1px no-repeat;filter:drop-shadow(0 0 2px #fff3c4);animation:twinkle 2.2s ease-in-out infinite"></span>
+          </span>
+      <span aria-hidden="true" style="position:relative;width:12px;height:12px;flex:none;transform:rotate(45deg);border-radius:1.5px;background:linear-gradient(135deg,rgba(255,255,255,.9) 0%,rgba(255,255,255,0) 40%),conic-gradient(#ffffff 0 45deg,#bcd3e6 45deg 90deg,#f7fcff 90deg 135deg,#8ea4ba 135deg 180deg,#e9f5ff 180deg 225deg,#a6bccf 225deg 270deg,#ffffff 270deg 315deg,#7d93aa 315deg 360deg);box-shadow:0 0 0 .5px rgba(255,255,255,.95),0 0 6px rgba(200,230,255,.8),0 0 14px rgba(255,255,255,.35)">
+            <span style="position:absolute;inset:3.24px;border-radius:1px;background:linear-gradient(135deg,#ffffff,#dcefff 40%,#9fb6cc 62%,#ffffff);box-shadow:0 0 0 .5px rgba(110,140,170,.55)"></span>
+            <span style="position:absolute;left:50%;top:50%;width:20px;height:20px;margin:-10px 0 0 -10px;transform:rotate(-45deg);background:linear-gradient(#fff,#fff) center/1px 100% no-repeat,linear-gradient(#fff,#fff) center/100% 1px no-repeat;opacity:.9;animation:twinkle 2.8s ease-in-out infinite"></span>
+          </span>
+      <span style="flex:1;height:1px;background:linear-gradient(90deg,#f3e3b6,#c9a24a 60%,transparent)"></span>
+    </div>
+      <p style="margin:0;max-width:660px;font-size:16px;line-height:1.7;color:#eadfd0;text-wrap:pretty">Only two Master Genesis Apps exist. Inside each one is an endless tunnel of doors, each nested inside the one before it. When a creator claims the open door, their NFT spawns the next door inside it, and every claim and sale rewards the door it lives inside.</p>
+      <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:6px">
+        <sc-for list="{{ editions }}" as="e" hint-placeholder-count="2">
+          <button onClick="{{ e.pick }}" style="padding:10px 20px;border-radius:999px;border:1px solid {{ e.border }};background:{{ e.bg }};color:{{ e.color }};font-size:12px;font-weight:700;letter-spacing:.1em;cursor:pointer">{{ e.label }}</button>
+        </sc-for>
+      </div>
+      <p style="margin:4px 0 0;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(19px,2vw,23px);line-height:1.4;color:#f6e3ba;text-wrap:balance">Two universes. One origin. Every door you open writes a different path.</p>
+    </div>
+
+    <div id="portal" style="display:flex;flex-direction:column;align-items:center;gap:16px;opacity:{{ portalOpacity }};transform:translateY({{ portalY }});transition:opacity .8s ease,transform 1s cubic-bezier(.2,.8,.2,1)">
+      <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:8px;max-width:760px">
+        <sc-for list="{{ doorPills }}" as="p" hint-placeholder-count="4">
+          <button onClick="{{ p.go }}" style="padding:9px 16px;border-radius:999px;border:1px solid {{ p.border }};background:{{ p.bg }};color:{{ p.color }};font-size:11px;font-weight:700;letter-spacing:.1em;cursor:pointer">{{ p.label }}</button>
+        </sc-for>
+      </div>
+      <div style="position:relative;display:flex;align-items:center;justify-content:center;width:100%">
+      <div aria-hidden="true" style="position:absolute;left:50%;bottom:-8%;transform:translateX(-50%);width:min(760px,100%);height:38%;border-radius:50%;background:radial-gradient(ellipse at 50% 100%,rgba(255,240,215,.4),rgba(246,200,220,.16) 45%,transparent 70%);filter:blur(28px);pointer-events:none"></div>
+      <div aria-hidden="true" style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:min(900px,120vw);height:115%;pointer-events:none;animation:heavenPulse 7s ease-in-out infinite">
+        <div style="position:absolute;left:50%;top:6%;transform:translateX(-50%);width:62%;height:46%;border-radius:50%;background:radial-gradient(ellipse at 50% 60%,rgba(255,248,232,.38),rgba(255,230,200,.14) 45%,transparent 70%);filter:blur(30px)"></div>
+        <div style="position:absolute;left:6%;top:18%;width:42%;height:26%;border-radius:50%;background:radial-gradient(ellipse at 50% 50%,rgba(255,246,236,.32),transparent 70%);filter:blur(22px);animation:cloudDrift 22s ease-in-out 0s infinite;pointer-events:none"></div>
+        <div style="position:absolute;left:52%;top:12%;width:44%;height:28%;border-radius:50%;background:radial-gradient(ellipse at 50% 50%,rgba(250,232,246,.3),transparent 70%);filter:blur(22px);animation:cloudDrift 26s ease-in-out -6s infinite;pointer-events:none"></div>
+        <div style="position:absolute;left:2%;top:50%;width:40%;height:24%;border-radius:50%;background:radial-gradient(ellipse at 50% 50%,rgba(255,240,220,.26),transparent 70%);filter:blur(22px);animation:cloudDrift 24s ease-in-out -3s infinite;pointer-events:none"></div>
+        <div style="position:absolute;left:58%;top:48%;width:40%;height:26%;border-radius:50%;background:radial-gradient(ellipse at 50% 50%,rgba(240,236,255,.26),transparent 70%);filter:blur(22px);animation:cloudDrift 28s ease-in-out -10s infinite;pointer-events:none"></div>
+        <div style="position:absolute;left:20%;top:76%;width:60%;height:22%;border-radius:50%;background:radial-gradient(ellipse at 50% 50%,rgba(255,244,230,.3),transparent 70%);filter:blur(22px);animation:cloudDrift 20s ease-in-out -4s infinite;pointer-events:none"></div>
+      </div>
+      <div style="position:relative;width:min(520px,88vw);aspect-ratio:13/19;box-sizing:border-box;padding:10px;border-radius:50% 50% 24px 24px / 34% 34% 24px 24px;background:linear-gradient(180deg,rgba(246,227,186,.42) 0%,rgba(230,205,138,.26) 30%,rgba(212,175,55,.2) 55%,rgba(246,227,186,.34) 100%),linear-gradient(110deg,transparent 35%,rgba(255,255,255,.7) 50%,transparent 65%);background-size:100% 100%,300% 100%;animation:sheen 10s ease-in-out infinite;border:1px solid rgba(255,243,214,.75);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);box-shadow:0 0 0 1px rgba(212,175,55,.35),0 0 40px rgba(255,240,210,.35),0 0 90px rgba(255,230,200,.18),inset 0 0 24px rgba(255,248,232,.35)">
+        <div style="position:relative;width:100%;height:100%;border-radius:50% 50% 16px 16px / 34% 34% 16px 16px;overflow:hidden;perspective:1600px;transform-style:preserve-3d;background:radial-gradient(ellipse at 50% 30%,rgba(255,250,240,.32),rgba(240,220,240,.14) 45%,rgba(60,30,90,.22) 100%);box-shadow:inset 0 0 0 1px rgba(255,248,230,.6),inset 0 0 40px rgba(255,245,230,.25)">
+          <div style="position:absolute;inset:0;border-radius:50% 50% 14px 14px / 34% 34% 14px 14px;z-index:1;background:radial-gradient(ellipse 70% 40% at 30% 30%,rgba(255,252,245,.28),transparent 70%),radial-gradient(ellipse 60% 35% at 72% 62%,rgba(250,236,250,.22),transparent 70%),linear-gradient(180deg,rgba(255,248,235,.16),transparent 55%,rgba(246,227,186,.28) 100%),radial-gradient(ellipse at 50% 50%,rgba(255,244,228,.3) 0%,rgba(150,110,170,.22) 55%,rgba(40,20,60,.38) 100%);border:1px solid rgba(255,243,214,.55);box-shadow:inset 0 0 40px rgba(255,248,235,.22),0 0 18px rgba(255,240,210,.2)"></div>
+          <div style="position:absolute;inset:9% 9% 2% 9%;border-radius:50% 50% 14px 14px / 34% 34% 14px 14px;z-index:2;background:radial-gradient(ellipse 70% 40% at 30% 30%,rgba(255,252,245,.28),transparent 70%),radial-gradient(ellipse 60% 35% at 72% 62%,rgba(250,236,250,.22),transparent 70%),linear-gradient(180deg,rgba(255,248,235,.16),transparent 55%,rgba(246,227,186,.28) 100%),radial-gradient(ellipse at 50% 50%,rgba(255,244,228,.3) 0%,rgba(150,110,170,.22) 55%,rgba(40,20,60,.38) 100%);border:1px solid rgba(255,243,214,.55);box-shadow:inset 0 0 40px rgba(255,248,235,.22),0 0 18px rgba(255,240,210,.2)"></div>
+          <div style="position:absolute;inset:17% 17% 4% 17%;border-radius:50% 50% 14px 14px / 34% 34% 14px 14px;z-index:3;background:radial-gradient(ellipse 70% 40% at 30% 30%,rgba(255,252,245,.28),transparent 70%),radial-gradient(ellipse 60% 35% at 72% 62%,rgba(250,236,250,.22),transparent 70%),linear-gradient(180deg,rgba(255,248,235,.16),transparent 55%,rgba(246,227,186,.28) 100%),radial-gradient(ellipse at 50% 50%,rgba(255,244,228,.3) 0%,rgba(150,110,170,.22) 55%,rgba(40,20,60,.38) 100%);border:1px solid rgba(255,243,214,.55);box-shadow:inset 0 0 40px rgba(255,248,235,.22),0 0 18px rgba(255,240,210,.2)"></div>
+          <div style="position:absolute;inset:24% 24% 6% 24%;border-radius:50% 50% 14px 14px / 34% 34% 14px 14px;z-index:4;background:radial-gradient(ellipse 70% 40% at 30% 30%,rgba(255,252,245,.28),transparent 70%),radial-gradient(ellipse 60% 35% at 72% 62%,rgba(250,236,250,.22),transparent 70%),linear-gradient(180deg,rgba(255,248,235,.16),transparent 55%,rgba(246,227,186,.28) 100%),radial-gradient(ellipse at 50% 50%,rgba(255,244,228,.3) 0%,rgba(150,110,170,.22) 55%,rgba(40,20,60,.38) 100%);border:1px solid rgba(255,243,214,.55);box-shadow:inset 0 0 40px rgba(255,248,235,.22),0 0 18px rgba(255,240,210,.2)"></div>
+          <div style="position:absolute;inset:30% 30% 8% 30%;border-radius:50% 50% 14px 14px / 34% 34% 14px 14px;z-index:5;background:radial-gradient(ellipse 70% 40% at 30% 30%,rgba(255,252,245,.28),transparent 70%),radial-gradient(ellipse 60% 35% at 72% 62%,rgba(250,236,250,.22),transparent 70%),linear-gradient(180deg,rgba(255,248,235,.16),transparent 55%,rgba(246,227,186,.28) 100%),radial-gradient(ellipse at 50% 50%,rgba(255,244,228,.3) 0%,rgba(150,110,170,.22) 55%,rgba(40,20,60,.38) 100%);border:1px solid rgba(255,243,214,.55);box-shadow:inset 0 0 40px rgba(255,248,235,.22),0 0 18px rgba(255,240,210,.2)"></div>
+          <div onClick="{{ d0.click }}" role="button" aria-label="{{ d0.aria }}" style="position:absolute;inset:0;border-radius:50% 50% 14px 14px / 34% 34% 14px 14px;z-index:10;background:url('dragon-door.jpg') center top / cover no-repeat;border:2px solid rgba(212,175,55,.85);transform-origin:right center;transform:{{ d0.tf }};transition:transform .9s cubic-bezier(.22,1,.36,1),filter .5s;cursor:pointer;pointer-events:{{ d0.pe }};box-shadow:-12px 0 30px rgba(0,0,0,.85),inset 0 0 20px rgba(0,0,0,.55);backface-visibility:hidden" style-hover="filter:brightness(1.08)">
+            <div style="position:absolute;left:50%;bottom:4%;transform:translateX(-50%);width:82%;padding:10px 14px;border-radius:12px;background:rgba(20,8,36,.72);border:1px solid rgba(255,243,214,.7);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);color:#fff;text-align:center;pointer-events:none;box-shadow:0 8px 24px rgba(0,0,0,.85)">
+              <div style="font-size:10px;letter-spacing:.16em;color:#f5e29c;font-weight:700">{{ d0.kicker }}</div>
+              <div style="font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;margin:3px 0 5px">{{ d0.name }}</div>
+              <span style="display:inline-block;font-size:9px;font-weight:700;letter-spacing:.1em;color:#1a072b;background:linear-gradient(135deg,#fff6d6,#d4af37);padding:4px 12px;border-radius:999px">{{ d0.action }}</span>
+            </div>
+          </div>
+          <div onClick="{{ d1.click }}" role="button" aria-label="{{ d1.aria }}" style="position:absolute;inset:9% 9% 2% 9%;border-radius:50% 50% 14px 14px / 34% 34% 14px 14px;z-index:9;background:url('dragon-door.jpg') center top / cover no-repeat;border:2px solid rgba(212,175,55,.85);transform-origin:right center;transform:{{ d1.tf }};transition:transform .9s cubic-bezier(.22,1,.36,1),filter .5s;cursor:pointer;pointer-events:{{ d1.pe }};box-shadow:-12px 0 30px rgba(0,0,0,.85),inset 0 0 20px rgba(0,0,0,.55);backface-visibility:hidden" style-hover="filter:brightness(1.08)">
+            <div style="position:absolute;left:50%;bottom:4%;transform:translateX(-50%);width:82%;padding:10px 14px;border-radius:12px;background:rgba(20,8,36,.72);border:1px solid rgba(255,243,214,.7);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);color:#fff;text-align:center;pointer-events:none;box-shadow:0 8px 24px rgba(0,0,0,.85)">
+              <div style="font-size:9px;letter-spacing:.16em;color:#f5e29c;font-weight:700">{{ d1.kicker }}</div>
+              <div style="font-family:'Cormorant Garamond',serif;font-size:17px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;margin:3px 0 5px">{{ d1.name }}</div>
+              <span style="display:inline-block;font-size:9px;font-weight:700;letter-spacing:.1em;color:#1a072b;background:linear-gradient(135deg,#fff6d6,#d4af37);padding:4px 12px;border-radius:999px">{{ d1.action }}</span>
+            </div>
+          </div>
+          <div onClick="{{ d2.click }}" role="button" aria-label="{{ d2.aria }}" style="position:absolute;inset:17% 17% 4% 17%;border-radius:50% 50% 14px 14px / 34% 34% 14px 14px;z-index:8;background:url('dragon-door.jpg') center top / cover no-repeat;border:2px solid rgba(212,175,55,.85);transform-origin:right center;transform:{{ d2.tf }};transition:transform .9s cubic-bezier(.22,1,.36,1),filter .5s;cursor:pointer;pointer-events:{{ d2.pe }};box-shadow:-12px 0 30px rgba(0,0,0,.85),inset 0 0 20px rgba(0,0,0,.55);backface-visibility:hidden" style-hover="filter:brightness(1.08)">
+            <div style="position:absolute;left:50%;bottom:4%;transform:translateX(-50%);width:82%;padding:10px 14px;border-radius:12px;background:rgba(20,8,36,.72);border:1px solid rgba(255,243,214,.7);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);color:#fff;text-align:center;pointer-events:none;box-shadow:0 8px 24px rgba(0,0,0,.85)">
+              <div style="font-size:9px;letter-spacing:.16em;color:#f5e29c;font-weight:700">{{ d2.kicker }}</div>
+              <div style="font-family:'Cormorant Garamond',serif;font-size:14px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;margin:3px 0 5px">{{ d2.name }}</div>
+              <span style="display:inline-block;font-size:9px;font-weight:700;letter-spacing:.1em;color:#1a072b;background:linear-gradient(135deg,#fff6d6,#d4af37);padding:4px 12px;border-radius:999px">{{ d2.action }}</span>
+            </div>
+          </div>
+          <div onClick="{{ d3.click }}" role="button" aria-label="{{ d3.aria }}" style="position:absolute;inset:24% 24% 6% 24%;border-radius:50% 50% 14px 14px / 34% 34% 14px 14px;z-index:7;background:url('dragon-door.jpg') center top / cover no-repeat;border:2px solid rgba(212,175,55,.85);transform-origin:right center;transform:{{ d3.tf }};transition:transform .9s cubic-bezier(.22,1,.36,1),filter .5s;cursor:pointer;pointer-events:{{ d3.pe }};box-shadow:-12px 0 30px rgba(0,0,0,.85),inset 0 0 20px rgba(0,0,0,.55);backface-visibility:hidden" style-hover="filter:brightness(1.08)">
+            <div style="position:absolute;left:50%;bottom:4%;transform:translateX(-50%);width:82%;padding:10px 14px;border-radius:12px;background:rgba(20,8,36,.72);border:1px solid rgba(255,243,214,.7);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);color:#fff;text-align:center;pointer-events:none;box-shadow:0 8px 24px rgba(0,0,0,.85)">
+              <div style="font-size:9px;letter-spacing:.16em;color:#f5e29c;font-weight:700">{{ d3.kicker }}</div>
+              <div style="font-family:'Cormorant Garamond',serif;font-size:14px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;margin:3px 0 5px">{{ d3.name }}</div>
+              <span style="display:inline-block;font-size:8px;font-weight:700;letter-spacing:.1em;color:#1a072b;background:linear-gradient(135deg,#fff6d6,#d4af37);padding:4px 12px;border-radius:999px">{{ d3.action }}</span>
+            </div>
+          </div>
+          <div onClick="{{ d4.click }}" role="button" aria-label="{{ d4.aria }}" style="position:absolute;inset:30% 30% 8% 30%;border-radius:50% 50% 14px 14px / 34% 34% 14px 14px;z-index:6;background:url('dragon-door.jpg') center top / cover no-repeat;border:2px solid rgba(212,175,55,.85);transform-origin:right center;transform:{{ d4.tf }};transition:transform .9s cubic-bezier(.22,1,.36,1),filter .5s;cursor:pointer;pointer-events:{{ d4.pe }};box-shadow:-12px 0 30px rgba(0,0,0,.85),inset 0 0 20px rgba(0,0,0,.55);backface-visibility:hidden" style-hover="filter:brightness(1.08)">
+            <div style="position:absolute;left:50%;bottom:4%;transform:translateX(-50%);width:82%;padding:10px 14px;border-radius:12px;background:rgba(20,8,36,.72);border:1px solid rgba(255,243,214,.7);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);color:#fff;text-align:center;pointer-events:none;box-shadow:0 8px 24px rgba(0,0,0,.85)">
+              <div style="font-size:9px;letter-spacing:.16em;color:#f5e29c;font-weight:700">{{ d4.kicker }}</div>
+              <div style="font-family:'Cormorant Garamond',serif;font-size:14px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;margin:3px 0 5px">{{ d4.name }}</div>
+              <span style="display:inline-block;font-size:8px;font-weight:700;letter-spacing:.1em;color:#1a072b;background:linear-gradient(135deg,#fff6d6,#d4af37);padding:4px 12px;border-radius:999px">{{ d4.action }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+      <span style="font-size:12px;color:#d7c9b8;text-align:center">Click a door, or a pill above, to swing it open and step into the next one nested inside.</span>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:22px;margin-top:-30px">
+    <div aria-hidden="true" style="display:flex;align-items:center;justify-content:center;gap:14px;width:min(560px,80vw);margin:0 auto">
+      <span style="flex:1;height:1px;background:linear-gradient(90deg,transparent,#c9a24a 40%,#f3e3b6)"></span>
+      <span aria-hidden="true" style="position:relative;width:12px;height:12px;flex:none;transform:rotate(45deg);border-radius:1.5px;background:linear-gradient(135deg,rgba(255,255,255,.9) 0%,rgba(255,255,255,0) 40%),conic-gradient(#ffffff 0 45deg,#bcd3e6 45deg 90deg,#f7fcff 90deg 135deg,#8ea4ba 135deg 180deg,#e9f5ff 180deg 225deg,#a6bccf 225deg 270deg,#ffffff 270deg 315deg,#7d93aa 315deg 360deg);box-shadow:0 0 0 .5px rgba(255,255,255,.95),0 0 6px rgba(200,230,255,.8),0 0 14px rgba(255,255,255,.35)">
+            <span style="position:absolute;inset:3.24px;border-radius:1px;background:linear-gradient(135deg,#ffffff,#dcefff 40%,#9fb6cc 62%,#ffffff);box-shadow:0 0 0 .5px rgba(110,140,170,.55)"></span>
+            <span style="position:absolute;left:50%;top:50%;width:20px;height:20px;margin:-10px 0 0 -10px;transform:rotate(-45deg);background:linear-gradient(#fff,#fff) center/1px 100% no-repeat,linear-gradient(#fff,#fff) center/100% 1px no-repeat;opacity:.9;animation:twinkle 2.8s ease-in-out infinite"></span>
+          </span>
+      <span role="img" aria-label="LXFE rose" style="position:relative;display:inline-block;width:56px;height:56px;flex:none;margin:0 10px">
+            <span aria-hidden="true" style="position:absolute;inset:-18px;border-radius:50%;background:radial-gradient(circle,rgba(255,170,190,.5),rgba(212,175,55,.18) 45%,transparent 70%);animation:emberGlow 3.8s ease-in-out infinite"></span>
+            <span style="position:absolute;inset:0;border-radius:50%;overflow:hidden;border:2px solid transparent;background:linear-gradient(#1a0b33,#1a0b33) padding-box,conic-gradient(#f3e3b6,#b8902e,#e8698a,#fff8e6,#b8902e,#f3e3b6) border-box;box-shadow:0 0 18px rgba(232,105,138,.45),0 0 34px rgba(212,175,55,.3)">
+              <span style="position:absolute;inset:0;border-radius:50%;background:url('lxfe-rose-crimson.png') center / cover no-repeat"></span>
+              <span style="position:absolute;inset:0;border-radius:50%;background:url('lxfe-rose-pearl.png') center / cover no-repeat;animation:roseMorph 14s ease-in-out infinite"></span>
+              <span style="position:absolute;inset:0;border-radius:50%;background:linear-gradient(115deg,rgba(255,120,200,.35),rgba(140,170,255,.3) 35%,rgba(120,255,230,.28) 60%,rgba(255,230,140,.32));animation:roseMorph 14s ease-in-out infinite"></span>
+              <span style="position:absolute;inset:0;border-radius:50%;background:radial-gradient(ellipse 40% 26% at 34% 24%,rgba(255,255,255,.45),rgba(255,255,255,0) 72%)"></span>
+            </span>
+          </span>
+      <span aria-hidden="true" style="position:relative;width:12px;height:12px;flex:none;transform:rotate(45deg);border-radius:1.5px;background:linear-gradient(135deg,rgba(255,255,255,.9) 0%,rgba(255,255,255,0) 40%),conic-gradient(#ffffff 0 45deg,#bcd3e6 45deg 90deg,#f7fcff 90deg 135deg,#8ea4ba 135deg 180deg,#e9f5ff 180deg 225deg,#a6bccf 225deg 270deg,#ffffff 270deg 315deg,#7d93aa 315deg 360deg);box-shadow:0 0 0 .5px rgba(255,255,255,.95),0 0 6px rgba(200,230,255,.8),0 0 14px rgba(255,255,255,.35)">
+            <span style="position:absolute;inset:3.24px;border-radius:1px;background:linear-gradient(135deg,#ffffff,#dcefff 40%,#9fb6cc 62%,#ffffff);box-shadow:0 0 0 .5px rgba(110,140,170,.55)"></span>
+            <span style="position:absolute;left:50%;top:50%;width:20px;height:20px;margin:-10px 0 0 -10px;transform:rotate(-45deg);background:linear-gradient(#fff,#fff) center/1px 100% no-repeat,linear-gradient(#fff,#fff) center/100% 1px no-repeat;opacity:.9;animation:twinkle 2.8s ease-in-out infinite"></span>
+          </span>
+      <span style="flex:1;height:1px;background:linear-gradient(90deg,#f3e3b6,#c9a24a 60%,transparent)"></span>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:12px">
+      <a href="#engine" style="border:1px solid transparent;background:linear-gradient(180deg,rgba(20,6,12,.2),rgba(8,2,6,.38)) padding-box,{{ btnBg }} center / cover no-repeat padding-box,url('cartoon-scales-v2.png') 0 0 / 34px 24px repeat padding-box,linear-gradient(180deg,#f3e3b6,#b8902e 45%,#7d5a14 52%,#e4c777) border-box;height:50px;padding:0 26px;display:flex;align-items:center;justify-content:center;border-radius:12px;position:relative;overflow:hidden;isolation:isolate;box-shadow:0 1px 0 rgba(255,255,255,.12) inset,0 6px 16px rgba(0,0,0,.4);font-size:13px;letter-spacing:.12em;color:#ffe7a0;text-shadow:0 -1px 0 rgba(255,250,228,.9),0 1px 0 #7a5410,0 2px 5px rgba(0,0,0,.95),0 0 12px rgba(255,214,120,.55);font-weight:800" style-before="content:'';position:absolute;inset:0;z-index:-1;border-radius:inherit;pointer-events:none;background:radial-gradient(circle 1.8px at 22% 30%,#fff 0,rgba(255,255,255,.6) 40%,transparent 100%) 0 0/52px 36px,radial-gradient(circle 1.5px at 70% 60%,#9fe6ff 0,transparent 100%) 0 0/78px 54px,radial-gradient(circle 1.6px at 45% 80%,#ffb3ea 0,transparent 100%) 0 0/65px 45px,radial-gradient(circle 1.4px at 85% 20%,#b6ffd2 0,transparent 100%) 0 0/91px 63px,radial-gradient(circle 1.2px at 10% 70%,#fff3b0 0,transparent 100%) 0 0/39px 27px;animation:twinkle 2.4s ease-in-out infinite" style-hover="background:rgba(255,190,90,.22);border-color:rgba(255,214,140,.85);box-shadow:0 0 18px rgba(255,190,90,.45)" style-after="content:'';position:absolute;top:0;bottom:0;left:-60%;width:60%;z-index:-1;pointer-events:none;background:linear-gradient(100deg,transparent,rgba(255,90,90,.34),rgba(255,170,60,.38) 45%,rgba(255,236,170,.42) 55%,rgba(255,110,170,.32),transparent);animation:scaleSweep 8s ease-in-out infinite"><span style="position:relative;display:inline-block"><span aria-hidden="true" style="position:absolute;left:0;top:0;right:0;color:#1e0b00;text-shadow:0 1px 0 #1e0b00,0 2px 5px rgba(0,0,0,.95),0 0 12px rgba(255,190,90,.55);pointer-events:none">VIEW THE CLAIM CHAIN ↓</span><span style="position:relative;background:linear-gradient(180deg,#ffffff 0%,#fff1c4 22%,#ffd36b 44%,#a8620e 50%,#f0b54a 58%,#ffe6a6 78%,#fffaf0 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;text-shadow:none">VIEW THE CLAIM CHAIN ↓</span></span></a>
+      <a href="index.html" style="border:1px solid transparent;background:linear-gradient(180deg,rgba(20,6,12,.2),rgba(8,2,6,.38)) padding-box,{{ btnBg }} center / cover no-repeat padding-box,url('cartoon-scales-v2.png') 0 0 / 34px 24px repeat padding-box,linear-gradient(180deg,#f3e3b6,#b8902e 45%,#7d5a14 52%,#e4c777) border-box;height:50px;padding:0 26px;display:flex;align-items:center;justify-content:center;border-radius:12px;position:relative;overflow:hidden;isolation:isolate;box-shadow:0 1px 0 rgba(255,255,255,.12) inset,0 6px 16px rgba(0,0,0,.4);font-size:13px;letter-spacing:.12em;color:#ffe7a0;text-shadow:0 -1px 0 rgba(255,250,228,.9),0 1px 0 #7a5410,0 2px 5px rgba(0,0,0,.95),0 0 12px rgba(255,214,120,.55);font-weight:800" style-before="content:'';position:absolute;inset:0;z-index:-1;border-radius:inherit;pointer-events:none;background:radial-gradient(circle 1.8px at 22% 30%,#fff 0,rgba(255,255,255,.6) 40%,transparent 100%) 0 0/52px 36px,radial-gradient(circle 1.5px at 70% 60%,#9fe6ff 0,transparent 100%) 0 0/78px 54px,radial-gradient(circle 1.6px at 45% 80%,#ffb3ea 0,transparent 100%) 0 0/65px 45px,radial-gradient(circle 1.4px at 85% 20%,#b6ffd2 0,transparent 100%) 0 0/91px 63px,radial-gradient(circle 1.2px at 10% 70%,#fff3b0 0,transparent 100%) 0 0/39px 27px;animation:twinkle 2.4s ease-in-out infinite" style-hover="background:rgba(255,190,90,.22);border-color:rgba(255,214,140,.85);box-shadow:0 0 18px rgba(255,190,90,.45)" style-after="content:'';position:absolute;top:0;bottom:0;left:-60%;width:60%;z-index:-1;pointer-events:none;background:linear-gradient(100deg,transparent,rgba(255,90,90,.34),rgba(255,170,60,.38) 45%,rgba(255,236,170,.42) 55%,rgba(255,110,170,.32),transparent);animation:scaleSweep 8s ease-in-out infinite"><span style="position:relative;display:inline-block"><span aria-hidden="true" style="position:absolute;left:0;top:0;right:0;color:#1e0b00;text-shadow:0 1px 0 #1e0b00,0 2px 5px rgba(0,0,0,.95),0 0 12px rgba(255,190,90,.55);pointer-events:none">ENTER THE GENESIS NFT · FIRE ROSE →</span><span style="position:relative;background:linear-gradient(180deg,#ffffff 0%,#fff1c4 22%,#ffd36b 44%,#a8620e 50%,#f0b54a 58%,#ffe6a6 78%,#fffaf0 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;text-shadow:none">ENTER THE GENESIS NFT · FIRE ROSE →</span></span></a>
+      <button onClick="{{ openExample }}" style="height:50px;padding:0 26px;display:flex;align-items:center;justify-content:center;border-radius:12px;border:1px solid #f1dfae;background:linear-gradient(135deg,#FFF3C4 0%,#D4AF37 55%,#9A7418 100%) padding-box,linear-gradient(110deg,transparent 35%,rgba(255,255,255,.85) 50%,transparent 65%) border-box;background-size:100% 100%,300% 100%;animation:sheen 7s ease-in-out infinite;color:#160728;font-weight:700;font-size:13px;letter-spacing:.14em;text-transform:uppercase;box-shadow:0 1px 0 rgba(255,255,255,.8) inset,0 -1px 0 rgba(120,80,10,.5) inset,0 8px 20px rgba(0,0,0,.45),0 0 22px rgba(212,175,55,.45);position:relative;overflow:hidden;cursor:pointer;font-family:inherit" style-hover="color:#160728;filter:brightness(1.05)" style-after="content:'';position:absolute;inset:0;background:linear-gradient(105deg,transparent 40%,rgba(255,255,255,.3) 50%,transparent 60%);background-size:250% 100%;animation:shimmerText 4s ease-in-out infinite;pointer-events:none">PREVIEW AN EXAMPLE DOOR →</button>
+    </div>
+    </div>
+
+    <div id="engine" style="position:relative;max-width:900px;width:100%;margin:0 auto;box-sizing:border-box;padding:clamp(22px,4vw,38px);border-radius:22px;border:1px solid transparent;background:linear-gradient(180deg,rgba(30,14,50,.86),rgba(16,7,30,.92)) padding-box,linear-gradient(180deg,#f3e3b6,#b8902e 30%,#e8698a 50%,#b8902e 70%,#7d5a14) border-box;box-shadow:0 30px 80px -30px rgba(0,0,0,.9),0 0 40px rgba(232,105,138,.08),inset 0 1px 0 rgba(255,255,255,.08);display:flex;flex-direction:column;gap:24px">
+      <div aria-hidden="true" style="position:absolute;top:0;left:50%;transform:translate(-50%,-50%);display:flex;align-items:center;gap:12px;padding:10px 34px;background:radial-gradient(ellipse at 50% 50%,rgba(26,11,44,.9) 0%,rgba(26,11,44,.55) 45%,rgba(26,11,44,0) 72%)">
+        <span aria-hidden="true" style="position:relative;width:10px;height:10px;flex:none;transform:rotate(45deg);border-radius:1.5px;background:linear-gradient(135deg,rgba(255,255,255,.9) 0%,rgba(255,255,255,0) 40%),conic-gradient(#ffffff 0 45deg,#bcd3e6 45deg 90deg,#f7fcff 90deg 135deg,#8ea4ba 135deg 180deg,#e9f5ff 180deg 225deg,#a6bccf 225deg 270deg,#ffffff 270deg 315deg,#7d93aa 315deg 360deg);box-shadow:0 0 0 .5px rgba(255,255,255,.95),0 0 6px rgba(200,230,255,.8),0 0 14px rgba(255,255,255,.35)">
+            <span style="position:absolute;inset:2.7px;border-radius:1px;background:linear-gradient(135deg,#ffffff,#dcefff 40%,#9fb6cc 62%,#ffffff);box-shadow:0 0 0 .5px rgba(110,140,170,.55)"></span>
+            <span style="position:absolute;left:50%;top:50%;width:18px;height:18px;margin:-9px 0 0 -9px;transform:rotate(-45deg);background:linear-gradient(#fff,#fff) center/1px 100% no-repeat,linear-gradient(#fff,#fff) center/100% 1px no-repeat;opacity:.9;animation:twinkle 2.8s ease-in-out infinite"></span>
+          </span>
+        <span aria-hidden="true" style="position:relative;display:inline-block;width:30px;height:38px;flex:none;margin:0 7px">
+            <span style="position:absolute;inset:-12px -14px;border-radius:50%;background:radial-gradient(ellipse at 50% 50%,rgba(255,220,140,.6),rgba(212,175,55,.2) 42%,transparent 70%);animation:emberGlow 3.6s ease-in-out infinite"></span>
+            <span style="position:absolute;left:-10px;right:-10px;top:20px;height:10px;margin-top:-5px;border-radius:50%;border:1px dashed rgba(255,236,190,.45);transform:rotate(-14deg)"></span>
+            <span style="position:absolute;inset:0;border-radius:50% 50% 50% 50% / 60% 60% 40% 40%;overflow:hidden;background:radial-gradient(ellipse at 50% 55%,#2a1a04 0%,#140b02 60%,#0a0501 100%);box-shadow:inset 0 0 0 1.5px #f6e3ba,inset 0 0 5px rgba(255,214,120,.95),inset 0 -4px 8px rgba(212,175,55,.55),0 0 9px rgba(255,214,120,.85),0 0 23px rgba(212,175,55,.5)">
+              <span style="position:absolute;left:-30%;top:-14%;width:160%;height:128%;background:url('gold-galaxy.png') center / contain no-repeat;animation:galaxySpinR 16s linear infinite"></span>
+              <span style="position:absolute;left:-10%;top:4%;width:120%;height:92%;background:url('gold-galaxy.png') center / contain no-repeat;opacity:.55;transform:scaleX(-1);animation:galaxySpinR 26s linear infinite"></span>
+              <span style="position:absolute;inset:0;background:radial-gradient(ellipse at 50% 56%,transparent 48%,rgba(90,56,8,.35) 78%,rgba(212,175,55,.55) 100%)"></span>
+              <span style="position:absolute;inset:0;background:radial-gradient(ellipse 26% 16% at 34% 20%,rgba(255,255,255,.75),rgba(255,255,255,0) 72%),linear-gradient(115deg,transparent 30%,rgba(255,250,230,.35) 45%,transparent 58%);background-size:100% 100%,260% 100%;animation:sheen 6s ease-in-out infinite"></span>
+              <span style="position:absolute;left:58%;top:8%;width:8px;height:10px;clip-path:polygon(0 0,18% 0,46% 34%,30% 40%,70% 72%,52% 76%,100% 100%,86% 100%,40% 80%,58% 76%,16% 44%,34% 38%);background:linear-gradient(180deg,#fff,#fff3c4 50%,rgba(255,214,120,.2));filter:drop-shadow(0 0 2px #fff3c4);animation:emberGlow 2.4s ease-in-out infinite"></span>
+            </span>
+            <span style="position:absolute;left:-10px;right:-10px;top:20px;height:10px;margin-top:-5px;border-radius:50%;border:1px dashed transparent;border-bottom-color:rgba(255,244,210,.95);transform:rotate(-14deg)"></span>
+            <span style="position:absolute;right:-9px;top:15px;width:7px;height:7px;background:linear-gradient(#fff,#fff) center/1px 100% no-repeat,linear-gradient(#fff,#fff) center/100% 1px no-repeat;filter:drop-shadow(0 0 2px #fff3c4);animation:twinkle 2.2s ease-in-out infinite"></span>
+          </span>
+        <span aria-hidden="true" style="position:relative;width:10px;height:10px;flex:none;transform:rotate(45deg);border-radius:1.5px;background:linear-gradient(135deg,rgba(255,255,255,.9) 0%,rgba(255,255,255,0) 40%),conic-gradient(#ffffff 0 45deg,#bcd3e6 45deg 90deg,#f7fcff 90deg 135deg,#8ea4ba 135deg 180deg,#e9f5ff 180deg 225deg,#a6bccf 225deg 270deg,#ffffff 270deg 315deg,#7d93aa 315deg 360deg);box-shadow:0 0 0 .5px rgba(255,255,255,.95),0 0 6px rgba(200,230,255,.8),0 0 14px rgba(255,255,255,.35)">
+            <span style="position:absolute;inset:2.7px;border-radius:1px;background:linear-gradient(135deg,#ffffff,#dcefff 40%,#9fb6cc 62%,#ffffff);box-shadow:0 0 0 .5px rgba(110,140,170,.55)"></span>
+            <span style="position:absolute;left:50%;top:50%;width:18px;height:18px;margin:-9px 0 0 -9px;transform:rotate(-45deg);background:linear-gradient(#fff,#fff) center/1px 100% no-repeat,linear-gradient(#fff,#fff) center/100% 1px no-repeat;opacity:.9;animation:twinkle 2.8s ease-in-out infinite"></span>
+          </span>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:8px">
+        <span style="font-size:11px;font-weight:700;letter-spacing:.24em;color:#e2c16b">NESTED CLAIM CHAIN · {{ edShort }}</span>
+        <h2 style="margin:0;font-family:'Cinzel',serif;font-size:clamp(24px,3.2vw,34px);font-weight:700;color:#fff8e6">One Door Inside Another</h2>
+        <p style="margin:0;font-size:15px;line-height:1.65;color:#eadfd0;text-wrap:pretty">The lineage is infinite. When you claim an open door, your NFT automatically spawns the next gateway inside it. You retain {{ youPct }} of your door's value, {{ holdersPct }} rewards the storyteller whose door you live inside, and {{ vaultPct }} fortifies the Founder Vault. Instantaneous, transparent, and settled permanently on-chain.</p>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:8px">
+        <sc-for list="{{ chain }}" as="c" hint-placeholder-count="6">
+          <div onClick="{{ c.go }}" role="{{ c.role }}" style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:6px 16px;padding:11px 16px;padding-left:{{ c.indent }};border-radius:10px;background:{{ c.bg }};border:{{ c.border }};font-size:14px;cursor:{{ c.cursor }};transition:filter .2s" style-hover="filter:brightness(1.15)">
+            <span style="display:flex;align-items:center;gap:10px;color:#fff"><span style="width:8px;height:8px;flex:none;transform:rotate(45deg);background:{{ c.mark }};box-shadow:{{ c.markGlow }}"></span><strong>{{ c.name }}</strong> <span style="color:#d7c9b8;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:16px">{{ c.where }}</span></span>
+            <span style="font-size:11px;font-weight:700;letter-spacing:.1em;color:{{ c.statusColor }}">{{ c.status }}</span>
+          </div>
+        </sc-for>
+        <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px;padding:11px 16px;border-radius:10px;border:1px dashed rgba(212,175,55,.4)">
+          <span style="font-family:'Cinzel',serif;font-size:14px;letter-spacing:.12em;color:#f6e3ba">∞ INFINITE LINEAGE · {{ shownCount }}</span>
+          <button onClick="{{ deeper }}" style="border:1px solid transparent;background:linear-gradient(180deg,rgba(20,6,12,.2),rgba(8,2,6,.38)) padding-box,{{ btnBg }} center / cover no-repeat padding-box,url('cartoon-scales-v2.png') 0 0 / 34px 24px repeat padding-box,linear-gradient(180deg,#f3e3b6,#b8902e 45%,#7d5a14 52%,#e4c777) border-box;padding:9px 16px;border-radius:999px;position:relative;overflow:hidden;isolation:isolate;box-shadow:0 1px 0 rgba(255,255,255,.12) inset,0 6px 16px rgba(0,0,0,.4);font-size:11px;letter-spacing:.1em;cursor:pointer;color:#ffe7a0;text-shadow:0 -1px 0 rgba(255,250,228,.9),0 1px 0 #7a5410,0 2px 5px rgba(0,0,0,.95),0 0 12px rgba(255,214,120,.55);font-weight:800" style-before="content:'';position:absolute;inset:0;z-index:-1;border-radius:inherit;pointer-events:none;background:radial-gradient(circle 1.8px at 22% 30%,#fff 0,rgba(255,255,255,.6) 40%,transparent 100%) 0 0/52px 36px,radial-gradient(circle 1.5px at 70% 60%,#9fe6ff 0,transparent 100%) 0 0/78px 54px,radial-gradient(circle 1.6px at 45% 80%,#ffb3ea 0,transparent 100%) 0 0/65px 45px,radial-gradient(circle 1.4px at 85% 20%,#b6ffd2 0,transparent 100%) 0 0/91px 63px,radial-gradient(circle 1.2px at 10% 70%,#fff3b0 0,transparent 100%) 0 0/39px 27px;animation:twinkle 2.4s ease-in-out infinite" style-after="content:'';position:absolute;top:0;bottom:0;left:-60%;width:60%;z-index:-1;pointer-events:none;background:linear-gradient(100deg,transparent,rgba(255,90,90,.34),rgba(255,170,60,.38) 45%,rgba(255,236,170,.42) 55%,rgba(255,110,170,.32),transparent);animation:scaleSweep 8s ease-in-out infinite" style-hover="background:rgba(255,190,90,.22);border-color:rgba(255,214,140,.85);box-shadow:0 0 18px rgba(255,190,90,.45)"><span style="position:relative;display:inline-block"><span aria-hidden="true" style="position:absolute;left:0;top:0;right:0;color:#1e0b00;text-shadow:0 1px 0 #1e0b00,0 2px 5px rgba(0,0,0,.95),0 0 12px rgba(255,190,90,.55);pointer-events:none">{{ deeperLabel }}</span><span style="position:relative;background:linear-gradient(180deg,#ffffff 0%,#fff1c4 22%,#ffd36b 44%,#a8620e 50%,#f0b54a 58%,#ffe6a6 78%,#fffaf0 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;text-shadow:none">{{ deeperLabel }}</span></span></button>
+        </div>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:18px;align-items:end">
+        <div style="display:flex;flex-direction:column;gap:10px">
+          <label for="price" style="font-size:10px;font-weight:700;letter-spacing:.2em;color:#e2c16b">DOOR #{{ openN }} PRICE (ETH)</label>
+          <input id="price" type="number" min="0" step="0.01" value="{{ priceInput }}" onChange="{{ setPrice }}" style="height:50px;padding:0 14px;border-radius:10px;border:1px solid rgba(212,175,55,.55);background:rgba(0,0,0,.4);color:#fff;font-size:18px;font-weight:700;outline:none">
+        </div>
+        <div style="display:flex;flex-direction:column;gap:10px">
+          <label for="inscr" style="font-size:10px;font-weight:700;letter-spacing:.2em;color:#e2c16b">YOUR DOOR TITLE &amp; STORY INSCRIPTION</label>
+          <input id="inscr" type="text" placeholder="e.g. The Amber Threshold — a story in 60 words" value="{{ fTitle }}" onChange="{{ setTitle }}" style="height:50px;padding:0 14px;border-radius:10px;border:1px solid rgba(212,175,55,.55);background:rgba(0,0,0,.4);color:#fff;font-size:15px;outline:none">
+        </div>
+        <div style="display:flex;flex-direction:column;gap:10px">
+          <label for="link" style="font-size:10px;font-weight:700;letter-spacing:.2em;color:#e2c16b">YOUR AUDIO OR ARTWORK LINK (IPFS / URL)</label>
+          <input id="link" type="url" placeholder="ipfs://… or https://…" value="{{ fLink }}" onChange="{{ setLink }}" style="height:50px;padding:0 14px;border-radius:10px;border:1px solid rgba(212,175,55,.55);background:rgba(0,0,0,.4);color:#fff;font-size:15px;outline:none">
+        </div>
+        <div style="display:flex;flex-direction:column;gap:8px">
+          {{ splitBar }}
+          <div style="display:flex;flex-wrap:wrap;gap:6px 16px;font-size:13px;color:#fff">
+            <span style="display:flex;align-items:center;gap:8px"><span style="width:10px;height:10px;border-radius:2px;background:linear-gradient(135deg,#e8698a,#b3192f)"></span>{{ youL }}</span>
+            <span style="display:flex;align-items:center;gap:8px"><span style="width:10px;height:10px;border-radius:2px;background:linear-gradient(135deg,#5fae8f,#2f6b57)"></span>{{ holdersL }}</span>
+            <span style="display:flex;align-items:center;gap:8px"><span style="width:10px;height:10px;border-radius:2px;background:linear-gradient(135deg,#f3e3b6,#b8902e)"></span>{{ vaultL }}</span>
+          </div>
+        </div>
+      </div>
+      <div style="border-radius:14px;background:#120726;border:1px solid rgba(212,175,55,.4);padding:20px 22px;font-family:ui-monospace,Menlo,monospace;font-size:clamp(12px,1.5vw,15px);line-height:1.9;overflow-x:auto">
+        <div style="color:#8f8399">{{ ledgerNote }}</div>
+        <div style="display:grid;grid-template-columns:minmax(0,1fr) auto;gap:2px 24px">
+          <sc-for list="{{ ledger }}" as="row" hint-placeholder-count="6">
+            <span style="color:{{ row.c }};border-top:{{ row.bt }};padding-top:{{ row.pt }}">{{ row.k }}</span>
+            <span style="color:{{ row.vc }};text-align:right;white-space:nowrap;border-top:{{ row.bt }};padding-top:{{ row.pt }}">{{ row.v }}</span>
+          </sc-for>
+        </div>
+      </div>
+      <div style="padding:18px 22px;border-radius:14px;border:1px solid transparent;background:linear-gradient(180deg,rgba(40,16,40,.6),rgba(22,10,42,.7)) padding-box,linear-gradient(90deg,#b8902e,#e8698a,#b8902e) border-box;font-size:14px;line-height:1.65;color:#e9e1d2;text-wrap:pretty"><span style="font-weight:900;letter-spacing:.08em;color:#f6e3ba">CREATOR SOVEREIGNTY GUARANTEE: </span>{{ sovereignty }}</div>
+      <div style="display:flex;flex-wrap:wrap;gap:12px">
+        <button onClick="{{ connect }}" style="border:1px solid transparent;background:linear-gradient(180deg,rgba(20,6,12,.2),rgba(8,2,6,.38)) padding-box,{{ btnBg }} center / cover no-repeat padding-box,url('cartoon-scales-v2.png') 0 0 / 34px 24px repeat padding-box,linear-gradient(180deg,#f3e3b6,#b8902e 45%,#7d5a14 52%,#e4c777) border-box;flex:1;min-width:200px;height:52px;border-radius:12px;position:relative;overflow:hidden;isolation:isolate;box-shadow:0 1px 0 rgba(255,255,255,.12) inset,0 6px 16px rgba(0,0,0,.4);font-size:14px;letter-spacing:.08em;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:10px;color:#ffe7a0;text-shadow:0 -1px 0 rgba(255,250,228,.9),0 1px 0 #7a5410,0 2px 5px rgba(0,0,0,.95),0 0 12px rgba(255,214,120,.55);font-weight:800" style-before="content:'';position:absolute;inset:0;z-index:-1;border-radius:inherit;pointer-events:none;background:radial-gradient(circle 1.8px at 22% 30%,#fff 0,rgba(255,255,255,.6) 40%,transparent 100%) 0 0/52px 36px,radial-gradient(circle 1.5px at 70% 60%,#9fe6ff 0,transparent 100%) 0 0/78px 54px,radial-gradient(circle 1.6px at 45% 80%,#ffb3ea 0,transparent 100%) 0 0/65px 45px,radial-gradient(circle 1.4px at 85% 20%,#b6ffd2 0,transparent 100%) 0 0/91px 63px,radial-gradient(circle 1.2px at 10% 70%,#fff3b0 0,transparent 100%) 0 0/39px 27px;animation:twinkle 2.4s ease-in-out infinite" style-after="content:'';position:absolute;top:0;bottom:0;left:-60%;width:60%;z-index:-1;pointer-events:none;background:linear-gradient(100deg,transparent,rgba(255,90,90,.34),rgba(255,170,60,.38) 45%,rgba(255,236,170,.42) 55%,rgba(255,110,170,.32),transparent);animation:scaleSweep 8s ease-in-out infinite" style-hover="background:rgba(255,190,90,.22);border-color:rgba(255,214,140,.85);box-shadow:0 0 18px rgba(255,190,90,.45)"><span style="width:8px;height:8px;border-radius:50%;background:{{ dotColor }}"></span><span style="position:relative;display:inline-block"><span aria-hidden="true" style="position:absolute;left:0;top:0;right:0;color:#1e0b00;text-shadow:0 1px 0 #1e0b00,0 2px 5px rgba(0,0,0,.95),0 0 12px rgba(255,190,90,.55);pointer-events:none">{{ walletLabelLong }}</span><span style="position:relative;background:linear-gradient(180deg,#ffffff 0%,#fff1c4 22%,#ffd36b 44%,#a8620e 50%,#f0b54a 58%,#ffe6a6 78%,#fffaf0 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;text-shadow:none">{{ walletLabelLong }}</span></span></button>
+        <button onClick="{{ openBuilder }}" style="flex:1;min-width:200px;height:52px;display:flex;align-items:center;justify-content:center;border-radius:12px;border:1px solid #f1dfae;background:linear-gradient(135deg,#FFF3C4 0%,#D4AF37 55%,#9A7418 100%) padding-box,linear-gradient(110deg,transparent 35%,rgba(255,255,255,.85) 50%,transparent 65%) border-box;background-size:100% 100%,300% 100%;animation:sheen 7s ease-in-out infinite;color:#160728;font-weight:700;font-size:13px;letter-spacing:.14em;text-transform:uppercase;box-shadow:0 1px 0 rgba(255,255,255,.8) inset,0 -1px 0 rgba(120,80,10,.5) inset,0 8px 20px rgba(0,0,0,.45),0 0 22px rgba(212,175,55,.45);position:relative;overflow:hidden;cursor:pointer;font-family:inherit" style-hover="color:#160728;filter:brightness(1.05)" style-after="content:'';position:absolute;inset:0;background:linear-gradient(105deg,transparent 40%,rgba(255,255,255,.3) 50%,transparent 60%);background-size:250% 100%;animation:shimmerText 4s ease-in-out infinite;pointer-events:none">REQUEST TO CLAIM DOOR #{{ openN }} →</button>
+      </div>
+      <sc-if value="{{ walletMsg }}" hint-placeholder-val="{{ false }}"><span style="margin-top:-12px;font-size:13px;color:#f6e3ba">{{ walletMsg }}</span></sc-if>
+      <div id="collect-genesis-1" style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px 20px;padding:18px 20px;border-radius:14px;border:1px solid transparent;background:linear-gradient(180deg,rgba(40,16,40,.7),rgba(22,10,42,.8)) padding-box,linear-gradient(90deg,#b8902e,#e8698a,#b8902e) border-box;scroll-margin-top:24px">
+        <div style="display:flex;flex-direction:column;gap:3px;min-width:0">
+          <span style="font-size:10px;font-weight:700;letter-spacing:.2em;color:#e2c16b">{{ genKicker }}</span>
+          <span style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:28px;color:#fff">{{ genPrice }}</span>
+          <span style="font-size:12px;line-height:1.5;color:#d7c9b8">{{ genNote }}</span>
+        </div>
+        <button onClick="{{ genBuy }}" style="height:50px;padding:0 24px;border-radius:12px;border:1px solid #f1dfae;background:linear-gradient(135deg,#FFF3C4 0%,#D4AF37 55%,#9A7418 100%);color:#160728;font-size:12px;font-weight:700;letter-spacing:.14em;font-family:inherit;box-shadow:0 0 18px rgba(212,175,55,.35);opacity:{{ genOpacity }};cursor:{{ genCursor }}" style-hover="filter:brightness(1.06)">{{ genLabel }}</button>
+      </div>
+      <sc-if value="{{ earnOn }}" hint-placeholder-val="{{ false }}">
+        <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px 20px;padding:16px 20px;border-radius:14px;border:1px solid rgba(127,212,180,.6);background:rgba(20,60,50,.32)">
+          <div style="display:flex;flex-direction:column;gap:2px">
+            <span style="font-size:10px;font-weight:700;letter-spacing:.2em;color:#9fd9c2">YOUR CREATOR ROYALTIES · READY TO WITHDRAW</span>
+            <span style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:30px;color:#fff">{{ earnAmt }}</span>
+          </div>
+          <button onClick="{{ withdraw }}" style="height:48px;padding:0 22px;border-radius:12px;border:1px solid #f1dfae;background:linear-gradient(135deg,#FFF3C4 0%,#D4AF37 55%,#9A7418 100%);color:#160728;font-size:12px;font-weight:700;letter-spacing:.14em;font-family:inherit;box-shadow:0 0 18px rgba(212,175,55,.35);opacity:{{ earnOpacity }};cursor:{{ earnCursor }}" style-hover="filter:brightness(1.06)">{{ withdrawLabel }}</button>
+        </div>
+      </sc-if>
+      <sc-if value="{{ txOn }}" hint-placeholder-val="{{ false }}">
+        <div role="status" aria-live="polite" style="display:flex;flex-wrap:wrap;align-items:center;gap:8px 16px;padding:14px 18px;border-radius:14px;border:1px solid {{ txBorder }};background:{{ txBg }};color:#fff;font-size:14px;line-height:1.5">
+          <span style="flex:1;min-width:200px">{{ txMsg }}</span>
+          <sc-if value="{{ txHref }}" hint-placeholder-val="{{ false }}"><a href="{{ txHref }}" target="_blank" rel="noopener noreferrer" style="font-size:13px;font-weight:700">View on Etherscan ↗</a></sc-if>
+          <button onClick="{{ txClose }}" aria-label="Dismiss" style="width:32px;height:32px;border-radius:50%;border:1px solid rgba(255,255,255,.3);background:transparent;color:#fff;font-size:16px;cursor:pointer;font-family:inherit">×</button>
+        </div>
+      </sc-if>
+      <sc-if value="{{ chainNote }}" hint-placeholder-val="{{ false }}"><span style="font-size:12px;line-height:1.6;color:#d7c9b8">{{ chainNote }}</span></sc-if>
+      <div style="display:flex;flex-wrap:wrap;gap:18px;font-size:13px;font-weight:700">
+        <a href="https://etherscan.io/nft/0x67eb3572b5039b7a32ed48c0e8beb434642e96c3/1" target="_blank" rel="noopener noreferrer">Genesis #1 on Etherscan ↗</a>
+        <sc-if value="{{ doorsHref }}" hint-placeholder-val="{{ false }}"><a href="{{ doorsHref }}" target="_blank" rel="noopener noreferrer">Nesting Doors contract on Etherscan ↗</a></sc-if>
+        <a href="https://opensea.io/collection/lxfe888" target="_blank" rel="noopener noreferrer">LXFE collection on OpenSea ↗</a>
+      </div>
+    </div>
+
+    <div id="audit" role="region" aria-labelledby="audit-title" style="position:relative;max-width:900px;width:100%;margin:0 auto;box-sizing:border-box;padding:clamp(24px,4.5vw,46px);border-radius:22px;border:1px solid transparent;background:linear-gradient(180deg,rgba(30,14,50,.86),rgba(16,7,30,.92)) padding-box,linear-gradient(180deg,#f3e3b6,#b8902e 30%,#e8698a 50%,#b8902e 70%,#7d5a14) border-box;box-shadow:0 30px 80px -30px rgba(0,0,0,.9),inset 0 1px 0 rgba(255,255,255,.08);display:flex;flex-direction:column;gap:38px">
+      <div style="display:flex;flex-direction:column;align-items:center;gap:14px;text-align:center">
+        <span style="display:flex;align-items:center;gap:12px;font-size:11px;font-weight:700;letter-spacing:.3em;color:#e2c16b"><span aria-hidden="true" style="width:6px;height:6px;transform:rotate(45deg);background:#e8698a;box-shadow:0 0 8px #e8698a"></span>SOVEREIGN AUDIT LOG<span aria-hidden="true" style="width:6px;height:6px;transform:rotate(45deg);background:#e8698a;box-shadow:0 0 8px #e8698a"></span></span>
+        <h2 id="audit-title" style="margin:0;font-family:'Cinzel',serif;font-weight:700;font-size:clamp(32px,4.6vw,52px);line-height:1.06;letter-spacing:.05em;background:linear-gradient(180deg,#fffaf0 0%,#f6e3ba 30%,#d4af37 52%,#9a7418 58%,#e6c672 74%,#fff3c4 100%);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent">Open by Design.</h2>
+        <p style="margin:0;max-width:600px;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(19px,2vw,23px);line-height:1.45;color:#f6e3ba;text-wrap:pretty">Every wei, every seat and every power, read live from Ethereum. Not from us.</p>
+        <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:10px 14px">
+          <span style="display:flex;align-items:center;gap:10px;padding:8px 14px;border-radius:999px;border:1px solid rgba(212,175,55,.45);background:rgba(10,4,20,.55);font-family:ui-monospace,monospace;font-size:11px;letter-spacing:.06em;color:#eadfd0"><span aria-hidden="true" style="width:7px;height:7px;flex:none;border-radius:50%;background:{{ aDot }};box-shadow:0 0 8px {{ aDot }}"></span>{{ aStamp }}</span>
+          <button onClick="{{ aRefresh }}" style="height:34px;padding:0 16px;border-radius:999px;border:1px solid #d4af37;background:transparent;color:#f1dfae;font-size:10px;font-weight:700;letter-spacing:.18em;cursor:pointer;font-family:inherit" style-hover="background:rgba(212,175,55,.16);color:#fff8e6">RE-READ THE LEDGER</button>
+        </div>
+      </div>
+
+      <div style="display:flex;flex-direction:column;gap:20px">
+        <div style="display:flex;align-items:center;gap:16px">
+          <span style="font-family:'Cinzel',serif;font-weight:700;font-size:26px;line-height:1;color:#d4af37">I</span>
+          <span style="font-size:11px;font-weight:700;letter-spacing:.28em;color:#f6e3ba">THE PACIOLI SOLVENCY SCALE</span>
+          <span aria-hidden="true" style="flex:1;height:1px;background:linear-gradient(90deg,rgba(212,175,55,.6),transparent)"></span>
+        </div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:22px">
+          <div aria-hidden="true" style="position:relative;flex:none;width:42em;height:28em;font-size:clamp(5px,1.75vw,10px)">
+            <span style="position:absolute;background-position:center;background-size:100% 100%;background-repeat:no-repeat;left:0;top:0;width:42em;height:28em;background-image:url('scale-stand.png')"></span>
+            <span style="position:absolute;left:50%;top:5.6em;width:32em;height:.8em;margin-left:-16em;transform:{{ aTilt }};transform-origin:50% 50%;transition:transform 1.4s cubic-bezier(.2,.8,.2,1)">
+              <span style="position:absolute;inset:0;transform-origin:50% 50%;animation:scaleWeigh 3.2s cubic-bezier(.3,.6,.4,1) 1,scaleSway 7s ease-in-out 3.2s infinite">
+              <span style="position:absolute;background-position:center;background-size:100% 100%;background-repeat:no-repeat;left:-1.5em;top:-1.6em;width:35em;height:4em;background-image:url('scale-beam.png')"></span>
+              <span style="position:absolute;left:0;top:50%;width:0;height:0;transform:{{ aTiltInv }};transform-origin:0 0;transition:transform 1.4s cubic-bezier(.2,.8,.2,1)">
+                <span style="position:absolute;left:0;top:0;width:0;height:0;transform-origin:0 0;animation:scaleWeighInv 3.2s cubic-bezier(.3,.6,.4,1) .12s 1,scaleSwayInv 7s ease-in-out 3.45s infinite"><span style="position:absolute;background-position:center;background-size:100% 100%;background-repeat:no-repeat;left:-6.5em;top:-.8em;width:13em;height:11em;background-image:url('scale-pan-held.png')"></span></span>
+              </span>
+              <span style="position:absolute;left:100%;top:50%;width:0;height:0;transform:{{ aTiltInv }};transform-origin:0 0;transition:transform 1.4s cubic-bezier(.2,.8,.2,1)">
+                <span style="position:absolute;left:0;top:0;width:0;height:0;transform-origin:0 0;animation:scaleWeighInv 3.2s cubic-bezier(.3,.6,.4,1) .12s 1,scaleSwayInv 7s ease-in-out 3.45s infinite"><span style="position:absolute;background-position:center;background-size:100% 100%;background-repeat:no-repeat;left:-6.5em;top:-.8em;width:13em;height:11em;background-image:url('scale-pan-owed.png')"></span></span>
+              </span>
+              </span>
+            </span>
+            <span style="position:absolute;background-position:center;background-size:100% 100%;background-repeat:no-repeat;left:0;top:0;width:42em;height:28em;background-image:url('scale-crown.png')"></span>
+            <span style="position:absolute;left:23.6em;top:1em;width:1.4em;height:1.4em;margin:-0.7em 0 0 -0.7em;border-radius:50%;background:radial-gradient(circle,#ffffff 0 14%,rgba(255,244,214,.8) 26%,rgba(255,220,160,.25) 52%,rgba(255,220,160,0) 72%);animation:twinkle 2.4s ease-in-out 0s infinite"></span>
+            <span style="position:absolute;left:18em;top:2.6em;width:1em;height:1em;margin:-0.5em 0 0 -0.5em;border-radius:50%;background:radial-gradient(circle,#ffffff 0 14%,rgba(255,244,214,.8) 26%,rgba(255,220,160,.25) 52%,rgba(255,220,160,0) 72%);animation:twinkle 2.7s ease-in-out 1.2s infinite"></span>
+            <span style="position:absolute;left:24.6em;top:4.4em;width:0.9em;height:0.9em;margin:-0.45em 0 0 -0.45em;border-radius:50%;background:radial-gradient(circle,#ffffff 0 14%,rgba(255,244,214,.8) 26%,rgba(255,220,160,.25) 52%,rgba(255,220,160,0) 72%);animation:twinkle 3.0s ease-in-out 2.1s infinite"></span>
+            <span style="position:absolute;left:4.2em;top:4.6em;width:1.1em;height:1.1em;margin:-0.55em 0 0 -0.55em;border-radius:50%;background:radial-gradient(circle,#ffffff 0 14%,rgba(255,244,214,.8) 26%,rgba(255,220,160,.25) 52%,rgba(255,220,160,0) 72%);animation:twinkle 3.3s ease-in-out 0.6s infinite"></span>
+            <span style="position:absolute;left:37.6em;top:5.2em;width:1em;height:1em;margin:-0.5em 0 0 -0.5em;border-radius:50%;background:radial-gradient(circle,#ffffff 0 14%,rgba(255,244,214,.8) 26%,rgba(255,220,160,.25) 52%,rgba(255,220,160,0) 72%);animation:twinkle 3.6s ease-in-out 1.8s infinite"></span>
+            <span style="position:absolute;left:2.6em;top:12.8em;width:0.9em;height:0.9em;margin:-0.45em 0 0 -0.45em;border-radius:50%;background:radial-gradient(circle,#ffffff 0 14%,rgba(255,244,214,.8) 26%,rgba(255,220,160,.25) 52%,rgba(255,220,160,0) 72%);animation:twinkle 2.4s ease-in-out 2.6s infinite"></span>
+            <span style="position:absolute;left:39.2em;top:13.4em;width:1.1em;height:1.1em;margin:-0.55em 0 0 -0.55em;border-radius:50%;background:radial-gradient(circle,#ffffff 0 14%,rgba(255,244,214,.8) 26%,rgba(255,220,160,.25) 52%,rgba(255,220,160,0) 72%);animation:twinkle 2.7s ease-in-out 0.9s infinite"></span>
+            <span style="position:absolute;left:11.2em;top:16.4em;width:0.8em;height:0.8em;margin:-0.4em 0 0 -0.4em;border-radius:50%;background:radial-gradient(circle,#ffffff 0 14%,rgba(255,244,214,.8) 26%,rgba(255,220,160,.25) 52%,rgba(255,220,160,0) 72%);animation:twinkle 3.0s ease-in-out 1.5s infinite"></span>
+            <span style="position:absolute;left:30.6em;top:16.8em;width:0.9em;height:0.9em;margin:-0.45em 0 0 -0.45em;border-radius:50%;background:radial-gradient(circle,#ffffff 0 14%,rgba(255,244,214,.8) 26%,rgba(255,220,160,.25) 52%,rgba(255,220,160,0) 72%);animation:twinkle 3.3s ease-in-out 2.9s infinite"></span>
+            <span style="position:absolute;left:19em;top:11.5em;width:0.8em;height:0.8em;margin:-0.4em 0 0 -0.4em;border-radius:50%;background:radial-gradient(circle,#ffffff 0 14%,rgba(255,244,214,.8) 26%,rgba(255,220,160,.25) 52%,rgba(255,220,160,0) 72%);animation:twinkle 3.6s ease-in-out 0.3s infinite"></span>
+            <span style="position:absolute;left:23.4em;top:17.8em;width:0.9em;height:0.9em;margin:-0.45em 0 0 -0.45em;border-radius:50%;background:radial-gradient(circle,#ffffff 0 14%,rgba(255,244,214,.8) 26%,rgba(255,220,160,.25) 52%,rgba(255,220,160,0) 72%);animation:twinkle 2.4s ease-in-out 2.3s infinite"></span>
+            <span style="position:absolute;left:15.2em;top:24.4em;width:1em;height:1em;margin:-0.5em 0 0 -0.5em;border-radius:50%;background:radial-gradient(circle,#ffffff 0 14%,rgba(255,244,214,.8) 26%,rgba(255,220,160,.25) 52%,rgba(255,220,160,0) 72%);animation:twinkle 2.7s ease-in-out 1.1s infinite"></span>
+            <span style="position:absolute;left:27.2em;top:25em;width:0.9em;height:0.9em;margin:-0.45em 0 0 -0.45em;border-radius:50%;background:radial-gradient(circle,#ffffff 0 14%,rgba(255,244,214,.8) 26%,rgba(255,220,160,.25) 52%,rgba(255,220,160,0) 72%);animation:twinkle 3.0s ease-in-out 3.2s infinite"></span>
+          </div>
+          <div style="display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);align-items:start;gap:clamp(12px,3vw,30px);width:100%">
+            <div style="display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center;min-width:0">
+              <span style="font-size:10px;font-weight:700;letter-spacing:.22em;color:#e2c16b">HELD BY THE CONTRACT</span>
+              <span style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(26px,4.4vw,46px);line-height:1;letter-spacing:.02em;background:linear-gradient(180deg,#FFFFFF 0%,#F5E6C8 55%,#D4AF37 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;overflow-wrap:anywhere">{{ aBal }}</span>
+              <span style="font-family:ui-monospace,monospace;font-size:11px;line-height:1.5;color:#bfb1c9;word-break:break-all">{{ aBalWei }}</span>
+            </div>
+            <div aria-hidden="true" style="display:flex;flex-direction:column;align-items:center;gap:8px;padding-top:4px">
+              <span style="width:1px;height:28px;background:linear-gradient(transparent,#d4af37)"></span>
+              <span style="width:9px;height:9px;transform:rotate(45deg);background:linear-gradient(135deg,#f3e3b6,#b8902e)"></span>
+              <span style="width:1px;height:28px;background:linear-gradient(#d4af37,transparent)"></span>
+            </div>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center;min-width:0">
+              <span style="font-size:10px;font-weight:700;letter-spacing:.22em;color:#e2c16b">OWED TO CREATORS &amp; LINEAGE</span>
+              <span style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(26px,4.4vw,46px);line-height:1;letter-spacing:.02em;background:linear-gradient(180deg,#FFFFFF 0%,#F5E6C8 55%,#D4AF37 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;overflow-wrap:anywhere">{{ aOwed }}</span>
+              <span style="font-family:ui-monospace,monospace;font-size:11px;line-height:1.5;color:#bfb1c9;word-break:break-all">{{ aOwedWei }}</span>
+            </div>
+          </div>
+        </div>
+        <div style="display:flex;justify-content:center">
+          <span role="status" style="padding:10px 18px;border-radius:999px;border:1px solid {{ aStatusBorder }};background:rgba(10,4,20,.6);color:{{ aStatusColor }};font-size:11px;font-weight:700;letter-spacing:.2em;text-align:center">{{ aStatus }}</span>
+        </div>
+        <p style="margin:0;max-width:640px;align-self:center;font-size:12px;line-height:1.7;color:#c9bcd2;text-align:center;text-wrap:pretty">Named for Luca Pacioli, who published the first double-entry ledger in 1494. Here the contract is the ledger: every royalty is credited inside it, and only its owner can withdraw it.</p>
+      </div>
+
+      <div style="display:flex;flex-direction:column;gap:20px">
+        <div style="display:flex;align-items:center;gap:16px">
+          <span style="font-family:'Cinzel',serif;font-weight:700;font-size:26px;line-height:1;color:#d4af37">II</span>
+          <span style="font-size:11px;font-weight:700;letter-spacing:.28em;color:#f6e3ba">IMMUTABLE GOVERNANCE</span>
+          <span aria-hidden="true" style="flex:1;height:1px;background:linear-gradient(90deg,rgba(212,175,55,.6),transparent)"></span>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:16px">
+          <div style="display:flex;flex-direction:column;gap:12px;padding:20px 22px;border-radius:16px;border:1px solid rgba(212,175,55,.38);background:rgba(10,4,20,.5);min-width:0">
+            <span style="font-size:10px;font-weight:700;letter-spacing:.22em;color:#e2c16b">THE FOUNDER CAN</span>
+            <sc-for list="{{ aCan }}" as="x" hint-placeholder-count="3">
+              <div style="display:flex;gap:12px"><span aria-hidden="true" style="width:7px;height:7px;flex:none;margin-top:8px;transform:rotate(45deg);background:linear-gradient(135deg,#f3e3b6,#b8902e)"></span><span style="font-size:14px;line-height:1.6;color:#eadfd0;text-wrap:pretty">{{ x.t }}</span></div>
+            </sc-for>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:12px;padding:20px 22px;border-radius:16px;border:1px solid rgba(212,175,55,.38);background:rgba(10,4,20,.5);min-width:0;border-color:rgba(232,105,138,.5)">
+            <span style="font-size:10px;font-weight:700;letter-spacing:.22em;color:#e2c16b;color:#ffb3c6">THE FOUNDER CANNOT</span>
+            <div style="display:flex;gap:12px"><span aria-hidden="true" style="width:8px;height:8px;flex:none;margin-top:7px;border-radius:50%;background:radial-gradient(circle at 40% 35%,#ffd1dc,#e8698a 50%,#b3192f);box-shadow:0 0 8px rgba(232,105,138,.6)"></span><span style="font-size:14px;line-height:1.6;color:#eadfd0;text-wrap:pretty">Move or freeze anyone’s royalties. Only their owner can withdraw them.</span></div>
+            <div style="display:flex;gap:12px"><span aria-hidden="true" style="width:8px;height:8px;flex:none;margin-top:7px;border-radius:50%;background:radial-gradient(circle at 40% 35%,#ffd1dc,#e8698a 50%,#b3192f);box-shadow:0 0 8px rgba(232,105,138,.6)"></span><span style="font-size:14px;line-height:1.6;color:#eadfd0;text-wrap:pretty">Move, burn or edit anyone’s door. Minted art, audio and story are permanent.</span></div>
+            <div style="display:flex;gap:12px"><span aria-hidden="true" style="width:8px;height:8px;flex:none;margin-top:7px;border-radius:50%;background:radial-gradient(circle at 40% 35%,#ffd1dc,#e8698a 50%,#b3192f);box-shadow:0 0 8px rgba(232,105,138,.6)"></span><span style="font-size:14px;line-height:1.6;color:#eadfd0;text-wrap:pretty">Change the 70 / 15 / 15 split or the Founder Vault address.</span></div>
+            <div style="display:flex;gap:12px"><span aria-hidden="true" style="width:8px;height:8px;flex:none;margin-top:7px;border-radius:50%;background:radial-gradient(circle at 40% 35%,#ffd1dc,#e8698a 50%,#b3192f);box-shadow:0 0 8px rgba(232,105,138,.6)"></span><span style="font-size:14px;line-height:1.6;color:#eadfd0;text-wrap:pretty">Raise the claim fee above 8.88 ETH. The cap is written into the contract.</span></div>
+            <div style="display:flex;gap:12px"><span aria-hidden="true" style="width:8px;height:8px;flex:none;margin-top:7px;border-radius:50%;background:radial-gradient(circle at 40% 35%,#ffd1dc,#e8698a 50%,#b3192f);box-shadow:0 0 8px rgba(232,105,138,.6)"></span><span style="font-size:14px;line-height:1.6;color:#eadfd0;text-wrap:pretty">Block withdrawals. They keep working even while paused.</span></div>
+          </div>
+        </div>
+        <div style="display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 16px;padding:14px 18px;border-radius:12px;border:1px dashed rgba(212,175,55,.45)">
+          <span style="font-size:10px;font-weight:700;letter-spacing:.22em;color:#e2c16b">ADMIN KEY</span>
+          <span style="flex:1;min-width:220px;font-size:14px;line-height:1.55;color:#fff;text-wrap:pretty">{{ aKey }}</span>
+          <sc-if value="{{ aKeyHref }}" hint-placeholder-val="{{ false }}"><a href="{{ aKeyHref }}" target="_blank" rel="noopener noreferrer" style="font-size:12px;font-weight:700">Check on Etherscan ↗</a></sc-if>
+        </div>
+      </div>
+
+      <div style="display:flex;flex-direction:column;gap:20px">
+        <div style="display:flex;align-items:center;gap:16px">
+          <span style="font-family:'Cinzel',serif;font-weight:700;font-size:26px;line-height:1;color:#d4af37">III</span>
+          <span style="font-size:11px;font-weight:700;letter-spacing:.28em;color:#f6e3ba">CURRENT LINEAGE</span>
+          <span aria-hidden="true" style="flex:1;height:1px;background:linear-gradient(90deg,rgba(212,175,55,.6),transparent)"></span>
+        </div>
+        <p style="margin:0;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(19px,2vw,22px);line-height:1.5;color:#f3ead9;text-wrap:pretty">{{ aLead }}</p>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:16px">
+          <sc-for list="{{ aLineage }}" as="r" hint-placeholder-count="2">
+            <div style="display:flex;flex-direction:column;gap:12px;padding:20px 22px;border-radius:16px;border:1px solid rgba(212,175,55,.38);background:rgba(10,4,20,.5);min-width:0;gap:8px">
+              <span style="font-size:10px;font-weight:700;letter-spacing:.22em;color:#e2c16b">{{ r.t }}</span>
+              <span style="font-size:15px;font-weight:700;color:#fff">{{ r.holder }}</span>
+              <span style="font-size:13px;line-height:1.6;color:#d7c9b8;text-wrap:pretty">{{ r.open }}</span>
+              <span style="font-size:13px;line-height:1.6;color:#d7c9b8;text-wrap:pretty">{{ r.sale }}</span>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+
+      <div style="display:flex;flex-direction:column;gap:12px">
+        <div style="display:flex;align-items:center;gap:16px">
+          <span style="font-family:'Cinzel',serif;font-weight:700;font-size:26px;line-height:1;color:#d4af37">IV</span>
+          <span style="font-size:11px;font-weight:700;letter-spacing:.28em;color:#f6e3ba">PROVENANCE &amp; SOVEREIGN LINKS</span>
+          <span aria-hidden="true" style="flex:1;height:1px;background:linear-gradient(90deg,rgba(212,175,55,.6),transparent)"></span>
+        </div>
+        <div style="display:flex;flex-direction:column">
+          <sc-for list="{{ aLinks }}" as="l" hint-placeholder-count="6">
+            <div style="display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:6px 18px;padding:14px 2px;border-bottom:1px solid rgba(212,175,55,.22)">
+              <span style="display:flex;flex-direction:column;gap:3px;min-width:0">
+                <span style="font-size:14px;font-weight:700;color:#fff">{{ l.k }}</span>
+                <span style="font-family:ui-monospace,monospace;font-size:11px;line-height:1.5;color:#bfb1c9;word-break:break-all">{{ l.sub }}</span>
+              </span>
+              <sc-if value="{{ l.href }}" hint-placeholder-val="{{ true }}"><a href="{{ l.href }}" target="_blank" rel="noopener noreferrer" style="font-size:11px;font-weight:700;letter-spacing:.18em;color:{{ l.color }};white-space:nowrap" style-hover="color:#fff8e6">{{ l.v }}</a></sc-if>
+              <sc-if value="{{ l.noHref }}" hint-placeholder-val="{{ false }}"><span style="font-size:11px;font-weight:700;letter-spacing:.18em;color:{{ l.color }};white-space:nowrap">{{ l.v }}</span></sc-if>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+
+      <div style="display:flex;flex-direction:column;gap:20px">
+        <div style="display:flex;align-items:center;gap:16px">
+          <span style="font-family:'Cinzel',serif;font-weight:700;font-size:26px;line-height:1;color:#d4af37">V</span>
+          <span style="font-size:11px;font-weight:700;letter-spacing:.28em;color:#f6e3ba">ROYALTIES &amp; PERMANENCE</span>
+          <span aria-hidden="true" style="flex:1;height:1px;background:linear-gradient(90deg,rgba(212,175,55,.6),transparent)"></span>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:16px">
+          <div style="display:flex;flex-direction:column;gap:12px;padding:20px 22px;border-radius:16px;border:1px solid rgba(212,175,55,.38);background:rgba(10,4,20,.5);min-width:0">
+            <span style="font-size:10px;font-weight:700;letter-spacing:.22em;color:#e2c16b">ROYALTIES ARE GUARANTEED HERE</span>
+            <span style="font-size:14px;line-height:1.6;color:#eadfd0;text-wrap:pretty">Collect through LXFE.io and the contract pays 70% to the seller, 15% to the holder of the door it lives inside and 15% to the Founder Vault, on every sale.</span>
+            <span style="font-size:14px;line-height:1.6;color:#eadfd0;text-wrap:pretty;color:#ffd1dc">Outside marketplaces such as OpenSea may skip these custom splits. The 15% Door Holder and 15% Founder Vault lineage royalties are guaranteed only when you trade here.</span>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:12px;padding:20px 22px;border-radius:16px;border:1px solid rgba(212,175,55,.38);background:rgba(10,4,20,.5);min-width:0">
+            <span style="font-size:10px;font-weight:700;letter-spacing:.22em;color:#e2c16b">PERMANENT PROVENANCE</span>
+            <span style="font-size:14px;line-height:1.6;color:#eadfd0;text-wrap:pretty">Art and audio must be IPFS links to mint, so no server can quietly change or remove them.</span>
+            <span style="font-size:14px;line-height:1.6;color:#eadfd0;text-wrap:pretty">Doors reported for malicious content are hidden on LXFE.io after review. They remain on Ethereum, which no one can alter.</span>
+            <div style="display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:6px 14px">
+              <span style="font-size:12px;color:#c9bcd2">{{ aHiddenNote }}</span>
+              <a href="{{ aReportHref }}" style="font-size:12px;font-weight:700">Report a door →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="display:flex;flex-direction:column;align-items:center;gap:10px;text-align:center;padding:26px 28px;border-radius:16px;border:1px solid transparent;background:linear-gradient(180deg,rgba(30,14,50,.86),rgba(16,7,30,.92)) padding-box,linear-gradient(180deg,#b8902e,#e8698a,#b8902e) border-box;align-self:center;box-shadow:0 20px 50px -20px rgba(0,0,0,.9)">
+      <div aria-hidden="true" style="display:flex;align-items:center;justify-content:center;gap:14px;width:min(360px,70vw);margin:0 auto">
+      <span style="flex:1;height:1px;background:linear-gradient(90deg,transparent,#c9a24a 40%,#f3e3b6)"></span>
+      <span aria-hidden="true" style="position:relative;width:12px;height:12px;flex:none;transform:rotate(45deg);border-radius:1.5px;background:linear-gradient(135deg,rgba(255,255,255,.9) 0%,rgba(255,255,255,0) 40%),conic-gradient(#ffffff 0 45deg,#bcd3e6 45deg 90deg,#f7fcff 90deg 135deg,#8ea4ba 135deg 180deg,#e9f5ff 180deg 225deg,#a6bccf 225deg 270deg,#ffffff 270deg 315deg,#7d93aa 315deg 360deg);box-shadow:0 0 0 .5px rgba(255,255,255,.95),0 0 6px rgba(200,230,255,.8),0 0 14px rgba(255,255,255,.35)">
+            <span style="position:absolute;inset:3.24px;border-radius:1px;background:linear-gradient(135deg,#ffffff,#dcefff 40%,#9fb6cc 62%,#ffffff);box-shadow:0 0 0 .5px rgba(110,140,170,.55)"></span>
+            <span style="position:absolute;left:50%;top:50%;width:20px;height:20px;margin:-10px 0 0 -10px;transform:rotate(-45deg);background:linear-gradient(#fff,#fff) center/1px 100% no-repeat,linear-gradient(#fff,#fff) center/100% 1px no-repeat;opacity:.9;animation:twinkle 2.8s ease-in-out infinite"></span>
+          </span>
+      <span aria-hidden="true" style="position:relative;display:inline-block;width:46px;height:59px;flex:none;margin:0 10px">
+            <span style="position:absolute;inset:-18px -22px;border-radius:50%;background:radial-gradient(ellipse at 50% 50%,rgba(255,220,140,.6),rgba(212,175,55,.2) 42%,transparent 70%);animation:emberGlow 3.6s ease-in-out infinite"></span>
+            <span style="position:absolute;left:-15px;right:-15px;top:31px;height:15px;margin-top:-7px;border-radius:50%;border:1px dashed rgba(255,236,190,.45);transform:rotate(-14deg)"></span>
+            <span style="position:absolute;inset:0;border-radius:50% 50% 50% 50% / 60% 60% 40% 40%;overflow:hidden;background:radial-gradient(ellipse at 50% 55%,#2a1a04 0%,#140b02 60%,#0a0501 100%);box-shadow:inset 0 0 0 1.5px #f6e3ba,inset 0 0 8px rgba(255,214,120,.95),inset 0 -6px 12px rgba(212,175,55,.55),0 0 14px rgba(255,214,120,.85),0 0 36px rgba(212,175,55,.5)">
+              <span style="position:absolute;left:-30%;top:-14%;width:160%;height:128%;background:url('gold-galaxy.png') center / contain no-repeat;animation:galaxySpinR 16s linear infinite"></span>
+              <span style="position:absolute;left:-10%;top:4%;width:120%;height:92%;background:url('gold-galaxy.png') center / contain no-repeat;opacity:.55;transform:scaleX(-1);animation:galaxySpinR 26s linear infinite"></span>
+              <span style="position:absolute;inset:0;background:radial-gradient(ellipse at 50% 56%,transparent 48%,rgba(90,56,8,.35) 78%,rgba(212,175,55,.55) 100%)"></span>
+              <span style="position:absolute;inset:0;background:radial-gradient(ellipse 26% 16% at 34% 20%,rgba(255,255,255,.75),rgba(255,255,255,0) 72%),linear-gradient(115deg,transparent 30%,rgba(255,250,230,.35) 45%,transparent 58%);background-size:100% 100%,260% 100%;animation:sheen 6s ease-in-out infinite"></span>
+              <span style="position:absolute;left:58%;top:8%;width:12px;height:16px;clip-path:polygon(0 0,18% 0,46% 34%,30% 40%,70% 72%,52% 76%,100% 100%,86% 100%,40% 80%,58% 76%,16% 44%,34% 38%);background:linear-gradient(180deg,#fff,#fff3c4 50%,rgba(255,214,120,.2));filter:drop-shadow(0 0 2px #fff3c4);animation:emberGlow 2.4s ease-in-out infinite"></span>
+            </span>
+            <span style="position:absolute;left:-15px;right:-15px;top:31px;height:15px;margin-top:-7px;border-radius:50%;border:1px dashed transparent;border-bottom-color:rgba(255,244,210,.95);transform:rotate(-14deg)"></span>
+            <span style="position:absolute;right:-14px;top:24px;width:10px;height:10px;background:linear-gradient(#fff,#fff) center/1px 100% no-repeat,linear-gradient(#fff,#fff) center/100% 1px no-repeat;filter:drop-shadow(0 0 2px #fff3c4);animation:twinkle 2.2s ease-in-out infinite"></span>
+          </span>
+      <span aria-hidden="true" style="position:relative;width:12px;height:12px;flex:none;transform:rotate(45deg);border-radius:1.5px;background:linear-gradient(135deg,rgba(255,255,255,.9) 0%,rgba(255,255,255,0) 40%),conic-gradient(#ffffff 0 45deg,#bcd3e6 45deg 90deg,#f7fcff 90deg 135deg,#8ea4ba 135deg 180deg,#e9f5ff 180deg 225deg,#a6bccf 225deg 270deg,#ffffff 270deg 315deg,#7d93aa 315deg 360deg);box-shadow:0 0 0 .5px rgba(255,255,255,.95),0 0 6px rgba(200,230,255,.8),0 0 14px rgba(255,255,255,.35)">
+            <span style="position:absolute;inset:3.24px;border-radius:1px;background:linear-gradient(135deg,#ffffff,#dcefff 40%,#9fb6cc 62%,#ffffff);box-shadow:0 0 0 .5px rgba(110,140,170,.55)"></span>
+            <span style="position:absolute;left:50%;top:50%;width:20px;height:20px;margin:-10px 0 0 -10px;transform:rotate(-45deg);background:linear-gradient(#fff,#fff) center/1px 100% no-repeat,linear-gradient(#fff,#fff) center/100% 1px no-repeat;opacity:.9;animation:twinkle 2.8s ease-in-out infinite"></span>
+          </span>
+      <span style="flex:1;height:1px;background:linear-gradient(90deg,#f3e3b6,#c9a24a 60%,transparent)"></span>
+    </div>
+      <div style="display:flex;align-items:center;gap:14px;font-size:14px;font-weight:900;letter-spacing:.28em;color:#fff">FREEDOM<span style="width:6px;height:6px;border-radius:50%;background:#e8698a;box-shadow:0 0 8px #e8698a"></span>PEACE<span style="width:6px;height:6px;border-radius:50%;background:#e8698a;box-shadow:0 0 8px #e8698a"></span>LEGACY</div>
+      <div style="font-family:'Cinzel',serif;font-size:13px;letter-spacing:.2em;color:#e2c16b">THE STERLING METHOD™</div>
+      <div style="font-size:12px;color:#d7c9b8">Created by Maya Harrington • Conceived &amp; Created January 8</div>
+      <a href="index.html" style="font-size:12px;font-weight:700;letter-spacing:.14em">← BACK TO FIRE ROSE</a>
+    </div>
+  </div>
+</div>
+<sc-if value="{{ vOpen }}" hint-placeholder-val="{{ false }}">
+  <div ref="{{ ovRef }}" role="dialog" aria-modal="true" aria-label="{{ vAria }}" style="position:fixed;inset:0;z-index:300;overflow-y:auto;overscroll-behavior:contain;background:linear-gradient(180deg,#0c0519 0%,#1a0b33 35%,#2a1046 70%,#3a1650 100%);color:#fff;font-family:'Lato',sans-serif">
+    <div aria-hidden="true" style="position:fixed;inset:0;pointer-events:none;background:radial-gradient(ellipse at 50% -10%,rgba(255,240,215,.16),transparent 55%),radial-gradient(ellipse at 92% 100%,rgba(232,105,138,.16),transparent 50%),radial-gradient(ellipse at 0% 80%,rgba(212,175,55,.08),transparent 45%)"></div>
+    <div style="position:relative;max-width:1180px;margin:0 auto;padding:20px clamp(16px,4vw,40px) 90px;display:flex;flex-direction:column;gap:30px;animation:rise .45s ease both">
+      <div style="display:flex;flex-wrap:wrap;align-items:center;gap:12px 16px">
+        <button onClick="{{ closeView }}" style="border:1px solid transparent;background:linear-gradient(180deg,rgba(26,12,40,.85),rgba(14,6,24,.9)) padding-box,linear-gradient(180deg,#f3e3b6,#b8902e 45%,#7d5a14 52%,#e4c777) border-box;color:#f1dfae;box-shadow:0 1px 0 rgba(255,255,255,.12) inset,0 6px 16px rgba(0,0,0,.4);cursor:pointer;font-family:inherit;height:44px;padding:0 18px;border-radius:999px;font-size:12px;font-weight:700;letter-spacing:.12em" style-hover="color:#fff8e6;background:linear-gradient(180deg,rgba(60,38,20,.9),rgba(30,16,30,.95)) padding-box,linear-gradient(180deg,#fff3cf,#d4af37 45%,#8c6712 52%,#f1dfae) border-box">← BACK TO THE NESTING DOORS TUNNEL</button>
+        <nav aria-label="Door lineage" style="display:flex;flex-wrap:wrap;align-items:center;gap:6px">
+          <sc-for list="{{ crumbs }}" as="k" hint-placeholder-count="3">
+            <button onClick="{{ k.go }}" style="padding:6px 11px;border-radius:999px;border:1px solid {{ k.border }};background:{{ k.bg }};color:{{ k.color }};font-size:10px;font-weight:700;letter-spacing:.14em;cursor:pointer;font-family:inherit">{{ k.label }}</button>
+          </sc-for>
+        </nav>
+        <button onClick="{{ connect }}" style="margin-left:auto;border:1px solid transparent;background:linear-gradient(180deg,rgba(26,12,40,.85),rgba(14,6,24,.9)) padding-box,linear-gradient(180deg,#f3e3b6,#b8902e 45%,#7d5a14 52%,#e4c777) border-box;color:#f1dfae;box-shadow:0 1px 0 rgba(255,255,255,.12) inset,0 6px 16px rgba(0,0,0,.4);cursor:pointer;font-family:inherit;height:44px;padding:0 16px;border-radius:999px;font-size:12px;font-weight:700;letter-spacing:.08em;display:flex;align-items:center;gap:8px" style-hover="color:#fff8e6;background:linear-gradient(180deg,rgba(60,38,20,.9),rgba(30,16,30,.95)) padding-box,linear-gradient(180deg,#fff3cf,#d4af37 45%,#8c6712 52%,#f1dfae) border-box"><span style="width:8px;height:8px;border-radius:50%;background:{{ dotColor }}"></span>{{ walletLabel }}</button>
+      </div>
+      <sc-if value="{{ flash }}" hint-placeholder-val="{{ false }}">
+        <div role="status" style="display:flex;align-items:center;gap:12px;padding:14px 18px;border-radius:14px;border:1px solid #7fd4b4;background:rgba(20,60,50,.35);color:#eafff6;font-size:14px;line-height:1.5"><span style="width:8px;height:8px;flex:none;transform:rotate(45deg);background:#7fd4b4;box-shadow:0 0 10px #7fd4b4"></span>{{ flash }}</div>
+      </sc-if>
+      <sc-if value="{{ txOn }}" hint-placeholder-val="{{ false }}">
+        <div role="status" aria-live="polite" style="display:flex;flex-wrap:wrap;align-items:center;gap:8px 16px;padding:14px 18px;border-radius:14px;border:1px solid {{ txBorder }};background:{{ txBg }};color:#fff;font-size:14px;line-height:1.5">
+          <span style="flex:1;min-width:200px">{{ txMsg }}</span>
+          <sc-if value="{{ txHref }}" hint-placeholder-val="{{ false }}"><a href="{{ txHref }}" target="_blank" rel="noopener noreferrer" style="font-size:13px;font-weight:700">View on Etherscan ↗</a></sc-if>
+          <button onClick="{{ txClose }}" aria-label="Dismiss" style="width:32px;height:32px;border-radius:50%;border:1px solid rgba(255,255,255,.3);background:transparent;color:#fff;font-size:16px;cursor:pointer;font-family:inherit">×</button>
+        </div>
+      </sc-if>
+      <div style="display:flex;flex-wrap:wrap;gap:clamp(22px,3.5vw,48px);align-items:flex-start">
+        <div style="flex:1.15 1 380px;display:flex;flex-direction:column;gap:22px;min-width:0">
+          <sc-if value="{{ isViewer }}" hint-placeholder-val="{{ false }}">
+            <div style="display:flex;flex-wrap:wrap;gap:8px">
+              <span style="padding:7px 12px;border-radius:999px;border:1px solid #e8698a;background:rgba(60,20,40,.6);color:#ffd1dc;font-size:10px;font-weight:700;letter-spacing:.18em">{{ pgKicker }}</span>
+              <span style="padding:7px 12px;border-radius:999px;border:1px solid #7fd4b4;background:rgba(20,60,50,.35);color:#c9f5e4;font-size:10px;font-weight:700;letter-spacing:.18em">{{ pgStatus }}</span>
+              <sc-if value="{{ pgSample }}" hint-placeholder-val="{{ false }}"><span style="padding:7px 12px;border-radius:999px;border:1px dashed rgba(212,175,55,.6);color:#f1dfae;font-size:10px;font-weight:700;letter-spacing:.18em">EXAMPLE</span></sc-if>
+            </div>
+            <h2 style="margin:0;font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(40px,5.4vw,68px);line-height:1.02;color:#fff;text-wrap:balance;overflow-wrap:anywhere">{{ pgTitle }}</h2>
+            <div style="display:flex;align-items:center;gap:14px;padding:12px 18px 12px 12px;border-radius:14px;border:1px solid rgba(212,175,55,.4);background:rgba(22,10,42,.6);align-self:flex-start;max-width:100%;box-sizing:border-box">
+              <span style="width:44px;height:44px;flex:none;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Cinzel',serif;font-weight:700;font-size:18px;color:#160728;background:linear-gradient(135deg,#FFF3C4,#D4AF37 55%,#9A7418);box-shadow:0 0 0 2px #1a0b33,0 0 0 3px #e8698a">{{ pgInitial }}</span>
+              <div style="display:flex;flex-direction:column;gap:2px;min-width:0">
+                <span style="font-size:10px;font-weight:700;letter-spacing:.2em;color:#e2c16b">CREATOR</span>
+                <span style="font-size:17px;font-weight:700;color:#fff">{{ pgCreator }}</span>
+                <span style="font-family:ui-monospace,monospace;font-size:12px;color:#d7c9b8">{{ pgWallet }}</span>
+              </div>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:8px">
+              <span style="font-size:10px;font-weight:700;letter-spacing:.2em;color:#e2c16b">STORY · FREQUENCY INSCRIPTION</span>
+              <p style="margin:0;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(20px,2vw,24px);line-height:1.5;color:#f3ead9;text-wrap:pretty;white-space:pre-line">{{ pgStory }}</p>
+            </div>
+            <div style="display:flex;flex-wrap:wrap;align-items:flex-end;gap:14px 28px;padding:18px 20px;border-radius:16px;border:1px solid transparent;background:linear-gradient(180deg,rgba(30,14,50,.86),rgba(16,7,30,.92)) padding-box,linear-gradient(90deg,#b8902e,#e8698a,#b8902e) border-box">
+              <div style="display:flex;flex-direction:column;gap:4px">
+                <span style="font-size:10px;font-weight:700;letter-spacing:.2em;color:#e2c16b">PRICE</span>
+                <span style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:46px;letter-spacing:.04em;line-height:1;background:linear-gradient(180deg,#FFFFFF 0%,#F5E6C8 55%,#D4AF37 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent">{{ pgPrice }}</span>
+              </div>
+              <span style="flex:1;min-width:220px;font-size:12px;line-height:1.7;color:#d7c9b8">{{ pgSplit }}</span>
+            </div>
+            <div style="display:flex;flex-wrap:wrap;gap:12px">
+              <button onClick="{{ cardCollect }}" style="border:1px solid #f1dfae;background:linear-gradient(135deg,#FFF3C4 0%,#D4AF37 55%,#9A7418 100%) padding-box,linear-gradient(110deg,transparent 35%,rgba(255,255,255,.85) 50%,transparent 65%) border-box;background-size:100% 100%,300% 100%;animation:sheen 7s ease-in-out infinite;color:#160728;font-weight:700;text-transform:uppercase;box-shadow:0 1px 0 rgba(255,255,255,.8) inset,0 -1px 0 rgba(120,80,10,.5) inset,0 8px 20px rgba(0,0,0,.45),0 0 22px rgba(212,175,55,.45);position:relative;overflow:hidden;cursor:pointer;font-family:inherit;flex:1;min-width:200px;height:52px;border-radius:12px;font-size:13px;letter-spacing:.14em" style-hover="filter:brightness(1.06)" style-after="content:'';position:absolute;inset:0;background:linear-gradient(105deg,transparent 40%,rgba(255,255,255,.3) 50%,transparent 60%);background-size:250% 100%;animation:shimmerText 4s ease-in-out infinite;pointer-events:none">{{ collectLabel }}</button>
+              <button onClick="{{ nextGo }}" style="border:1px solid transparent;background:linear-gradient(180deg,rgba(26,12,40,.85),rgba(14,6,24,.9)) padding-box,linear-gradient(180deg,#f3e3b6,#b8902e 45%,#7d5a14 52%,#e4c777) border-box;color:#f1dfae;box-shadow:0 1px 0 rgba(255,255,255,.12) inset,0 6px 16px rgba(0,0,0,.4);cursor:pointer;font-family:inherit;flex:1;min-width:200px;height:52px;border-radius:12px;font-size:13px;font-weight:700;letter-spacing:.12em" style-hover="color:#fff8e6;background:linear-gradient(180deg,rgba(60,38,20,.9),rgba(30,16,30,.95)) padding-box,linear-gradient(180deg,#fff3cf,#d4af37 45%,#8c6712 52%,#f1dfae) border-box">{{ nextBtnLabel }}</button>
+            </div>
+            <sc-if value="{{ ownerOn }}" hint-placeholder-val="{{ false }}">
+              <div style="display:flex;flex-wrap:wrap;align-items:flex-end;gap:12px;padding:16px 18px;border-radius:14px;border:1px solid rgba(212,175,55,.45);background:rgba(10,4,20,.5)">
+                <div style="display:flex;flex-direction:column;gap:8px;flex:1;min-width:180px">
+                  <label for="listP" style="font-size:10px;font-weight:700;letter-spacing:.2em;color:#e2c16b">YOU OWN THIS DOOR · SALE PRICE (ETH)</label>
+                  <input id="listP" type="number" min="0" step="0.01" placeholder="e.g. 0.88" value="{{ listP }}" onChange="{{ setListP }}" style="width:100%;box-sizing:border-box;height:48px;padding:0 14px;border-radius:10px;border:1px solid rgba(212,175,55,.55);background:rgba(0,0,0,.4);color:#fff;font-size:15px;outline:none;font-family:inherit">
+                </div>
+                <button onClick="{{ doList }}" style="height:48px;padding:0 18px;border-radius:12px;border:1px solid #d4af37;background:rgba(22,10,42,.78);color:#f1dfae;font-size:12px;font-weight:700;letter-spacing:.12em;cursor:pointer;font-family:inherit" style-hover="background:rgba(212,175,55,.16);color:#fff8e6">{{ listLabel }}</button>
+                <sc-if value="{{ canUnlist }}" hint-placeholder-val="{{ false }}"><button onClick="{{ doUnlist }}" style="height:48px;padding:0 18px;border-radius:12px;border:1px solid #d4af37;background:rgba(22,10,42,.78);color:#f1dfae;font-size:12px;font-weight:700;letter-spacing:.12em;cursor:pointer;font-family:inherit" style-hover="background:rgba(212,175,55,.16);color:#fff8e6">UNLIST</button></sc-if>
+              </div>
+            </sc-if>
+            <sc-if value="{{ pgTokenHref }}" hint-placeholder-val="{{ false }}">
+              <div style="display:flex;flex-wrap:wrap;gap:10px 22px;font-size:13px;font-weight:700">
+                <a href="{{ pgTokenHref }}" target="_blank" rel="noopener noreferrer">Token on Etherscan ↗</a>
+                <a href="{{ pgOpenseaHref }}" target="_blank" rel="noopener noreferrer">View on OpenSea ↗</a>
+                <a href="{{ pgReportHref }}">Report this door →</a>
+              </div>
+            </sc-if>
+            <sc-if value="{{ pgFinalize }}" hint-placeholder-val="{{ false }}">
+              <div style="display:flex;flex-wrap:wrap;gap:10px 22px;font-size:13px;font-weight:700">
+                <a href="{{ pgFinalizeHref }}" target="_blank" rel="noopener noreferrer">Finalize on-chain with the Founder ↗</a>
+                <sc-if value="{{ pgCanUnpublish }}" hint-placeholder-val="{{ false }}"><button onClick="{{ unpublish }}" style="background:none;border:0;padding:0;color:#d7c9b8;font:inherit;font-weight:700;cursor:pointer;text-decoration:underline">Unpublish from this device</button></sc-if>
+              </div>
+            </sc-if>
+            <span style="font-size:12px;line-height:1.65;color:#c9bcd2;text-wrap:pretty">{{ pgNote }}</span>
+          </sc-if>
+          <sc-if value="{{ isBuilder }}" hint-placeholder-val="{{ false }}">
+            <div style="display:flex;flex-direction:column;gap:8px">
+              <span style="font-size:11px;font-weight:700;letter-spacing:.3em;color:#e2c16b">INNER DOOR SANCTUARY BUILDER</span>
+              <h2 style="margin:0;font-family:'Cinzel',serif;font-weight:700;font-size:clamp(28px,3.6vw,42px);line-height:1.1;letter-spacing:.04em;color:#fff">Build your page inside Door #{{ openN }}</h2>
+              <p style="margin:0;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:20px;line-height:1.45;color:#f6e3ba;text-wrap:pretty">Nested inside {{ openParent }}. Your page becomes the gateway the creator of Door #{{ spawnN }} walks through.</p>
+            </div>
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:16px">
+              <div style="position:relative;display:flex;flex-direction:column;gap:10px;min-width:0">
+                <label for="bName" style="font-size:10px;font-weight:700;letter-spacing:.2em;color:#e2c16b">CREATOR NAME</label>
+                <input id="bName" type="text" placeholder="Your artist name" value="{{ bName }}" onChange="{{ setBName }}" style="width:100%;box-sizing:border-box;height:50px;padding:0 14px;border-radius:10px;border:1px solid rgba(212,175,55,.55);background:rgba(0,0,0,.4);color:#fff;font-size:15px;outline:none;font-family:inherit" style-focus="border-color:#f6e3ba;box-shadow:0 0 0 3px rgba(212,175,55,.18)">
+              </div>
+              <div style="position:relative;display:flex;flex-direction:column;gap:10px;min-width:0">
+                <div style="display:flex;align-items:center;justify-content:space-between;gap:8px">
+                  <label for="bWallet" style="font-size:10px;font-weight:700;letter-spacing:.2em;color:#e2c16b">WALLET ADDRESS</label>
+                  <sc-if value="{{ canUseWallet }}" hint-placeholder-val="{{ false }}"><button onClick="{{ useWallet }}" style="background:none;border:0;padding:0;color:#f6e3ba;font-size:11px;font-weight:700;letter-spacing:.08em;cursor:pointer;text-decoration:underline;font-family:inherit">Use connected</button></sc-if>
+                </div>
+                <input id="bWallet" type="text" placeholder="0x…" value="{{ bWallet }}" onChange="{{ setBWallet }}" style="width:100%;box-sizing:border-box;height:50px;padding:0 14px;border-radius:10px;border:1px solid rgba(212,175,55,.55);background:rgba(0,0,0,.4);color:#fff;font-size:15px;outline:none;font-family:inherit;font-family:ui-monospace,monospace;font-size:14px" style-focus="border-color:#f6e3ba;box-shadow:0 0 0 3px rgba(212,175,55,.18)">
+              </div>
+            </div>
+            <div style="position:relative;display:flex;flex-direction:column;gap:10px;min-width:0">
+              <label for="bTitle" style="font-size:10px;font-weight:700;letter-spacing:.2em;color:#e2c16b">INNER NFT TITLE</label>
+              <input id="bTitle" type="text" placeholder="e.g. Sovereign Echo #003" value="{{ bTitle }}" onChange="{{ setBTitle }}" style="width:100%;box-sizing:border-box;height:50px;padding:0 14px;border-radius:10px;border:1px solid rgba(212,175,55,.55);background:rgba(0,0,0,.4);color:#fff;font-size:15px;outline:none;font-family:inherit" style-focus="border-color:#f6e3ba;box-shadow:0 0 0 3px rgba(212,175,55,.18)">
+            </div>
+            <div style="position:relative;display:flex;flex-direction:column;gap:10px;min-width:0">
+              <label for="bStory" style="font-size:10px;font-weight:700;letter-spacing:.2em;color:#e2c16b">STORY · FREQUENCY INSCRIPTION</label>
+              <textarea id="bStory" rows="5" placeholder="The story behind your piece — what it carries, who it is for, what it unlocks." value="{{ bStory }}" onChange="{{ setBStory }}" style="width:100%;box-sizing:border-box;height:50px;padding:0 14px;border-radius:10px;border:1px solid rgba(212,175,55,.55);background:rgba(0,0,0,.4);color:#fff;font-size:15px;outline:none;font-family:inherit;height:auto;min-height:132px;padding:12px 14px;line-height:1.55;resize:vertical" style-focus="border-color:#f6e3ba;box-shadow:0 0 0 3px rgba(212,175,55,.18)"></textarea>
+            </div>
+            <div style="position:relative;display:flex;flex-direction:column;gap:10px;min-width:0">
+              <span style="font-size:10px;font-weight:700;letter-spacing:.2em;color:#e2c16b">ARTWORK · IMAGE PREVIEW + IPFS LINK (REQUIRED TO MINT)</span>
+              <label for="bArtFile" onDragOver="{{ artDragOver }}" onDragLeave="{{ artDragLeave }}" onDrop="{{ artDrop }}" style="display:flex;align-items:center;gap:14px;padding:16px;border-radius:12px;border:1.5px dashed {{ dropBorder }};background:{{ dropBg }};cursor:pointer" style-hover="background:rgba(212,175,55,.08)">
+                <span style="width:48px;height:48px;flex:none;border-radius:10px;background-color:#120726;background-image:{{ cardArtBg }};background-size:cover;background-position:center;border:1px solid rgba(212,175,55,.5)"></span>
+                <span style="display:flex;flex-direction:column;gap:3px;min-width:0">
+                  <span style="font-size:14px;font-weight:700;color:#fff;overflow-wrap:anywhere">{{ artDropLabel }}</span>
+                  <span style="font-size:12px;color:#d7c9b8">PNG, JPG, WEBP or GIF · resized to 1100px for the page</span>
+                </span>
+              </label>
+              <input id="bArtFile" type="file" accept="image/*" onChange="{{ artFile }}" style="position:absolute;left:0;top:0;width:1px;height:1px;opacity:0;pointer-events:none">
+              <input type="url" aria-label="Artwork URL or IPFS link" placeholder="ipfs://…" value="{{ bArtUrl }}" onChange="{{ setBArtUrl }}" style="width:100%;box-sizing:border-box;height:50px;padding:0 14px;border-radius:10px;border:1px solid rgba(212,175,55,.55);background:rgba(0,0,0,.4);color:#fff;font-size:15px;outline:none;font-family:inherit" style-focus="border-color:#f6e3ba;box-shadow:0 0 0 3px rgba(212,175,55,.18)">
+            </div>
+            <div style="position:relative;display:flex;flex-direction:column;gap:10px;min-width:0">
+              <span style="font-size:10px;font-weight:700;letter-spacing:.2em;color:#e2c16b">30-SECOND AUDIO TRACK · .MP3 / .WAV PREVIEW + IPFS LINK (REQUIRED TO MINT)</span>
+              <label for="bAudioFile" style="display:flex;align-items:center;gap:14px;padding:14px 16px;border-radius:12px;border:1.5px dashed rgba(212,175,55,.55);background:rgba(10,4,20,.4);cursor:pointer" style-hover="background:rgba(212,175,55,.08)">
+                <span style="width:42px;height:42px;flex:none;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:17px;color:#160728;background:linear-gradient(135deg,#FFF3C4,#D4AF37 55%,#9A7418)">♪</span>
+                <span style="display:flex;flex-direction:column;gap:3px;min-width:0">
+                  <span style="font-size:14px;font-weight:700;color:#fff;overflow-wrap:anywhere">{{ audioDropLabel }}</span>
+                  <span style="font-size:12px;color:#d7c9b8">{{ audioHint }}</span>
+                </span>
+              </label>
+              <input id="bAudioFile" type="file" accept="audio/*,.mp3,.wav" onChange="{{ audioFile }}" style="position:absolute;left:0;top:0;width:1px;height:1px;opacity:0;pointer-events:none">
+              <input type="url" aria-label="Audio URL or IPFS link" placeholder="ipfs://… (.mp3 / .wav)" value="{{ bAudioUrl }}" onChange="{{ setBAudioUrl }}" style="width:100%;box-sizing:border-box;height:50px;padding:0 14px;border-radius:10px;border:1px solid rgba(212,175,55,.55);background:rgba(0,0,0,.4);color:#fff;font-size:15px;outline:none;font-family:inherit" style-focus="border-color:#f6e3ba;box-shadow:0 0 0 3px rgba(212,175,55,.18)">
+            </div>
+            <div style="display:flex;flex-direction:column;gap:12px;padding:18px;border-radius:16px;border:1px solid rgba(212,175,55,.4);background:rgba(10,4,20,.5)">
+              <label for="bPrice" style="font-size:10px;font-weight:700;letter-spacing:.2em;color:#e2c16b">SALE PRICE (ETH) · 0 TO LIST LATER</label>
+              <input id="bPrice" type="number" min="0" step="0.01" value="{{ bPrice }}" onChange="{{ setBPrice }}" style="width:100%;box-sizing:border-box;height:50px;padding:0 14px;border-radius:10px;border:1px solid rgba(212,175,55,.55);background:rgba(0,0,0,.4);color:#fff;font-size:15px;outline:none;font-family:inherit" style-focus="border-color:#f6e3ba;box-shadow:0 0 0 3px rgba(212,175,55,.18)">
+              {{ splitBar }}
+              <sc-for list="{{ bRows }}" as="r" hint-placeholder-count="3">
+                <div style="display:flex;justify-content:space-between;gap:12px;font-size:13px">
+                  <span style="display:flex;align-items:center;gap:8px;color:#eadfd0"><span style="width:9px;height:9px;flex:none;border-radius:2px;background:{{ r.sw }}"></span>{{ r.k }}</span>
+                  <span style="font-family:ui-monospace,monospace;color:#fff;white-space:nowrap">{{ r.v }}</span>
+                </div>
+              </sc-for>
+              <span style="font-size:11px;color:#bfb1c9;font-family:ui-monospace,monospace;word-break:break-all">Founder Vault · 0x2636943c3be407a142d7ab3084f54aa7ae03b934</span>
+            </div>
+            <sc-if value="{{ bErr }}" hint-placeholder-val="{{ false }}"><span role="alert" style="padding:12px 16px;border-radius:12px;border:1px solid #e8698a;background:rgba(80,20,40,.4);color:#ffd1dc;font-size:14px">{{ bErr }}</span></sc-if>
+            <button onClick="{{ publish }}" style="border:1px solid #f1dfae;background:linear-gradient(135deg,#FFF3C4 0%,#D4AF37 55%,#9A7418 100%) padding-box,linear-gradient(110deg,transparent 35%,rgba(255,255,255,.85) 50%,transparent 65%) border-box;background-size:100% 100%,300% 100%;animation:sheen 7s ease-in-out infinite;color:#160728;font-weight:700;text-transform:uppercase;box-shadow:0 1px 0 rgba(255,255,255,.8) inset,0 -1px 0 rgba(120,80,10,.5) inset,0 8px 20px rgba(0,0,0,.45),0 0 22px rgba(212,175,55,.45);position:relative;overflow:hidden;cursor:pointer;font-family:inherit;width:100%;min-height:60px;padding:12px 18px;border-radius:14px;font-size:13px;letter-spacing:.12em;line-height:1.4" style-hover="filter:brightness(1.06)" style-after="content:'';position:absolute;inset:0;background:linear-gradient(105deg,transparent 40%,rgba(255,255,255,.3) 50%,transparent 60%);background-size:250% 100%;animation:shimmerText 4s ease-in-out infinite;pointer-events:none">{{ publishLabel }}</button>
+            <span style="font-size:12px;line-height:1.65;color:#c9bcd2;text-wrap:pretty">{{ publishNote }}</span>
+          </sc-if>
+        </div>
+        <div style="flex:.85 1 300px;max-width:460px;margin:0 auto;position:sticky;top:20px;display:flex;flex-direction:column;gap:12px;min-width:0">
+          <div style="border-radius:22px;padding:14px;border:1px solid transparent;background:linear-gradient(180deg,rgba(30,14,50,.94),rgba(12,5,24,.97)) padding-box,linear-gradient(180deg,#f3e3b6,#b8902e 30%,#e8698a 50%,#b8902e 70%,#7d5a14) border-box;box-shadow:0 34px 80px -30px rgba(0,0,0,.95),0 0 40px rgba(232,105,138,.12)">
+            <div style="position:relative;aspect-ratio:1/1;border-radius:14px;overflow:hidden;background-color:#120726;background-image:{{ cardArtBg }};background-size:cover;background-position:center;box-shadow:inset 0 0 0 1px rgba(255,243,214,.25)">
+              <sc-if value="{{ cardNoArt }}" hint-placeholder-val="{{ true }}">
+                <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;gap:16px;padding:18px;overflow:hidden;text-align:center;background:radial-gradient(ellipse at 50% 45%,rgba(232,105,138,.16),transparent 62%)">
+                  <span role="img" aria-label="Galaxy born from the opened cosmic egg" style="position:absolute;inset:0;background-color:#05020b;background-image:radial-gradient(circle 1px at 12% 18%,#fff 0,rgba(255,255,255,0) 100%),radial-gradient(circle .8px at 84% 12%,#fff6d0 0,rgba(255,255,255,0) 100%),radial-gradient(circle .9px at 90% 70%,#cfe8ff 0,rgba(255,255,255,0) 100%),radial-gradient(circle .7px at 8% 82%,#fff 0,rgba(255,255,255,0) 100%),radial-gradient(circle .8px at 30% 92%,#e9d5ff 0,rgba(255,255,255,0) 100%),radial-gradient(circle .7px at 70% 90%,#fff 0,rgba(255,255,255,0) 100%),radial-gradient(ellipse at 50% 48%,rgba(255,206,120,.18) 0%,rgba(90,50,140,.28) 40%,rgba(5,2,11,0) 75%)"></span>
+                  <sc-if value="{{ galaxyOn }}" hint-placeholder-val="{{ false }}"><span aria-hidden="true" style="position:absolute;left:-18%;top:-20%;width:136%;height:136%;background:url('gold-galaxy.png') center / contain no-repeat;animation:galaxySpinR 48s linear infinite"></span></sc-if>
+                  <sc-if value="{{ orbOn }}" hint-placeholder-val="{{ true }}"><span role="img" aria-label="Galaxy / Cosmic Void artwork" style="position:relative;width:min(132px,40%);aspect-ratio:1/1;margin:auto 0;border-radius:50%;background-color:#05020b;background-image:radial-gradient(circle 1px at 22% 30%,#fff 0,rgba(255,255,255,0) 100%),radial-gradient(circle .8px at 70% 22%,#fff6d0 0,rgba(255,255,255,0) 100%),radial-gradient(circle .9px at 62% 74%,#cfe8ff 0,rgba(255,255,255,0) 100%),radial-gradient(circle .7px at 32% 68%,#fff 0,rgba(255,255,255,0) 100%),radial-gradient(ellipse at 50% 50%,rgba(140,110,255,.22) 0%,rgba(40,20,80,.25) 40%,transparent 70%),radial-gradient(circle at 34% 28%,#2a1c44 0%,#0d0718 45%,#020105 100%);box-shadow:inset 0 0 0 1px rgba(255,243,214,.55),inset -10px -14px 26px rgba(0,0,0,.85),inset 8px 10px 20px rgba(190,170,255,.18),0 0 26px rgba(170,140,255,.35),0 0 60px rgba(212,175,55,.18)"><span style="position:absolute;left:18%;top:12%;width:30%;height:16%;border-radius:50%;background:radial-gradient(ellipse,rgba(255,255,255,.45),rgba(255,255,255,0) 70%)"></span></span></sc-if>
+                  <span aria-hidden="true" style="position:absolute;inset:0;background-image:{{ voidArtBg }};background-size:cover;background-position:center"></span>
+                  <span style="position:relative;font-size:10px;font-weight:700;letter-spacing:.24em;color:#f6e3ba;text-shadow:0 1px 3px rgba(0,0,0,.95)">{{ cardArtPlaceholder }}</span>
+                </div>
+              </sc-if>
+              <span style="position:absolute;top:12px;left:12px;max-width:calc(100% - 24px);padding:7px 12px;border-radius:999px;background:rgba(14,5,26,.82);border:1px solid rgba(255,243,214,.7);color:#fff8e6;font-size:10px;font-weight:700;letter-spacing:.16em;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)">{{ cardBadge }}</span>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:14px;padding:16px 6px 6px">
+              <div style="display:flex;flex-direction:column;gap:4px">
+                <span style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:28px;line-height:1.1;color:#fff;overflow-wrap:anywhere">{{ cardTitle }}</span>
+                <span style="font-size:13px;color:#d7c9b8">{{ cardBy }}</span>
+              </div>
+              <div style="display:flex;align-items:center;gap:12px;padding:10px 12px;border-radius:12px;background:rgba(0,0,0,.35);border:1px solid rgba(212,175,55,.3)">
+                <button onClick="{{ cardPlay }}" aria-label="{{ cardPlayAria }}" style="width:44px;height:44px;flex:none;border-radius:50%;border:1px solid #f1dfae;background:linear-gradient(135deg,#FFF3C4 0%,#D4AF37 55%,#9A7418 100%);color:#160728;font-size:14px;font-weight:900;cursor:{{ cardPlayCursor }};opacity:{{ cardPlayOpacity }};display:flex;align-items:center;justify-content:center;box-shadow:0 0 16px rgba(212,175,55,.35)">{{ cardGlyph }}</button>
+                <div style="flex:1;display:flex;flex-direction:column;gap:6px;min-width:0">
+                  <div style="height:4px;border-radius:2px;background:rgba(255,255,255,.12);overflow:hidden"><div style="height:100%;width:{{ cardProgress }};background:linear-gradient(90deg,#e8698a,#f6e3ba)"></div></div>
+                  <div style="display:flex;justify-content:space-between;gap:8px;font-size:11px;color:#d7c9b8;font-family:ui-monospace,monospace"><span>{{ cardAudioLabel }}</span><span>{{ cardTime }}</span></div>
+                </div>
+              </div>
+              <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap">
+                <div style="display:flex;flex-direction:column;gap:2px">
+                  <span style="font-size:10px;font-weight:700;letter-spacing:.2em;color:#e2c16b">PRICE</span>
+                  <span style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:30px;letter-spacing:.04em;color:#fff">{{ cardPrice }}</span>
+                </div>
+                <button onClick="{{ cardCollect }}" title="{{ cardCollectTitle }}" style="border:1px solid #f1dfae;background:linear-gradient(135deg,#FFF3C4 0%,#D4AF37 55%,#9A7418 100%) padding-box,linear-gradient(110deg,transparent 35%,rgba(255,255,255,.85) 50%,transparent 65%) border-box;background-size:100% 100%,300% 100%;animation:sheen 7s ease-in-out infinite;color:#160728;font-weight:700;text-transform:uppercase;box-shadow:0 1px 0 rgba(255,255,255,.8) inset,0 -1px 0 rgba(120,80,10,.5) inset,0 8px 20px rgba(0,0,0,.45),0 0 22px rgba(212,175,55,.45);position:relative;overflow:hidden;cursor:pointer;font-family:inherit;height:46px;padding:0 20px;border-radius:12px;font-size:12px;letter-spacing:.14em" style-hover="filter:brightness(1.06)" style-after="content:'';position:absolute;inset:0;background:linear-gradient(105deg,transparent 40%,rgba(255,255,255,.3) 50%,transparent 60%);background-size:250% 100%;animation:shimmerText 4s ease-in-out infinite;pointer-events:none">{{ collectLabel }}</button>
+              </div>
+            </div>
+          </div>
+          <span style="text-align:center;font-size:11px;font-weight:700;letter-spacing:.2em;color:#e2c16b">{{ cardCaption }}</span>
+        </div>
+      </div>
+      <sc-if value="{{ isViewer }}" hint-placeholder-val="{{ false }}">
+        <div style="display:flex;flex-direction:column;align-items:center;gap:18px;text-align:center;padding-top:8px">
+        <div aria-hidden="true" style="display:flex;align-items:center;justify-content:center;gap:14px;width:min(420px,70vw);margin:0 auto">
+          <span style="flex:1;height:1px;background:linear-gradient(90deg,transparent,#c9a24a 40%,#f3e3b6)"></span>
+          <span aria-hidden="true" style="position:relative;width:12px;height:12px;flex:none;transform:rotate(45deg);border-radius:1.5px;background:linear-gradient(135deg,rgba(255,255,255,.9) 0%,rgba(255,255,255,0) 40%),conic-gradient(#ffffff 0 45deg,#bcd3e6 45deg 90deg,#f7fcff 90deg 135deg,#8ea4ba 135deg 180deg,#e9f5ff 180deg 225deg,#a6bccf 225deg 270deg,#ffffff 270deg 315deg,#7d93aa 315deg 360deg);box-shadow:0 0 0 .5px rgba(255,255,255,.95),0 0 6px rgba(200,230,255,.8),0 0 14px rgba(255,255,255,.35)">
+            <span style="position:absolute;inset:3.24px;border-radius:1px;background:linear-gradient(135deg,#ffffff,#dcefff 40%,#9fb6cc 62%,#ffffff);box-shadow:0 0 0 .5px rgba(110,140,170,.55)"></span>
+            <span style="position:absolute;left:50%;top:50%;width:20px;height:20px;margin:-10px 0 0 -10px;transform:rotate(-45deg);background:linear-gradient(#fff,#fff) center/1px 100% no-repeat,linear-gradient(#fff,#fff) center/100% 1px no-repeat;opacity:.9;animation:twinkle 2.8s ease-in-out infinite"></span>
+          </span>
+          <span aria-hidden="true" style="position:relative;display:inline-block;width:46px;height:59px;flex:none;margin:0 10px">
+            <span style="position:absolute;inset:-18px -22px;border-radius:50%;background:radial-gradient(ellipse at 50% 50%,rgba(255,220,140,.6),rgba(212,175,55,.2) 42%,transparent 70%);animation:emberGlow 3.6s ease-in-out infinite"></span>
+            <span style="position:absolute;left:-15px;right:-15px;top:31px;height:15px;margin-top:-7px;border-radius:50%;border:1px dashed rgba(255,236,190,.45);transform:rotate(-14deg)"></span>
+            <span style="position:absolute;inset:0;border-radius:50% 50% 50% 50% / 60% 60% 40% 40%;overflow:hidden;background:radial-gradient(ellipse at 50% 55%,#2a1a04 0%,#140b02 60%,#0a0501 100%);box-shadow:inset 0 0 0 1.5px #f6e3ba,inset 0 0 8px rgba(255,214,120,.95),inset 0 -6px 12px rgba(212,175,55,.55),0 0 14px rgba(255,214,120,.85),0 0 36px rgba(212,175,55,.5)">
+              <span style="position:absolute;left:-30%;top:-14%;width:160%;height:128%;background:url('gold-galaxy.png') center / contain no-repeat;animation:galaxySpinR 16s linear infinite"></span>
+              <span style="position:absolute;left:-10%;top:4%;width:120%;height:92%;background:url('gold-galaxy.png') center / contain no-repeat;opacity:.55;transform:scaleX(-1);animation:galaxySpinR 26s linear infinite"></span>
+              <span style="position:absolute;inset:0;background:radial-gradient(ellipse at 50% 56%,transparent 48%,rgba(90,56,8,.35) 78%,rgba(212,175,55,.55) 100%)"></span>
+              <span style="position:absolute;inset:0;background:radial-gradient(ellipse 26% 16% at 34% 20%,rgba(255,255,255,.75),rgba(255,255,255,0) 72%),linear-gradient(115deg,transparent 30%,rgba(255,250,230,.35) 45%,transparent 58%);background-size:100% 100%,260% 100%;animation:sheen 6s ease-in-out infinite"></span>
+              <span style="position:absolute;left:58%;top:8%;width:12px;height:16px;clip-path:polygon(0 0,18% 0,46% 34%,30% 40%,70% 72%,52% 76%,100% 100%,86% 100%,40% 80%,58% 76%,16% 44%,34% 38%);background:linear-gradient(180deg,#fff,#fff3c4 50%,rgba(255,214,120,.2));filter:drop-shadow(0 0 2px #fff3c4);animation:emberGlow 2.4s ease-in-out infinite"></span>
+            </span>
+            <span style="position:absolute;left:-15px;right:-15px;top:31px;height:15px;margin-top:-7px;border-radius:50%;border:1px dashed transparent;border-bottom-color:rgba(255,244,210,.95);transform:rotate(-14deg)"></span>
+            <span style="position:absolute;right:-14px;top:24px;width:10px;height:10px;background:linear-gradient(#fff,#fff) center/1px 100% no-repeat,linear-gradient(#fff,#fff) center/100% 1px no-repeat;filter:drop-shadow(0 0 2px #fff3c4);animation:twinkle 2.2s ease-in-out infinite"></span>
+          </span>
+          <span aria-hidden="true" style="position:relative;width:12px;height:12px;flex:none;transform:rotate(45deg);border-radius:1.5px;background:linear-gradient(135deg,rgba(255,255,255,.9) 0%,rgba(255,255,255,0) 40%),conic-gradient(#ffffff 0 45deg,#bcd3e6 45deg 90deg,#f7fcff 90deg 135deg,#8ea4ba 135deg 180deg,#e9f5ff 180deg 225deg,#a6bccf 225deg 270deg,#ffffff 270deg 315deg,#7d93aa 315deg 360deg);box-shadow:0 0 0 .5px rgba(255,255,255,.95),0 0 6px rgba(200,230,255,.8),0 0 14px rgba(255,255,255,.35)">
+            <span style="position:absolute;inset:3.24px;border-radius:1px;background:linear-gradient(135deg,#ffffff,#dcefff 40%,#9fb6cc 62%,#ffffff);box-shadow:0 0 0 .5px rgba(110,140,170,.55)"></span>
+            <span style="position:absolute;left:50%;top:50%;width:20px;height:20px;margin:-10px 0 0 -10px;transform:rotate(-45deg);background:linear-gradient(#fff,#fff) center/1px 100% no-repeat,linear-gradient(#fff,#fff) center/100% 1px no-repeat;opacity:.9;animation:twinkle 2.8s ease-in-out infinite"></span>
+          </span>
+          <span style="flex:1;height:1px;background:linear-gradient(90deg,#f3e3b6,#c9a24a 60%,transparent)"></span>
+        </div>
+          <span style="font-size:11px;font-weight:700;letter-spacing:.3em;color:#e2c16b">THE NEXT DOOR · NESTED INSIDE THIS PAGE</span>
+          <div onClick="{{ nextGo }}" role="button" aria-label="{{ nextAria }}" style="position:relative;width:min(250px,62vw);aspect-ratio:13/19;border-radius:50% 50% 14px 14px / 34% 34% 14px 14px;background:url('dragon-door.jpg') center top / cover no-repeat;border:2px solid rgba(212,175,55,.85);cursor:pointer;box-shadow:0 0 0 8px rgba(246,227,186,.1),0 0 60px rgba(255,240,210,.28),0 30px 60px -20px rgba(0,0,0,.9);transition:transform .4s ease,filter .4s ease" style-hover="transform:translateY(-4px);filter:brightness(1.08)">
+            <div style="position:absolute;left:50%;bottom:5%;transform:translateX(-50%);width:84%;padding:10px 12px;border-radius:12px;background:rgba(20,8,36,.74);border:1px solid rgba(255,243,214,.7);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);color:#fff;pointer-events:none">
+              <div style="font-size:9px;letter-spacing:.16em;color:#f5e29c;font-weight:700;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">{{ nextKicker }}</div>
+              <div style="font-family:'Cormorant Garamond',serif;font-size:19px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;margin:3px 0 6px">{{ nextName }}</div>
+              <span style="display:inline-block;font-size:9px;font-weight:700;letter-spacing:.1em;color:#1a072b;background:linear-gradient(135deg,#fff6d6,#d4af37);padding:4px 12px;border-radius:999px">{{ nextAction }}</span>
+            </div>
+          </div>
+          <span style="max-width:480px;font-size:13px;line-height:1.6;color:#d7c9b8;text-wrap:pretty">{{ nextCaption }}</span>
+        </div>
+      </sc-if>
+    </div>
+  </div>
+</sc-if>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;customDoorArtworkUrl&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Custom artwork&quot;},&quot;customButtonBgUrl&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Custom artwork&quot;},&quot;genesisPrice&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;8.88 ETH&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Genesis&quot;},&quot;creatorPct&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:70,&quot;min&quot;:50,&quot;max&quot;:95,&quot;step&quot;:1,&quot;unit&quot;:&quot;%&quot;,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Splits&quot;},&quot;holdersPct&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:15,&quot;min&quot;:0,&quot;max&quot;:30,&quot;step&quot;:1,&quot;unit&quot;:&quot;%&quot;,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Splits&quot;},&quot;contactEmail&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Requests&quot;},&quot;cosmicVoidArtUrl&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Custom artwork&quot;},&quot;doorsContractAddress&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;0x67eb3572b5039b7a32ed48c0e8beb434642e96c3&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Contracts&quot;},&quot;auditUrl&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Transparency&quot;},&quot;sourceVerified&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Transparency&quot;},&quot;hiddenDoors&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Transparency&quot;}}">
+class Component extends DCLogic {
+  state = { chainPages: null, chainNext: null, chainState: '', chainErr: '', chainFee: '', chainFeeEth: '', earnWei: null, earnEth: '', tx: null, txBusy: false, listP: '', ch: 0, ed: 1, price: '0.88', extra: 0, wallet: null, chain: null, walletMsg: '', fTitle: '', fLore: '', fLink: '', playing: false, pub: {}, view: null, flash: '', bName: '', bWallet: '', bTitle: '', bStory: '', bArtUrl: '', bArtData: '', bArtName: '', bAudioUrl: '', bAudioData: '', bAudioSrc: '', bAudioName: '', bAudioPersist: false, bPrice: '', bErr: '', busy: false, drag: false, cPlaying: false, cT: 0, cD: 0 };
+  KEY = 'lxfe-nesting-doors-pages-v2';
+  sess = {};
+  componentDidMount() {
+    { const im = new Image(), done = () => { if (!this.doorReady) { this.doorReady = true; this.setState({ doorReady: true }); } }; im.onload = () => (im.decode ? im.decode().then(done, done) : done()); im.onerror = done; im.src = 'dragon-door.jpg'; if (im.complete) done(); this.drT = setTimeout(done, 2500); }
+    if (this.addr()) this.loadChain();
+    this.poll = setInterval(() => { if (this.addr() && !this.state.txBusy && document.visibilityState === 'visible') this.loadChain(); }, 30000);
+    this.onVis = () => { if (document.visibilityState === 'visible' && this.addr() && !this.state.txBusy) this.loadChain(); };
+    document.addEventListener('visibilitychange', this.onVis);
+    if (/^#collect-genesis-[12]$/.test(location.hash)) {
+      const u = Number(location.hash.slice(-1));
+      this.setState({ ed: u });
+      setTimeout(() => { const el = document.getElementById('collect-genesis-1'); if (el) window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - 24, behavior: 'smooth' }); }, 600);
+    }
+    const eth0 = window.ethereum;
+    if (eth0 && eth0.request) Promise.all([eth0.request({ method: 'eth_accounts' }), eth0.request({ method: 'eth_chainId' })]).then(([a, c]) => { if (a && a[0]) this.setState({ wallet: a[0], chain: c }, () => this.loadChain()); }).catch(() => {});
+    try { const r = localStorage.getItem(this.KEY); if (r) this.setState({ pub: JSON.parse(r) || {} }); } catch (e) {}
+    this.onKey = e => { if (e.key === 'Escape' && this.state.view) this.setView(null); };
+    window.addEventListener('keydown', this.onKey);
+  }
+  ovRef = el => { this.ov = el; };
+  gw(u) { u = (u || '').trim(); if (!u) return ''; if (/^ipfs:\/\//i.test(u)) return 'https://ipfs.io/ipfs/' + u.replace(/^ipfs:\/\/(ipfs\/)?/i, ''); return u; }
+  pagesFor(ed) {
+    if (this.addr()) { const hs = this.hiddenSet(); return (((this.state.chainPages || {})[ed]) || []).map(x => hs.has(ed + ':' + x.n) ? { ...x, hidden: true, title: 'Hidden door', story: 'This door was reported and hidden on LXFE.io after review. It still exists on Ethereum, which no one can alter.', artUrl: '', audioUrl: '' } : x); }
+    const pub = (((this.state.pub || {})[ed]) || []).slice().sort((a, b) => a.n - b.n);
+    return pub;
+  }
+  setView(v, flash) {
+    this.stopCard(); clearTimeout(this.vt);
+    this.setState({ view: v, flash: flash || '', bErr: '' });
+    try { document.documentElement.style.overflow = v ? 'hidden' : ''; } catch (e) {}
+    setTimeout(() => { if (this.ov) this.ov.scrollTop = 0; }, 0);
+  }
+  openPage(n) { this.setView({ kind: 'page', n }); }
+  openExample() { this.setView({ kind: 'example' }); }
+  examplePage() { return { n: 1, title: 'The First Light', creator: 'Example Creator', wallet: '', story: 'When the cosmic egg cracked open, the first traveler stepped through and left this light behind: a 30-second frequency, a story inscribed in gold, and a door that opens into everything that follows. This is an example of how your page will live inside the tunnel.', artUrl: '', audioUrl: 'fire-rose.mp3', price: '0.88', example: true }; }
+  openBuilder() {
+    const s = this.state, l = (s.fLink || '').trim();
+    const isImg = /\.(png|jpe?g|webp|gif)(\?|$)/i.test(l), isAud = /\.(mp3|wav|m4a|ogg)(\?|$)/i.test(l);
+    this.setState({ bTitle: s.bTitle || s.fTitle || '', bStory: s.bStory || s.fLore || '', bArtUrl: s.bArtUrl || (isImg ? l : ''), bAudioUrl: s.bAudioUrl || (isAud ? l : ''), bPrice: s.bPrice || s.price || '0.88', bWallet: s.bWallet || s.wallet || '' });
+    this.setView({ kind: 'build' });
+  }
+  goDoor(n) {
+    const openN = this.openFor(this.state.ed);
+    if (n < 1) { this.setView(null); return; }
+    if (n < openN) this.openPage(n); else if (n === openN) this.openBuilder();
+  }
+  stopCard() { if (this.cardAudio) this.cardAudio.pause(); this.setState({ cPlaying: false, cT: 0 }); }
+  playCard(src) {
+    if (!src) return;
+    if (!this.cardAudio) {
+      const a = this.cardAudio = new Audio();
+      a.addEventListener('timeupdate', () => { if (a.currentTime >= 30) { a.pause(); a.currentTime = 0; this.setState({ cPlaying: false, cT: 0 }); } else this.setState({ cT: a.currentTime, cD: a.duration || 0 }); });
+      a.addEventListener('loadedmetadata', () => this.setState({ cD: a.duration || 0 }));
+      a.addEventListener('ended', () => this.setState({ cPlaying: false, cT: 0 }));
+    }
+    const a = this.cardAudio;
+    if (this.cardSrc !== src) { a.pause(); a.src = src; this.cardSrc = src; this.setState({ cT: 0, cD: 0, cPlaying: false }); }
+    if (this.state.cPlaying && this.cardSrc === src && !a.paused) { a.pause(); this.setState({ cPlaying: false }); return; }
+    if (this.audio && this.state.playing) { this.audio.pause(); this.setState({ playing: false }); }
+    a.play().then(() => this.setState({ cPlaying: true })).catch(() => { if (this.state.view && this.state.view.kind === 'build') this.setState({ bErr: 'That audio could not be played. Use an .mp3 or .wav file, or a direct link to one.' }); });
+  }
+  readArt(file) {
+    if (!file || !/^image\//.test(file.type)) { if (file) this.setState({ bErr: 'Artwork must be an image file (PNG, JPG, WEBP or GIF).' }); return; }
+    const url = URL.createObjectURL(file), img = new Image();
+    img.onload = () => {
+      let d = url;
+      try { const m = 1100, k = Math.min(1, m / Math.max(img.width, img.height)), c = document.createElement('canvas'); c.width = Math.round(img.width * k); c.height = Math.round(img.height * k); c.getContext('2d').drawImage(img, 0, 0, c.width, c.height); d = c.toDataURL(file.type === 'image/png' ? 'image/png' : 'image/jpeg', .88); if (d.length > 2.4e6) d = c.toDataURL('image/jpeg', .82); } catch (e) {}
+      this.setState({ bArtData: d, bArtName: file.name, bErr: '' });
+    };
+    img.onerror = () => this.setState({ bErr: 'That image could not be read.' });
+    img.src = url;
+  }
+  readAudio(file) {
+    if (!file) return;
+    if (!(/^audio\//.test(file.type) || /\.(mp3|wav)$/i.test(file.name))) { this.setState({ bErr: 'Audio must be an .mp3 or .wav file.' }); return; }
+    if (this.state.bAudioSrc && this.state.bAudioSrc.startsWith('blob:')) { try { URL.revokeObjectURL(this.state.bAudioSrc); } catch (e) {} }
+    this.stopCard();
+    this.setState({ bAudioSrc: URL.createObjectURL(file), bAudioName: file.name, bAudioData: '', bAudioPersist: false, bErr: '' });
+    if (file.size <= 1.6e6) { const fr = new FileReader(); fr.onload = () => this.setState({ bAudioData: fr.result, bAudioPersist: true }); fr.readAsDataURL(file); }
+  }
+  save(pub) { localStorage.setItem(this.KEY, JSON.stringify(pub)); }
+  async publish() {
+    const s = this.state, ed = s.ed, n = this.openFor(ed);
+    const name = (s.bName || '').trim(), w = (s.bWallet || '').trim(), title = (s.bTitle || '').trim();
+    const fail = m => this.setState({ bErr: m, busy: false });
+    if (s.busy) return;
+    if (this.addr()) {
+      if (s.txBusy) return;
+      if (s.chainState === 'wrong') return fail('Minting turns on once the SovereignDoors v2 contract address is set.');
+      if (!name) return fail('Add your creator name.');
+      if (!title) return fail('Give your inner NFT a title.');
+      const art = (s.bArtUrl || '').trim(), aud = (s.bAudioUrl || '').trim(), okLink = u => /^ipfs:\/\/\S+$/i.test(u) || /^https:\/\/\S+\/ipfs\/\S+$/i.test(u);
+      if (!okLink(art)) return fail('Artwork must be an IPFS link (ipfs://… or an https gateway link containing /ipfs/) so its provenance is permanent. Pinata offers free IPFS uploads.');
+      if (s.bAudioSrc && !aud) return fail('Add an IPFS link for your audio too, or remove the audio file.');
+      if (aud && !okLink(aud)) return fail('Your audio must be an IPFS link (ipfs://… or an https gateway link containing /ipfs/).');
+      if ((s.bStory || '').length > 600) return fail('Keep your story under 600 characters. Every character is stored on Ethereum and adds to the gas cost.');
+      const pr = parseFloat(s.bPrice || s.price);
+      if (isNaN(pr) || pr < 0) return fail('Enter a sale price in ETH, or 0 to list it later.');
+      if (w && s.wallet && w.toLowerCase() !== s.wallet.toLowerCase()) return fail('Your door mints to the wallet that signs (' + s.wallet.slice(0, 6) + '…' + s.wallet.slice(-4) + '). Clear the wallet field or switch accounts in MetaMask.');
+      const meta = { name: title, description: (s.bStory || '').trim(), image: art, external_url: 'https://lxfe.io', attributes: [{ trait_type: 'Universe', value: 'Genesis App ' + ed + ' of 2' }, { trait_type: 'Creator', value: name }, { trait_type: 'Timeline Root', value: 'Genesis Token #' + ed }] };
+      if (aud) meta.animation_url = aud;
+      const uri = 'data:application/json;base64,' + btoa(unescape(encodeURIComponent(JSON.stringify(meta))));
+      this.setState({ bErr: '' });
+      const F = m => Object.assign(new Error(m), { friendly: true });
+      return this.sendTx('Minting Door #' + n, async (c, E) => {
+        const cur = Number(await c.nextDoor(ed));
+        if (cur !== n) throw F('Door #' + n + ' was just claimed by someone else. Door #' + cur + ' is open now. Your details are still here, so press Mint again to claim it. Nothing was charged.');
+        const fee = await c.claimFee();
+        return c.claimDoor(ed, n, uri, pr > 0 ? E.parseEther(String(pr)) : 0n, { value: fee });
+      }, (hash, rc, E) => {
+        let dn = n;
+        try { const I = new E.Interface(this.ABI); for (const l of (rc && rc.logs) || []) { try { const ev = I.parseLog(l); if (ev && ev.name === 'DoorClaimed') dn = Number(ev.args[1]); } catch (e) {} } } catch (e) {}
+        this.setState({ bName: '', bTitle: '', bStory: '', bArtUrl: '', bArtData: '', bArtName: '', bAudioUrl: '', bAudioData: '', bAudioSrc: '', bAudioName: '', bAudioPersist: false, bPrice: '', fTitle: '', fLore: '', fLink: '' });
+        this.setView({ kind: 'page', n: dn });
+        this.setState({ tx: { kind: 'ok', msg: 'Door #' + dn + ' is minted on Ethereum' + (pr > 0 ? ' and listed at ' + pr + ' ETH' : '') + '. Door #' + (dn + 1) + ' is now open inside it.', hash } });
+      });
+    }
+    if (!name) return fail('Add your creator name.');
+    if (!/^0x[a-fA-F0-9]{40}$/.test(w)) return fail('Add a valid wallet address: 0x followed by 40 characters.');
+    if (!title) return fail('Give your inner NFT a title.');
+    if (!(s.bArtData || s.bArtUrl)) return fail('Add your artwork: upload an image or paste a URL / IPFS link.');
+    const pr = parseFloat(s.bPrice); const price = String(isNaN(pr) || pr < 0 ? 0.88 : Math.round(pr * 10000) / 10000);
+    let sig = null, signer = null;
+    if (window.ethereum && s.wallet) {
+      this.setState({ busy: true, bErr: '' });
+      const msg = 'Fire Rose · The Nesting Doors\nI am publishing my NFT page inside Door #' + n + ' (Genesis App ' + ed + '/2).\nTitle: ' + title + '\nCreator: ' + name + '\nPayout wallet: ' + w + '\nPrice: ' + price + ' ETH\nTime: ' + new Date().toISOString();
+      try { const hex = '0x' + Array.from(new TextEncoder().encode(msg)).map(b => b.toString(16).padStart(2, '0')).join(''); sig = await window.ethereum.request({ method: 'personal_sign', params: [hex, s.wallet] }); signer = s.wallet; }
+      catch (e) { return fail('Signature cancelled. Your page was not published.'); }
+    }
+    const page = { n, title, creator: name, wallet: w, story: (s.bStory || '').trim(), artUrl: (s.bArtUrl || '').trim(), artData: s.bArtData || '', audioUrl: (s.bAudioUrl || '').trim(), audioData: s.bAudioPersist ? (s.bAudioData || '') : '', price, sig, signer, at: Date.now() };
+    if (!page.audioData && s.bAudioSrc) this.sess[ed + '-' + n] = s.bAudioSrc;
+    const pub = { ...(s.pub || {}) }; pub[ed] = ((pub[ed] || []).filter(x => x.n !== n)).concat([page]);
+    let note = '';
+    try { this.save(pub); } catch (e) {
+      if (page.audioData) { this.sess[ed + '-' + n] = page.audioData; page.audioData = ''; }
+      try { this.save(pub); note = ' Your audio file was too large to keep on this device; add an audio link to make it permanent.'; }
+      catch (e2) { page.artData = ''; try { this.save(pub); note = ' Your files were too large to keep on this device; add URL / IPFS links to make them permanent.'; } catch (e3) { note = ' This browser could not save the page, so it will disappear on reload.'; } }
+    }
+    this.setState({ pub, busy: false, bName: '', bTitle: '', bStory: '', bArtUrl: '', bArtData: '', bArtName: '', bAudioUrl: '', bAudioData: '', bAudioSrc: '', bAudioName: '', bAudioPersist: false, bPrice: '', fTitle: '', fLore: '', fLink: '' });
+    this.setView({ kind: 'page', n }, 'Published inside Door #' + n + '. Door #' + (n + 1) + ' is now open inside it.' + note);
+  }
+  unpublish(n) {
+    const ed = this.state.ed, pub = { ...(this.state.pub || {}) };
+    pub[ed] = (pub[ed] || []).filter(x => x.n !== n);
+    try { this.save(pub); } catch (e) {}
+    this.setState({ pub });
+    this.setView(null);
+  }
+  componentDidUpdate(pp) { if ((pp.doorsContractAddress || '') !== (this.props.doorsContractAddress || '')) { this.rpc = null; this.setState({ chainPages: null, chainNext: null, chainState: '', earnWei: null, earnEth: '' }, () => this.loadChain()); } }
+  ABI = [
+    'function VERSION() view returns (string)',
+    'function nextDoor(uint8) view returns (uint64)',
+    'function doorTokenId(uint8,uint64) view returns (uint256)',
+    'function doors(uint256) view returns (uint8 universe, uint64 number, uint256 parentId, address creator)',
+    'function tokenURI(uint256) view returns (string)',
+    'function ownerOf(uint256) view returns (address)',
+    'function listingPrice(uint256) view returns (uint256)',
+    'function claimFee() view returns (uint256)',
+    'function totalOwed() view returns (uint256)', 'function owner() view returns (address)', 'function paused() view returns (bool)', 'function SELLER_BPS() view returns (uint256)', 'function UPSTREAM_BPS() view returns (uint256)', 'function CLAIM_UPSTREAM_BPS() view returns (uint256)', 'function MAX_CLAIM_FEE() view returns (uint256)', 'function getThreshold() view returns (uint256)', 'function getOwners() view returns (address[])',
+    'function pendingWithdrawals(address) view returns (uint256)',
+    'function claimDoor(uint8 universe, uint64 expectedNumber, string uri, uint256 price) payable returns (uint256)',
+    'function buy(uint256 tokenId) payable',
+    'function list(uint256 tokenId, uint256 price)',
+    'function unlist(uint256 tokenId)',
+    'function withdraw()',
+    'event DoorClaimed(uint8 indexed universe, uint64 indexed number, uint256 indexed tokenId, uint256 parentId, address creator, string uri)',
+    'error BadUniverse()', 'error DoorAlreadyClaimed(uint64 openDoor)', 'error EmptyURI()', 'error WrongPayment(uint256 required)', 'error NotTokenOwner()', 'error NotListed()', 'error ZeroPrice()', 'error SelfPurchase()', 'error NothingToWithdraw()', 'error TransferFailed()', 'error ZeroAddress()', 'error FeeTooHigh(uint256 max)', 'error EnforcedPause()', 'error ReentrancyGuardReentrantCall()', 'error ERC721NonexistentToken(uint256 tokenId)',
+  ];
+  RPCS = ['https://eth.drpc.org', 'https://ethereum.publicnode.com', 'https://ethereum-rpc.publicnode.com', 'https://rpc.flashbots.net', 'https://eth.merkle.io', 'https://eth.llamarpc.com'];
+  addr() { const a = (this.props.doorsContractAddress || '').trim(); return /^0x[a-fA-F0-9]{40}$/.test(a) ? a : ''; }
+  openFor(ed) { if (this.addr()) return (this.state.chainNext && this.state.chainNext[ed]) || this.pagesFor(ed).length + 1; return this.pagesFor(ed).length + 1; }
+  ethersLib() { return this.ethP || (this.ethP = import('https://cdn.jsdelivr.net/npm/ethers@6.13.4/+esm')); }
+  async reader() {
+    const E = await this.ethersLib();
+    if (window.ethereum && this.state.chain === '0x1') return new E.BrowserProvider(window.ethereum);
+    if (this.rpc) return this.rpc;
+    const net = E.Network.from(1);
+    for (const u of this.RPCS) {
+      try { const p = new E.JsonRpcProvider(u, net, { staticNetwork: net, batchMaxCount: 1 }); await Promise.race([p.getBlockNumber(), new Promise((_, j) => setTimeout(() => j(new Error('timeout')), 6000))]); return (this.rpc = p); } catch (e) {}
+    }
+    throw new Error('no Ethereum connection available');
+  }
+  async readMeta(uri) {
+    try {
+      if (uri.startsWith('data:application/json;base64,')) return JSON.parse(decodeURIComponent(escape(atob(uri.slice(29)))));
+      if (uri.startsWith('data:application/json,')) return JSON.parse(decodeURIComponent(uri.slice(22)));
+      const r = await Promise.race([fetch(this.gw(uri)), new Promise((_, j) => setTimeout(() => j(new Error('timeout')), 8000))]);
+      return await r.json();
+    } catch (e) { return {}; }
+  }
+  async loadChain() {
+    const a = this.addr(); if (!a) return;
+    const seq = (this.loadSeq = (this.loadSeq || 0) + 1);
+    if (!this.state.chainPages) this.setState({ chainState: 'loading' });
+    try {
+      const E = await this.ethersLib(), p = await this.reader(), c = new E.Contract(a, this.ABI, p);
+      const ver = await c.VERSION().catch(e => (e && (e.code === 'CALL_EXCEPTION' || e.code === 'BAD_DATA')) ? '' : Promise.reject(e));
+      if (seq !== this.loadSeq) return;
+      if (ver !== 'SovereignDoors-2') { this.setState({ chainState: 'wrong', chainPages: { 1: [], 2: [] }, chainNext: null, chainErr: '', earnWei: null, earnEth: '' }); return; }
+      const fee = await c.claimFee();
+      const opt = pr => Promise.resolve(pr).catch(() => null);
+      const blk = await opt(p.getBlockNumber());
+      const at = blk == null ? {} : { blockTag: blk };
+      const [aOwed, aBal] = await Promise.all([opt(c.totalOwed(at)), opt(blk == null ? p.getBalance(a) : p.getBalance(a, blk))]);
+      const aOwner = await opt(c.owner()), aPaused = await opt(c.paused()), aSB = await opt(c.SELLER_BPS()), aUB = await opt(c.UPSTREAM_BPS()), aCB = await opt(c.CLAIM_UPSTREAM_BPS()), aMax = await opt(c.MAX_CLAIM_FEE());
+      let aCode = null, aSafe = null;
+      if (aOwner && !/^0x0{40}$/i.test(aOwner)) aCode = await opt(p.getCode(aOwner));
+      const aDeleg = !!(aCode && /^0xef0100[0-9a-f]{40}$/i.test(aCode));
+      const aIsC = !!(aCode && aCode !== '0x' && !aDeleg);
+      if (aIsC) { const sc = new E.Contract(aOwner, this.ABI, p); const th = await opt(sc.getThreshold()); const ow = th == null ? null : await opt(sc.getOwners()); if (th != null && ow) aSafe = { th: Number(th), n: ow.length }; }
+      const audit = { owed: aOwed == null ? null : aOwed.toString(), bal: aBal == null ? null : aBal.toString(), owner: aOwner || null, paused: aPaused, block: blk == null ? null : Number(blk), sb: aSB == null ? 70 : Number(aSB) / 100, ub: aUB == null ? 15 : Number(aUB) / 100, cb: aCB == null ? 85 : Number(aCB) / 100, max: aMax == null ? '8.88' : E.formatEther(aMax), isContract: aIsC, delegated: aDeleg, safe: aSafe, at: Date.now() };
+      const out = {}, next = {}, gen = {};
+      for (const u of [1, 2]) {
+        const [go, gl] = await Promise.all([c.ownerOf(u), c.listingPrice(u)]);
+        gen[u] = { owner: go, priceWei: gl.toString(), price: gl > 0n ? E.formatEther(gl) : '' };
+        next[u] = Number(await c.nextDoor(u));
+        const from = Math.max(1, next[u] - 300);
+        out[u] = await Promise.all(Array.from({ length: next[u] - from }, (_, k) => from + k).map(async n => {
+          const id = await c.doorTokenId(u, n);
+          const [uri, owner, lp, d] = await Promise.all([c.tokenURI(id).catch(() => ''), c.ownerOf(id).catch(() => ''), c.listingPrice(id).catch(() => 0n), c.doors(id).catch(() => null)]);
+          const m = uri ? await this.readMeta(uri) : {};
+          const at = Array.isArray(m.attributes) ? m.attributes : [];
+          const cr = (at.find(x => x && x.trait_type === 'Creator') || {}).value;
+          const ca = d ? d.creator : '';
+          return { n, tokenId: id.toString(), title: m.name || 'Door #' + n, creator: cr || (ca ? ca.slice(0, 6) + '…' + ca.slice(-4) : 'Unknown creator'), wallet: ca, owner, story: m.description || '', artUrl: m.image || '', audioUrl: m.animation_url || '', priceWei: lp.toString(), price: lp > 0n ? E.formatEther(lp) : '', listed: lp > 0n, onchain: true };
+        }));
+      }
+      let earn = null;
+      if (this.state.wallet) earn = await c.pendingWithdrawals(this.state.wallet).catch(() => null);
+      if (seq !== this.loadSeq) return;
+      this.setState({ chainPages: out, chainNext: next, chainGen: gen, chainFee: fee.toString(), chainFeeEth: E.formatEther(fee), audit, chainState: 'ok', chainErr: '', earnWei: earn === null ? null : earn.toString(), earnEth: earn === null ? '' : E.formatEther(earn) });
+    } catch (e) {
+      if (seq !== this.loadSeq) return;
+      this.setState({ chainState: 'err', chainErr: (e && (e.shortMessage || e.message)) || 'unknown error' });
+    }
+  }
+  async signer() {
+    const eth = window.ethereum;
+    const F = m => Object.assign(new Error(m), { friendly: true });
+    if (!eth) throw F('Open LXFE.io inside the MetaMask app (or install the MetaMask extension) to continue.');
+    if (!this.state.wallet) await this.connectWallet();
+    if (!this.state.wallet) throw F('Connect your wallet to continue.');
+    const cid = await eth.request({ method: 'eth_chainId' });
+    if (cid !== '0x1') { try { await eth.request({ method: 'wallet_switchEthereumChain', params: [{ chainId: '0x1' }] }); } catch (e) { throw F('Switch MetaMask to Ethereum Mainnet to continue.'); } }
+    const E = await this.ethersLib();
+    return new E.BrowserProvider(eth).getSigner();
+  }
+  txErr(e) {
+    if (e && e.friendly) return e.message;
+    if (e && (e.code === 'ACTION_REJECTED' || e.code === 4001 || (e.info && e.info.error && e.info.error.code === 4001))) return 'You cancelled in MetaMask. Nothing was charged.';
+    if (e && e.code === 'INSUFFICIENT_FUNDS') return 'Not enough ETH in this wallet to cover the price and network gas.';
+    const r = e && e.revert && e.revert.name;
+    const map = { DoorAlreadyClaimed: 'Someone claimed this door moments before you. The next door is open now. Nothing was charged.', WrongPayment: 'The price changed. Refresh and try again. Nothing was charged.', NotListed: 'This door is no longer listed for sale.', SelfPurchase: 'You already own this door.', NotTokenOwner: 'Only the owner of this door can do that.', NothingToWithdraw: 'There is nothing to withdraw yet.', EnforcedPause: 'The contract is paused right now. Please try again later.', EmptyURI: 'Your page details were empty.', ZeroPrice: 'Enter a price above 0 ETH.', TransferFailed: 'Your wallet could not receive the ETH. Nothing was lost: your balance is still there.' };
+    if (r && map[r]) return map[r];
+    return 'Transaction failed: ' + String((e && (e.shortMessage || e.reason || e.message)) || 'unknown error').slice(0, 180);
+  }
+  async sendTx(label, fn, done) {
+    if (this.state.txBusy) return;
+    this.setState({ txBusy: true, tx: { kind: 'pending', msg: label + ' · confirm in MetaMask…', hash: '' } });
+    let hash = '';
+    try {
+      const sg = await this.signer();
+      const E = await this.ethersLib();
+      const c = new E.Contract(this.addr(), this.ABI, sg);
+      const tx = await fn(c, E);
+      hash = tx.hash;
+      this.setState({ tx: { kind: 'pending', msg: label + ' · waiting for Ethereum to confirm (usually under a minute)…', hash } });
+      const rc = await tx.wait();
+      await this.loadChain();
+      this.setState({ txBusy: false });
+      done && done(hash, rc, E);
+    } catch (e) {
+      const msg = this.txErr(e);
+      this.setState({ txBusy: false, tx: { kind: 'err', msg, hash }, bErr: this.state.view && this.state.view.kind === 'build' ? msg : this.state.bErr });
+      this.loadChain();
+    }
+  }
+  collectDoor(pg) {
+    const F = m => Object.assign(new Error(m), { friendly: true });
+    const par = pg.n <= 1 ? 'Genesis App ' + this.state.ed + '/2' : 'Door #' + (pg.n - 1);
+    return this.sendTx('Collecting Door #' + pg.n, async c => {
+      const lp = await c.listingPrice(pg.tokenId);
+      if (lp === 0n) throw F('This door is no longer listed for sale. Nothing was charged.');
+      if (lp.toString() !== pg.priceWei) throw F('The owner just changed the price. The page has been refreshed; check the new price and try again. Nothing was charged.');
+      return c.buy(pg.tokenId, { value: lp });
+    }, hash => this.setState({ tx: { kind: 'ok', msg: 'You collected Door #' + pg.n + ' · “' + pg.title + '”. 70% was credited to the seller, 15% to the owner of ' + par + ' and 15% to the Founder Vault.', hash } }));
+  }
+  collectGenesis(u) {
+    const F = m => Object.assign(new Error(m), { friendly: true });
+    const g = (this.state.chainGen || {})[u];
+    if (!g) return;
+    return this.sendTx('Collecting Genesis App ' + u + '/2', async c => {
+      const lp = await c.listingPrice(u);
+      if (lp === 0n) throw F('Genesis App ' + u + '/2 is not listed for sale right now. Nothing was charged.');
+      if (lp.toString() !== g.priceWei) throw F('The price just changed. The page has been refreshed; check the new price and try again. Nothing was charged.');
+      return c.buy(u, { value: lp });
+    }, hash => this.setState({ tx: { kind: 'ok', msg: 'You collected Fire Rose · Genesis App ' + u + '/2. You now hold the root of this universe and receive the lineage royalty of Door #1.', hash } }));
+  }
+  listDoor(pg) {
+    const val = parseFloat(this.state.listP);
+    if (!(val > 0)) { this.setState({ tx: { kind: 'err', msg: 'Enter a price above 0 ETH.', hash: '' } }); return; }
+    return this.sendTx((pg.listed ? 'Re-pricing' : 'Listing') + ' Door #' + pg.n, (c, E) => c.list(pg.tokenId, E.parseEther(String(val))), hash => this.setState({ listP: '', tx: { kind: 'ok', msg: 'Door #' + pg.n + ' is listed at ' + val + ' ETH.', hash } }));
+  }
+  unlistDoor(pg) { return this.sendTx('Unlisting Door #' + pg.n, c => c.unlist(pg.tokenId), hash => this.setState({ tx: { kind: 'ok', msg: 'Door #' + pg.n + ' is no longer for sale.', hash } })); }
+  withdrawEarnings() { const amt = this.state.earnEth; return this.sendTx('Withdrawing ' + amt + ' ETH', c => c.withdraw(), hash => this.setState({ tx: { kind: 'ok', msg: amt + ' ETH was sent to your wallet.', hash } })); }
+  feeText(par) {
+    const s = this.state, live = s.chainState === 'ok' && s.chainFee !== '';
+    if (live && s.chainFee === '0') return { btn: 'GAS ONLY', note: 'only network gas' };
+    const eth = live ? s.chainFeeEth : '0.88';
+    return { btn: eth + ' ETH', note: eth + ' ETH plus gas' + (live ? '' : ' (contract default)') + ': 85% to the owner of ' + par + ', the door it lives inside, and 15% to the Founder Vault' };
+  }
+  chainVals(ed, openN, wallet) {
+    const s = this.state, A = this.addr(), t = s.tx;
+    const col = !t ? { b: 'transparent', bg: 'transparent' } : t.kind === 'ok' ? { b: '#7fd4b4', bg: 'rgba(20,60,50,.55)' } : t.kind === 'err' ? { b: '#e8698a', bg: 'rgba(80,20,40,.6)' } : { b: '#d4af37', bg: 'rgba(60,40,10,.55)' };
+    const earnPos = !!(s.earnWei && BigInt(s.earnWei) > 0n), canW = earnPos && !s.txBusy;
+    const g = (s.chainGen || {})[ed];
+    const gOwner = g && g.owner ? (g.owner.toLowerCase() === '0x2636943c3be407a142d7ab3084f54aa7ae03b934' ? 'the Founder Vault' : g.owner.slice(0, 6) + '…' + g.owner.slice(-4)) : '';
+    const par = openN <= 1 ? 'Genesis App ' + ed + '/2' : 'Door #' + (openN - 1);
+    const cost = this.feeText(par).note;
+    return {
+      ...(() => {
+        const live = A && s.chainState === 'ok' && g;
+        const mineG = !!(live && wallet && g.owner && g.owner.toLowerCase() === wallet.toLowerCase());
+        const listed = !!(live && g.price);
+        const expWei = (() => { const m = String(this.props.genesisPrice ?? '8.88 ETH').match(/[\d.]+/); if (!m) return 8880000000000000000n; const [a, b = ''] = m[0].split('.'); return BigInt(a || '0') * 10n ** 18n + BigInt((b + '0'.repeat(18)).slice(0, 18)); })();
+        const under = listed && g.priceWei && BigInt(g.priceWei) < expWei;
+        const can = listed && !under && !mineG && !s.txBusy, canList = mineG && !s.txBusy && (!listed || under), gp = this.props.genesisPrice ?? '8.88 ETH';
+        return {
+          genKicker: 'BUY THE WHOLE FIRE ROSE · GENESIS APP ' + ed + ' OF 2',
+          genPrice: !live || under ? (this.props.genesisPrice ?? '8.88 ETH') : listed ? g.price + ' ETH' : 'Not listed yet',
+          genNote: under ? (mineG ? 'Your on-chain listing is ' + g.price + ' ETH, below the Genesis price. Purchases here are paused. Press the button to re-list at ' + gp + '.' : 'The Genesis price is being corrected on-chain. Collecting opens again shortly.') : !A ? '' : s.chainState === 'wrong' ? 'Collecting opens with contract v2.' : !live ? 'Reading the contract…' : mineG ? 'You hold this Genesis App. List it from Etherscan → Write Contract → list(' + ed + ', priceInWei).' : 'The entire app and its universe, held by ' + gOwner + '. Not a door: claiming Door #' + openN + ' costs ' + this.feeText(openN <= 1 ? 'Genesis App ' + ed + '/2' : 'Door #' + (openN - 1)).btn + ' below.',
+          genLabel: s.txBusy ? 'CONFIRM IN METAMASK…' : mineG ? (under ? 'FIX PRICE → ' + gp.toUpperCase() : !listed ? 'LIST FOR SALE AT ' + gp.toUpperCase() : 'YOU HOLD THIS · LISTED') : under ? 'PRICE BEING CORRECTED' : listed ? 'COLLECT FIRE ROSE · ' + g.price + ' ETH' : 'NOT FOR SALE YET',
+          genBuy: () => { if (canList) this.sendTx('Listing Genesis ' + ed + '/2 at ' + gp, c => c.list(ed, expWei), hash => this.setState({ tx: { kind: 'ok', msg: 'Genesis ' + ed + '/2 is now listed at ' + gp + '.', hash } })); else if (can) this.collectGenesis(ed); }, genOpacity: can || canList ? 1 : .55, genCursor: can || canList ? 'pointer' : 'not-allowed',
+        };
+      })(),
+      txOn: !!t, txMsg: t ? t.msg : '', txHref: t && t.hash ? 'https://etherscan.io/tx/' + t.hash : '', txBorder: col.b, txBg: col.bg, txClose: () => this.setState({ tx: null }),
+      earnOn: !!(A && wallet && s.chainState === 'ok'), earnAmt: s.earnEth ? s.earnEth + ' ETH' : '…', withdraw: () => { if (canW) this.withdrawEarnings(); }, earnOpacity: canW ? 1 : .5, earnCursor: canW ? 'pointer' : 'not-allowed',
+      withdrawLabel: s.txBusy ? 'CONFIRM IN METAMASK…' : earnPos ? 'WITHDRAW TO MY WALLET' : 'NOTHING TO WITHDRAW YET',
+      chainNote: !A ? '' : s.chainState === 'ok' ? 'Live on Ethereum Mainnet · Genesis App ' + ed + '/2 is root Token #' + ed + (gOwner ? ', held by ' + gOwner : '') + (g && g.price ? ', listed at ' + g.price + ' ETH' : '') + ' · Door #' + openN + ' is open. Claiming it costs ' + cost + '. Every share is credited on-chain and collected with the Withdraw button.' : s.chainState === 'wrong' ? 'The contract address in settings is not SovereignDoors v2. Minting, collecting and withdrawals turn on once the v2 address is set.' : s.chainState === 'err' ? 'Could not read the Nesting Doors contract right now (' + String(s.chainErr).slice(0, 120) + '). Connect your wallet or refresh to try again.' : 'Reading the Nesting Doors contract on Ethereum…',
+    };
+  }
+  hiddenSet() {
+    const out = new Set();
+    String(this.props.hiddenDoors || '').split(/[\s,;]+/).forEach(t => { const m = t.match(/^([12]):(\d+)$/); if (m) out.add(m[1] + ':' + Number(m[2])); });
+    return out;
+  }
+  reportHref(ed, pg) {
+    const to = (this.props.contactEmail || '').trim();
+    const sub = 'Report: Door #' + (pg ? pg.n : '') + ' · Genesis App ' + ed + '/2' + (pg && pg.tokenId ? ' · Token #' + pg.tokenId : '');
+    const body = 'Hi Maya,\n\nI would like to report ' + (pg ? 'Door #' + pg.n + ' in Genesis App ' + ed + '/2' : 'a door (please name the universe and door number)') + ' for review.\n\nReason:\n\nThank you.';
+    return 'mailto:' + to + '?subject=' + encodeURIComponent(sub) + '&body=' + encodeURIComponent(body);
+  }
+  auditVals(ed, openN) {
+    const s = this.state, A = this.addr(), au = s.chainState === 'ok' ? s.audit : null, VAULT = '0x2636943c3be407a142d7ab3084f54aa7ae03b934';
+    const sw = x => x ? x.slice(0, 6) + '…' + x.slice(-4) : '';
+    const isV = x => !!x && x.toLowerCase() === VAULT;
+    const who = x => !x ? 'an unknown holder' : isV(x) ? 'the Founder Vault (' + sw(x) + ')' : sw(x);
+    const grp = n => n.replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+    const eth = w => { if (w == null) return '—'; const b = BigInt(w), W = 10n ** 18n; return (b / W).toString() + '.' + (b % W).toString().padStart(18, '0').slice(0, 6) + ' ETH'; };
+    const wei = w => w == null ? '' : 'EXACT · ' + grp(String(w)) + ' WEI';
+    let status = 'READING THE LEDGER…', sc = '#f1dfae', sb = 'rgba(212,175,55,.5)', tilt = 'rotate(0deg)', dot = '#d4af37';
+    if (!A) status = 'NO CONTRACT ADDRESS SET';
+    else if (s.chainState === 'wrong') status = 'WAITING FOR THE SOVEREIGNDOORS V2 ADDRESS';
+    else if (s.chainState === 'err') { status = 'LEDGER UNAVAILABLE · RE-READ IN A MOMENT'; dot = '#e8698a'; }
+    if (au && au.bal != null && au.owed != null) {
+      const b = BigInt(au.bal), o = BigInt(au.owed);
+      dot = '#7fd4b4';
+      if (b === o) { status = 'IN PERFECT BALANCE · 0 WEI MISSING'; sc = '#c9f5e4'; sb = '#7fd4b4'; }
+      else if (b > o) { status = 'FULLY COVERED · 0 WEI MISSING · ' + eth((b - o).toString()) + ' UNASSIGNED'; sc = '#c9f5e4'; sb = '#7fd4b4'; tilt = 'rotate(-4deg)'; }
+      else { status = 'SHORTFALL · ' + grp((o - b).toString()) + ' WEI'; sc = '#ffd1dc'; sb = '#e8698a'; tilt = 'rotate(6deg)'; dot = '#e8698a'; }
+    }
+    const tiltInv = tilt === 'rotate(-4deg)' ? 'rotate(4deg)' : tilt === 'rotate(6deg)' ? 'rotate(-6deg)' : 'rotate(0deg)';
+    const t = au ? new Date(au.at) : null;
+    const stamp = au && au.block != null ? 'LIVE · BLOCK ' + grp(String(au.block)) + ' · READ ' + t.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) : status;
+    const fee = s.chainFeeEth || '—', max = au ? au.max : '8.88';
+    const zero = au && au.owner && /^0x0{40}$/i.test(au.owner);
+    const aCan = zero ? [{ t: 'Nothing. Admin powers were permanently surrendered on-chain.' }] : [
+      { t: 'Pause new claims, listings and sales in an emergency. Withdrawals keep working. Right now: ' + (au && au.paused === true ? 'paused.' : au && au.paused === false ? 'not paused.' : '—') },
+      { t: 'Set the claim fee between 0 and ' + max + ' ETH. Right now: ' + fee + ' ETH.' },
+      { t: 'Update the collection description shown on marketplaces.' },
+    ];
+    const dl = au && au.delegated ? ' (with a MetaMask smart-account delegation)' : '';
+    const key = !au || !au.owner ? 'Reading…' : zero ? 'Renounced. No one holds admin powers, permanently.' : au.safe ? 'Held by a Safe multisig ' + sw(au.owner) + '. Every change needs ' + au.safe.th + ' of ' + au.safe.n + ' signatures.' : isV(au.owner) ? 'Held by the Founder Vault wallet ' + sw(au.owner) + ', a single key' + dl + '.' : au.isContract ? 'Held by the smart-contract wallet ' + sw(au.owner) + '.' : 'Held by the wallet ' + sw(au.owner) + ', a single key' + dl + '.';
+    const cp = au ? au.cb : 85, spS = au ? au.sb : 70, spU = au ? au.ub : 15, vP = Math.round((100 - spS - spU) * 100) / 100;
+    const gen = s.chainGen || {}, nx = s.chainNext || {};
+    const rows = [1, 2].map(u => {
+      const g = gen[u], n = nx[u];
+      if (!g || !n) return { t: 'GENESIS ' + u + '/2 · TOKEN #' + u, holder: 'Reading…', open: '', sale: '' };
+      const pages = ((s.chainPages || {})[u]) || [];
+      const par = n === 1 ? g.owner : ((pages.find(x => x.n === n - 1) || {}).owner || '');
+      const parName = n === 1 ? 'Genesis ' + u + '/2' : 'Door #' + (n - 1);
+      return { t: 'GENESIS ' + u + '/2 · TOKEN #' + u, holder: 'Held by ' + who(g.owner), open: 'Door #' + n + ' is open. Its claim fee credits ' + cp + '% to ' + who(par) + ', holder of ' + parName + ', and ' + (100 - cp) + '% to the Founder Vault.', sale: 'Every sale of Door #1 credits ' + spU + '% to the holder of Genesis ' + u + '/2.' };
+    });
+    const bothV = gen[1] && gen[2] && isV(gen[1].owner) && isV(gen[2].owner);
+    const lead = !gen[1] ? 'Reading who holds each Genesis token…' : bothV ? 'The Founder Treasury Vault (0x2636…b934) holds both Genesis tokens, so today it receives the Door #1 lineage splits in each universe: ' + cp + '% of the claim fee and ' + spU + '% of every sale as Genesis holder, plus the ' + vP + '% Founder Vault royalty.' : 'Genesis 1/2 is held by ' + who(gen[1].owner) + ' and Genesis 2/2 by ' + who(gen[2] && gen[2].owner) + '. Each Genesis holder receives the Door #1 lineage splits in their universe.';
+    const hs = this.hiddenSet();
+    const audit = (this.props.auditUrl || '').trim();
+    const link = (k, sub, v2, href, color) => ({ k, sub, v: v2, href: href || '', noHref: !href, color: color || '#f6e3ba' });
+    const aLinks = [
+      link('Contract source code', A ? 'SovereignDoors v2 · ' + A : 'Not set', this.props.sourceVerified ? 'VERIFIED ✓ ↗' : 'OPEN ON ETHERSCAN ↗', A ? 'https://etherscan.io/address/' + A + '#code' : '', this.props.sourceVerified ? '#9fd9c2' : ''),
+      link('Independent security audit', audit ? audit.replace(/^https?:\/\//, '') : 'An external review of the contract code', audit ? 'READ THE AUDIT ↗' : 'NOT YET PUBLISHED', audit, audit ? '' : '#c9bcd2'),
+      link('Founder Treasury Vault', '0x2636943c3be407a142d7ab3084f54aa7ae03b934', 'VIEW ON ETHERSCAN ↗', 'https://etherscan.io/address/0x2636943c3be407a142d7ab3084f54aa7ae03b934'),
+      link('NFT standard', 'ERC-721 · each door is a standard, independently owned token', 'EIP-721 ↗', 'https://eips.ethereum.org/EIPS/eip-721'),
+      link('Metadata & media storage', 'IPFS · content-addressed, so a file cannot change without its link changing', 'ABOUT IPFS ↗', 'https://docs.ipfs.tech/concepts/what-is-ipfs/'),
+      link('v1 contract · retired', '0xf5e8517566a0ae01ea35c8c5b483a574de13d601 · do not buy or claim there', 'RETIRED ↗', 'https://etherscan.io/address/0xf5e8517566a0ae01ea35c8c5b483a574de13d601', '#ffb3c6'),
+    ];
+    return {
+      aDot: dot, aStamp: stamp, aRefresh: () => this.loadChain(),
+      aBal: au ? eth(au.bal) : '—', aBalWei: au ? wei(au.bal) : '', aOwed: au ? eth(au.owed) : '—', aOwedWei: au ? wei(au.owed) : '',
+      aTiltInv: tiltInv, aStatus: status, aStatusColor: sc, aStatusBorder: sb, aTilt: tilt,
+      aCan, aKey: key, aKeyHref: au && au.owner && !zero ? 'https://etherscan.io/address/' + au.owner : '',
+      aLead: lead, aLineage: rows, aLinks,
+      aHiddenNote: hs.size ? hs.size + (hs.size === 1 ? ' door is' : ' doors are') + ' hidden after review.' : 'No doors have been hidden.',
+      aReportHref: this.reportHref(ed, null),
+    };
+  }
+  atmRef = el => { if (el && !this.atmEl) { this.atmEl = el; import('./atmosphere.js').then(m => { this.stopAtm = m.startAtmosphere(el, { shootingStars: true, count: 35, embers: true }); }).catch(() => {}); } };
+  componentWillUnmount() { clearTimeout(this.drT); clearInterval(this.poll); document.removeEventListener('visibilitychange', this.onVis); this.stopAtm && this.stopAtm(); this.audio && this.audio.pause(); this.cardAudio && this.cardAudio.pause(); window.removeEventListener('keydown', this.onKey); clearTimeout(this.vt); try { document.documentElement.style.overflow = ''; } catch (e) {} }
+  async connectWallet() {
+    const eth = window.ethereum;
+    if (!eth) { const m = /iPhone|iPad|Android/i.test(navigator.userAgent); window.open(m ? 'https://metamask.app.link/dapp/' + location.host + location.pathname : 'https://metamask.io/download/', '_blank', 'noopener'); return; }
+    try {
+      const acc = await eth.request({ method: 'eth_requestAccounts' });
+      const chain = await eth.request({ method: 'eth_chainId' });
+      this.setState({ wallet: acc[0] || null, chain, walletMsg: chain === '0x1' ? '' : 'Switch MetaMask to Ethereum Mainnet before claiming.' }, () => this.loadChain());
+      if (!this.bound) { this.bound = true; eth.on && eth.on('accountsChanged', a => this.setState({ wallet: a[0] || null, earnWei: null, earnEth: '' }, () => this.loadChain())); eth.on && eth.on('chainChanged', c => this.setState({ chain: c, walletMsg: c === '0x1' ? '' : 'Switch MetaMask to Ethereum Mainnet before claiming.' }, () => this.loadChain())); }
+    } catch (e) { this.setState({ walletMsg: 'Wallet connection was cancelled.' }); }
+  }
+  toggleFreq() {
+    if (!this.audio) { this.audio = new Audio('fire-rose.mp3'); this.audio.addEventListener('ended', () => this.setState({ playing: false })); }
+    if (this.state.playing) { this.audio.pause(); this.setState({ playing: false }); }
+    else this.audio.play().then(() => this.setState({ playing: true })).catch(() => {});
+  }
+  overlayVals({ ed, pages, openN, parent, shortW, fx, url, you, holders, vault, email, wallet }) {
+    const s = this.state, view = s.view;
+    const isBuilder = !!view && view.kind === 'build';
+    const isExample = !!view && view.kind === 'example';
+    const pg = isExample ? this.examplePage() : view && view.kind === 'page' ? pages.find(x => x.n === view.n) : null;
+    const isViewer = !!pg;
+    const firstLight = !!((pg && (isExample || pg.n === 1)) || (isBuilder && openN === 1));
+    const fmt = t => { t = Math.max(0, Math.floor(t || 0)); return Math.floor(t / 60) + ':' + String(t % 60).padStart(2, '0'); };
+    const bp = (() => { const v = parseFloat(s.bPrice); return isNaN(v) || v < 0 ? 0.88 : v; })();
+    let art = '', audio = '', cTitle = '', cBy = '', cPrice = '', cN = openN, collect = () => {}, collectTitle = 'Preview only', collectLabel = isExample ? 'EXAMPLE ONLY' : 'COLLECT THIS DOOR';
+    if (isBuilder) { art = s.bArtData || this.gw(s.bArtUrl); audio = s.bAudioSrc || this.gw(s.bAudioUrl); cTitle = s.bTitle || 'Your Inner NFT Title'; cBy = 'by ' + (s.bName || 'Your Name'); cPrice = fx(bp) + ' ETH'; }
+    if (pg) {
+      art = pg.artData || this.gw(pg.artUrl); audio = pg.audioData || this.gw(pg.audioUrl) || this.sess[ed + '-' + pg.n] || ''; cTitle = pg.title; cBy = 'by ' + pg.creator; cPrice = pg.price + ' ETH'; cN = pg.n; collectTitle = isExample ? 'Example only' : 'Send a collect request';
+      const sub = encodeURIComponent('Collect request: Door #' + pg.n + ' · ' + pg.title + ' · Genesis App ' + ed + '/2');
+      const body = encodeURIComponent('Hi Maya,\n\nI would like to collect Door #' + pg.n + ' "' + pg.title + '" by ' + pg.creator + ' (' + pg.price + ' ETH) inside Genesis App ' + ed + '/2.\n\nMy wallet: ' + (wallet || '(not connected)') + '\n\nThank you!');
+      const href = 'mailto:' + email + '?subject=' + sub + '&body=' + body;
+      if (pg.onchain) {
+        const own = !!(s.wallet && pg.owner && pg.owner.toLowerCase() === s.wallet.toLowerCase());
+        collect = own || !pg.listed || s.txBusy ? () => {} : () => this.collectDoor(pg);
+        collectLabel = s.txBusy ? 'CONFIRM IN METAMASK…' : own ? 'YOU OWN THIS DOOR' : pg.listed ? 'COLLECT · ' + pg.price + ' ETH' : 'NOT LISTED FOR SALE';
+        collectTitle = pg.listed ? 'Buy through the contract: the 70 / 15 / 15 split is paid automatically' : 'Not listed';
+      } else collect = isExample ? () => {} : () => { window.location.href = href; };
+    }
+    if (pg && pg.hidden) { collect = () => {}; collectLabel = 'HIDDEN AFTER REVIEW'; collectTitle = 'Hidden on LXFE.io after review'; }
+    if (pg && pg.onchain) cPrice = pg.listed ? pg.price + ' ETH' : 'Not listed';
+    const crumbs = [];
+    const curN = isBuilder ? openN : pg && !isExample ? pg.n : 0;
+    const on = 'linear-gradient(135deg,#FFF3C4 0%,#D4AF37 55%,#9A7418 100%)';
+    crumbs.push({ label: 'GENESIS ' + ed + '/2', go: () => this.setView(null), bg: 'rgba(22,10,42,.7)', color: '#f1dfae', border: 'rgba(212,175,55,.45)' });
+    const from = Math.max(1, curN - 3);
+    if (from > 1) crumbs.push({ label: '…', go: () => this.setView(null), bg: 'transparent', color: '#d7c9b8', border: 'transparent' });
+    for (let n = from; n <= curN; n++) { const cur = n === curN; crumbs.push({ label: '› DOOR #' + n + (cur && isBuilder ? ' · YOURS' : ''), go: () => this.goDoor(n), bg: cur ? on : 'rgba(22,10,42,.7)', color: cur ? '#160728' : '#f1dfae', border: cur ? '#f1dfae' : 'rgba(212,175,55,.45)' }); }
+    if (isExample) crumbs.push({ label: '› EXAMPLE PAGE', go: () => {}, bg: on, color: '#160728', border: '#f1dfae' });
+    const nextN = isExample ? openN : pg ? pg.n + 1 : 0, nextPg = pages.find(x => x.n === nextN), nextOpen = nextN === openN;
+    const prog = audio ? Math.min(100, (Math.min(s.cT, 30) / Math.min(s.cD || 30, 30)) * 100) : 0;
+    const upN = openN, eachB = holders / upN;
+    const fin = pg && !pg.sample && !pg.onchain ? 'mailto:' + email + '?subject=' + encodeURIComponent('Finalize on-chain: Door #' + pg.n + ' · ' + pg.title) + '&body=' + encodeURIComponent('Hi Maya,\n\nI published "' + pg.title + '" inside Door #' + pg.n + ' (Genesis App ' + ed + '/2) and would like to finalize the mint on-chain.\n\nCreator: ' + pg.creator + '\nPayout wallet: ' + pg.wallet + '\nPrice: ' + pg.price + ' ETH\nArtwork link: ' + (pg.artUrl || '(uploaded file)') + '\nAudio link: ' + (pg.audioUrl || '(uploaded file)') + (pg.sig ? '\nSignature: ' + pg.sig : '') + '\n\nThank you!') : '';
+    const A = this.addr();
+    const mine = !!(pg && pg.onchain && s.wallet && pg.owner && pg.owner.toLowerCase() === s.wallet.toLowerCase());
+    const ownerVals = { ownerOn: mine, listP: s.listP, setListP: e => this.setState({ listP: e.target.value }), doList: () => { if (pg && !s.txBusy) this.listDoor(pg); }, doUnlist: () => { if (pg && !s.txBusy) this.unlistDoor(pg); }, canUnlist: !!(mine && pg.listed), listLabel: s.txBusy ? 'CONFIRM IN METAMASK…' : pg && pg.listed ? 'UPDATE PRICE' : 'LIST FOR SALE', pgTokenHref: pg && pg.onchain ? 'https://etherscan.io/nft/' + A + '/' + pg.tokenId : '', pgOpenseaHref: pg && pg.onchain ? 'https://opensea.io/item/ethereum/' + A.toLowerCase() + '/' + pg.tokenId : '' };
+    return {
+      ...ownerVals, pgReportHref: pg && pg.onchain ? this.reportHref(ed, pg) : '', collectLabel, vOpen: isBuilder || isViewer, isBuilder, isViewer, ovRef: this.ovRef, vAria: isBuilder ? 'Inner Door Sanctuary Builder' : isExample ? 'Example door page' : pg ? 'Door #' + pg.n + ' NFT page' : '',
+      closeView: () => this.setView(null), flash: s.flash || '', crumbs,
+      cardArtBg: url(art), cardNoArt: !art, voidArtBg: this.props.cosmicVoidArtUrl ? 'url(' + JSON.stringify(this.props.cosmicVoidArtUrl) + ')' : 'none', galaxyOn: firstLight, orbOn: !firstLight, cardArtPlaceholder: isBuilder && openN === 1 ? 'THE EGG HAS OPENED · ADD YOUR ARTWORK TO REPLACE' : firstLight ? 'THE EGG HAS OPENED · THE JOURNEY BEGINS' : isBuilder ? 'YOUR ARTWORK APPEARS HERE' : 'ARTWORK ARRIVES WITH THE CREATOR',
+      cardBadge: isExample ? 'EXAMPLE • HOW YOUR DOOR PAGE LOOKS' : 'DOOR #' + cN + ' • NESTED INSIDE GENESIS', cardTitle: cTitle, cardBy: cBy, cardPrice: cPrice,
+      cardGlyph: s.cPlaying ? '❚❚' : '▶', cardPlayAria: audio ? (s.cPlaying ? 'Pause' : 'Play 30-second preview') : 'No audio yet', cardPlayCursor: audio ? 'pointer' : 'not-allowed', cardPlayOpacity: audio ? 1 : .45,
+      cardPlay: () => this.playCard(audio), cardProgress: prog + '%', cardTime: audio ? fmt(Math.min(s.cT, 30)) + ' / ' + fmt(Math.min(s.cD || 30, 30)) : '— / 0:30', cardAudioLabel: audio ? (s.cPlaying ? 'NOW PLAYING' : '30-SEC FREQUENCY') : 'NO AUDIO YET',
+      cardCollect: collect, cardCollectTitle: collectTitle, cardCaption: isBuilder ? 'LIVE PREVIEW · UPDATES AS YOU BUILD' : pg ? 'DOOR #' + pg.n + ' · GENESIS APP ' + ed + '/2' : '',
+      pgKicker: isExample ? 'EXAMPLE DOOR PAGE' : pg ? 'DOOR #' + pg.n + ' · NESTED INSIDE ' + parent(pg.n).toUpperCase() : '', pgStatus: isExample ? 'PREVIEW ONLY · NOT FOR SALE' : 'CLAIMED · LINEAGE ROYALTY ' + holders + '% UPSTREAM', pgSample: !!(pg && (pg.sample || isExample)),
+      pgTitle: pg ? pg.title : '', pgCreator: pg ? pg.creator : '', pgInitial: pg ? ((pg.creator || '').trim().charAt(0).toUpperCase() || '✦') : '', pgWallet: pg && pg.wallet ? shortW(pg.wallet) : 'Wallet revealed at mint',
+      pgStory: pg ? (pg.story || 'The creator has not inscribed a story yet.') : '', pgPrice: pg ? (pg.onchain && !pg.listed ? 'Not listed' : pg.price + ' ETH') : '',
+      pgSplit: pg ? 'On every sale through LXFE.io: ' + you + '% to the seller (' + pg.creator + ' on the first sale) · ' + holders + '% to the owner of ' + parent(pg.n) + ', the door it lives inside · ' + vault + '% Founder Vault.' : '',
+      pgFinalize: !!fin, pgFinalizeHref: fin, pgCanUnpublish: !!(pg && !pg.sample && !pg.onchain && pg.n === openN - 1), unpublish: () => pg && this.unpublish(pg.n),
+      pgNote: pg && pg.onchain ? 'Minted on Ethereum · Token #' + pg.tokenId + ' in the universe of Genesis Token #' + ed + ' · Owned by ' + shortW(pg.owner) + '. Collecting through LXFE.io credits the 70 / 15 / 15 split on-chain and each person withdraws their share. Sales on other marketplaces skip the split.' : isExample ? 'This is an example so you can see how a door page looks. Door #' + openN + ' is the real open door — build yours to take its place in the lineage.' : pg ? (pg.sig ? 'Signed by ' + shortW(pg.signer) + ' as proof of authorship. ' : pg.sample ? 'Sample page: the real creator\'s artwork, audio and story replace this when Door #' + pg.n + ' is minted. ' : 'Unsigned: published without a connected wallet. ') + 'Collect requests go to the Founder, who coordinates the on-chain transfer with the creator. No ETH is charged on this page.' : '',
+      nextGo: () => this.goDoor(nextN), nextName: 'Door #' + nextN, nextAria: nextOpen ? 'Build your page inside Door #' + nextN : 'Enter Door #' + nextN,
+      nextKicker: nextOpen ? 'OPEN NOW · ' + fx(parseFloat(s.price) || 0) + ' ETH' : nextPg ? 'CLAIMED · ' + nextPg.title.toUpperCase() : '',
+      nextAction: nextOpen ? 'BUILD YOUR PAGE' : 'ENTER DOOR #' + nextN, nextBtnLabel: nextOpen ? 'BUILD INSIDE DOOR #' + nextN + ' →' : 'ENTER DOOR #' + nextN + ' ↓',
+      nextCaption: nextOpen ? 'Door #' + nextN + ' waits inside this page for its author. Claim it to publish your own NFT page here.' : nextPg ? '“' + nextPg.title + '” by ' + nextPg.creator + ' lives inside this page.' : '',
+      openParent: parent(openN), spawnN: openN + 1,
+      bName: s.bName, bWallet: s.bWallet, bTitle: s.bTitle, bStory: s.bStory, bArtUrl: s.bArtUrl, bAudioUrl: s.bAudioUrl, bPrice: s.bPrice,
+      setBName: e => this.setState({ bName: e.target.value }), setBWallet: e => this.setState({ bWallet: e.target.value.trim() }), setBTitle: e => this.setState({ bTitle: e.target.value }), setBStory: e => this.setState({ bStory: e.target.value }),
+      setBArtUrl: e => this.setState({ bArtUrl: e.target.value, bArtData: e.target.value ? '' : s.bArtData, bArtName: e.target.value ? '' : s.bArtName }),
+      setBAudioUrl: e => { this.stopCard(); this.setState({ bAudioUrl: e.target.value, bAudioSrc: e.target.value ? '' : s.bAudioSrc, bAudioName: e.target.value ? '' : s.bAudioName, bAudioData: e.target.value ? '' : s.bAudioData, bAudioPersist: e.target.value ? false : s.bAudioPersist }); },
+      setBPrice: e => this.setState({ bPrice: e.target.value }),
+      canUseWallet: !!wallet && s.bWallet !== wallet, useWallet: () => this.setState({ bWallet: wallet }),
+      artFile: e => { this.readArt(e.target.files && e.target.files[0]); e.target.value = ''; }, audioFile: e => { this.readAudio(e.target.files && e.target.files[0]); e.target.value = ''; },
+      artDragOver: e => { e.preventDefault(); if (!s.drag) this.setState({ drag: true }); }, artDragLeave: () => this.setState({ drag: false }), artDrop: e => { e.preventDefault(); this.setState({ drag: false }); this.readArt(e.dataTransfer && e.dataTransfer.files[0]); },
+      dropBorder: s.drag ? '#f6e3ba' : 'rgba(212,175,55,.55)', dropBg: s.drag ? 'rgba(212,175,55,.12)' : 'rgba(10,4,20,.4)',
+      artDropLabel: s.bArtName ? s.bArtName + ' · click to replace' : 'Drag & drop your artwork, or click to choose',
+      audioDropLabel: s.bAudioName ? s.bAudioName + ' · click to replace' : 'Choose your .mp3 or .wav (30 seconds)',
+      audioHint: s.bAudioName ? (s.bAudioPersist ? 'Saved with your page.' : 'Plays in this preview. Add a URL / IPFS link too so it stays with the published page.') : 'The preview plays the first 30 seconds.',
+      bRows: [
+        { k: 'Creator · you (' + you + '%)', v: fx(bp * you / 100) + ' ETH', sw: 'linear-gradient(135deg,#e8698a,#b3192f)' },
+        { k: 'Upstream · owner of ' + parent(openN) + ' (' + holders + '%)', v: fx(bp * holders / 100) + ' ETH', sw: 'linear-gradient(135deg,#5fae8f,#2f6b57)' },
+        { k: 'Founder Vault (' + vault + '%)', v: fx(bp * vault / 100) + ' ETH', sw: 'linear-gradient(135deg,#f3e3b6,#b8902e)' },
+      ],
+      bErr: s.bErr || '', publish: () => this.publish(),
+      publishLabel: this.addr() ? (s.chainState === 'wrong' ? 'MINTING OPENS WITH CONTRACT V2' : s.txBusy ? 'CONFIRM IN METAMASK…' : '✦ MINT & PUBLISH MY NFT PAGE INSIDE DOOR #' + openN + ' (' + this.feeText(parent(openN)).btn + ') →') : s.busy ? 'WAITING FOR YOUR WALLET SIGNATURE…' : '✦ MINT & PUBLISH MY NFT PAGE INSIDE DOOR #' + openN + ' (' + fx(bp) + ' ETH) →',
+      publishNote: this.addr() && s.chainState === 'wrong' ? 'Minting turns on once the SovereignDoors v2 contract address is set. Claiming will cost 0.88 ETH plus gas (contract default): 85% to the owner of ' + parent(openN) + ' and 15% to the Founder Vault.' : this.addr() ? 'Mints Door #' + openN + ' on Ethereum to the wallet that signs' + (wallet ? ' (' + shortW(wallet) + ')' : ' (connect your wallet first)') + '. Claiming costs ' + this.feeText(parent(openN)).note + '. When a collector buys your door through LXFE.io you receive 70%, and you can re-list or change its price any time. Artwork and audio must be IPFS links, so their provenance is permanent.' : 'Publishing saves your page into Door #' + openN + ' on this device' + (wallet ? ' and asks your wallet to sign it as proof of authorship (free, no gas)' : '') + '. On-chain minting and payment are finalized with the Founder once the Door contract is live. No ETH is charged here.',
+    };
+  }
+  renderVals() {
+    const { ch, ed, price, wallet, extra } = this.state;
+    const R = React.createElement;
+    const you = this.props.creatorPct ?? 70, holders = this.props.holdersPct ?? 15, vault = Math.max(0, 100 - you - holders);
+    const gp = this.props.genesisPrice ?? '8.88 ETH';
+    const fx = v => (Math.round(v * 10000) / 10000).toString();
+    const url = u => u ? 'url(' + JSON.stringify(u) + ')' : 'none';
+    const p = Math.max(0, parseFloat(price) || 0);
+    const pages = this.pagesFor(ed), openN = this.openFor(ed);
+    const parent = n => n <= 1 ? 'Genesis App ' + ed + '/2' : 'Door #' + (n - 1);
+    const shortW = a => a ? a.slice(0, 6) + '…' + a.slice(-4) : '';
+    const chapters = [
+      { kicker: 'PROLOGUE · MASTER PORTAL · ' + gp, short: 'Prologue', title: 'Fire Rose — The Dragon\'s Sanctuary', byline: 'by Maya Harrington · Conceived & Created January 8', lore: 'Before any door was cut, there was the Rose, and the dragon who coiled around it to keep its fire alive. This is the sanctuary every traveler enters first. Its flame is the light that every chapter after it is written by.', realm: 'fire-rose-art.png', realmLabel: 'GENESIS APP · EDITION ' + ed + ' OF 2', where: 'The Dragon\'s Sanctuary', audio: true },
+      { kicker: 'CHAPTER I · DOOR #1', short: 'Chapter I', title: 'The Amber Threshold', byline: 'by the first traveler · nested inside the Prologue', lore: 'The first traveler found a threshold of amber light just past the dragon\'s wing. They left their story pressed into the glass, so that whoever came after would know the path was walkable.', realm: this.props.chapter1ArtUrl || '', realmLabel: 'DOOR #1 · CLAIMED', where: 'Inside the Rose', sample: true },
+      { kicker: 'CHAPTER II · DOOR #2', short: 'Chapter II', title: 'Echoes of the Glass Vault', byline: 'by the second traveler · nested inside Chapter I', lore: 'Beyond the threshold, a vault of glass held every sound the first traveler made. The second traveler sang back into it, and the echo became a door of its own.', realm: this.props.chapter2ArtUrl || '', realmLabel: 'DOOR #2 · CLAIMED', where: 'Inside the Amber Threshold', sample: true },
+      { kicker: 'CHAPTER III · DOOR #3 · UNSEALED · ' + fx(p) + ' ETH', short: 'Chapter III', title: this.state.fTitle || 'Write the Next Chapter of the Legend', byline: 'by you · nested inside Chapter II', lore: '', realm: '', realmLabel: 'DOOR #3 · WAITING FOR ITS AUTHOR', where: 'Inside the Glass Vault', writing: true },
+    ];
+    const open = this.state.open ?? 0;
+    const off = Math.max(0, openN - 4);
+    const doors = {};
+    for (let i = 0; i < 5; i++) {
+      const dn = i === 0 ? 0 : i + off;
+      const st = i === 0 ? 'genesis' : dn < openN ? 'claimed' : dn === openN ? 'open' : 'sealed';
+      const nm = i === 0 ? 'Outer Genesis Door' : 'Door #' + dn;
+      const kicker = st === 'genesis' ? 'GENESIS ' + ed + '/2 · ROOT TOKEN #' + ed : st === 'claimed' ? 'INSIDE ' + parent(dn).toUpperCase() + ' · CLAIMED' : st === 'open' ? (dn === 1 ? 'OPEN · BE THE FIRST TRAVELER' : 'OPEN NOW · ' + fx(p) + ' ETH') : 'SPAWNS WHEN #' + (dn - 1) + ' IS CLAIMED';
+      const action = st === 'genesis' ? 'OPEN THE SANCTUARY' : st === 'claimed' ? 'ENTER DOOR #' + dn + ' PAGE' : st === 'open' ? 'BUILD YOUR PAGE' : 'SEALED · ∞';
+      doors['d' + i] = { name: nm, kicker, action, aria: (i < open ? 'Close ' : st === 'claimed' ? 'Enter ' : st === 'open' ? 'Build your page inside ' : 'Open ') + nm, tf: i < open ? 'rotateY(112deg)' : 'rotateY(0deg)', pe: i === open || i === open - 1 ? 'auto' : 'none', click: () => {
+        if (i < open) { this.setState({ open: i }); return; }
+        if (st === 'sealed') return;
+        if (st === 'open') { this.openBuilder(); return; }
+        this.setState({ open: Math.min(i + 1, 4) });
+        if (st === 'claimed') { clearTimeout(this.vt); this.vt = setTimeout(() => this.openPage(dn), 700); }
+      } };
+    }
+    const pillDefs = [{ label: 'Outer Genesis Door', layer: 0, dn: 0 }];
+    for (let dn = Math.max(1, openN - 2); dn <= openN; dn++) pillDefs.push({ label: dn === openN ? (dn === 1 ? '↳ Door #1 · Be the First Traveler' : '↳ Door #' + dn + ' · Next to Claim') : '↳ Door #' + dn + ' · Inside ' + (dn === 1 ? 'Genesis' : '#' + (dn - 1)), layer: dn - off, dn });
+    const doorPills = pillDefs.map(d => { const on = open === d.layer, nx = d.dn === openN; return { label: d.label, go: () => { this.setState({ open: d.layer }); if (nx) this.openBuilder(); }, bg: on ? 'linear-gradient(135deg,#FFF3C4 0%,#D4AF37 55%,#9A7418 100%)' : nx ? 'linear-gradient(180deg,rgba(60,20,40,.9),rgba(26,10,30,.95))' : 'rgba(22,10,42,.78)', color: on ? '#160728' : nx ? '#ffd1dc' : '#f1dfae', border: on ? '#f1dfae' : nx ? '#e8698a' : '#b8902e' }; });
+    const c = chapters[ch];
+    const steps = chapters.map((x, i) => ({ kicker: i === 3 ? 'OPEN NOW' : (i === 0 ? 'PROLOGUE' : 'CHAPTER ' + ['I', 'II'][i - 1]), title: i === 0 ? 'The Dragon\'s Sanctuary' : i === 3 ? 'Your Chapter' : x.title, go: () => this.setState({ ch: i }), border: ch === i ? '#f6e3ba' : 'rgba(212,175,55,.35)', bg: ch === i ? 'rgba(212,175,55,.14)' : 'rgba(22,10,42,.72)', kColor: i === 3 ? '#f6e3ba' : '#e2c16b', tColor: ch === i ? '#fff8e6' : '#eadfd0' }));
+    const editions = [1, 2].map(n => { const on = ed === n; return { label: 'GENESIS APP ' + n + ' OF 2', pick: () => this.setState({ ed: n }), bg: on ? 'linear-gradient(135deg,#FFF3C4 0%,#D4AF37 55%,#9A7418 100%)' : 'rgba(22,10,42,.78)', color: on ? '#160728' : '#f1dfae', border: on ? '#f1dfae' : '#b8902e' }; });
+    const upAll = ['Genesis App ' + ed + '/2'].concat(pages.map(x => 'Door #' + x.n));
+    const each = holders / upAll.length;
+    const agg = upAll.length > 5;
+    const upstream = agg ? [upAll[0], 'Doors #1–#' + (openN - 1)] : upAll;
+    const upW = agg ? [1, openN - 1] : upAll.map(() => 1);
+    const ind = k => Math.min(16 + k * 18, 150);
+    const base = [{ name: 'Genesis App · Edition ' + ed + ' of 2', where: 'Timeline root · Token #' + ed + ' · ' + gp, status: 'ANCHORED · FIRE ROSE →', statusColor: '#f6e3ba', indent: 16, go: () => { window.location.href = 'index.html'; } }];
+    pages.forEach(x => base.push({ name: 'Door #' + x.n, where: 'Inside ' + parent(x.n) + ' · “' + x.title + '”', status: 'CLAIMED · LINEAGE ROYALTY ' + holders + '% · VIEW PAGE →', statusColor: '#9fd9c2', indent: ind(x.n), go: () => this.openPage(x.n) }));
+    base.push({ name: 'Door #' + openN, where: 'Nested inside ' + parent(openN), status: (openN === 1 ? 'OPEN · BE THE FIRST TRAVELER · ' : 'OPEN NOW · ') + fx(p) + ' ETH · BUILD YOUR PAGE & SPAWN DOOR #' + (openN + 1) + ' →', statusColor: '#f6e3ba', indent: ind(openN), open: true, go: () => this.openBuilder() });
+    for (let n = openN + 1; n < openN + 3 + extra; n++) base.push({ name: 'Door #' + n, where: n === openN + 1 ? 'Spawns inside Door #' + openN + ' when it is claimed' : 'Nested inside Door #' + (n - 1), status: n === openN + 1 ? 'SEALED' : 'FUTURE', statusColor: '#8f8399', indent: ind(n), dim: true });
+    base.push({ name: '… ∞ Infinite Lineage', where: 'Every new door nests inside the last', status: 'NO CAP', statusColor: '#8f8399', indent: Math.min(ind(openN + 3 + extra), 162), dim: true });
+    const chain = base.map(x => ({ ...x, go: x.go || (() => {}), role: x.go ? 'button' : 'listitem', cursor: x.go ? 'pointer' : 'default', indent: x.indent + 'px', bg: x.open ? 'linear-gradient(90deg,rgba(232,105,138,.16),rgba(212,175,55,.1))' : x.dim ? 'transparent' : 'rgba(22,10,42,.72)', border: x.open ? '1px solid #e8698a' : x.dim ? '1px dashed rgba(212,175,55,.25)' : '1px solid rgba(212,175,55,.3)', mark: x.open ? 'radial-gradient(circle at 40% 35%,#ffd1dc,#e8698a 50%,#b3192f)' : x.dim ? 'rgba(201,162,74,.35)' : 'linear-gradient(135deg,#f3e3b6,#b8902e)', markGlow: x.open ? '0 0 10px rgba(232,105,138,.8)' : 'none', statusColor: x.open ? '#ffd1dc' : x.statusColor }));
+    const rows = [{ k: 'IN · sale of Door #' + openN, v: fx(p) + ' ETH', c: '#ffffff', vc: '#f6e3ba' }, { k: 'OUT · creator of Door #' + openN + ' (' + you + '%)', v: fx(p * you / 100) + ' ETH', c: '#ffb3c6', vc: '#7fd4b4' }];
+    rows.push({ k: 'OUT · owner of ' + parent(openN) + ' (' + holders + '%)', v: fx(p * holders / 100) + ' ETH', c: '#9fd9c2', vc: '#7fd4b4' });
+    rows.push({ k: 'OUT · Founder Vault (' + vault + '%)', v: fx(p * vault / 100) + ' ETH', c: '#f1dfae', vc: '#7fd4b4' });
+    rows.push({ k: 'BALANCE', v: fx(p - p * (you + holders + vault) / 100) + ' ETH', c: '#ffffff', vc: '#ffffff', bt: '1px solid rgba(255,255,255,.2)', pt: '6px' });
+    const seg = (w, bg) => R('div', { style: { width: w + '%', background: bg } });
+    const short = wallet ? wallet.slice(0, 6) + '…' + wallet.slice(-4) : '';
+    const email = this.props.contactEmail || '';
+    const subject = encodeURIComponent('Claim request: Door #' + openN + ' · Genesis App ' + ed + '/2');
+    const body = encodeURIComponent('Hi Maya,\n\nI would like to claim Door #' + openN + ' (' + fx(p) + ' ETH) inside Genesis App ' + ed + '/2.\n\nChapter title: ' + (this.state.fTitle || '') + '\nLore: ' + (this.state.fLore || '') + '\nAudio/Art link: ' + (this.state.fLink || '') + '\nWallet: ' + (wallet || '(not connected)') + '\n\nThank you!');
+    const realmUrl = c.writing ? (this.state.fLink && /\.(png|jpe?g|webp|gif)(\?|$)/i.test(this.state.fLink) ? this.state.fLink : '') : c.realm;
+    return {
+      atmRef: this.atmRef, editions, steps, chain, doorPills, ...doors,
+      ledger: rows.map(r => ({ bt: 'none', pt: '0', ...r })),
+      ch: c, writing: !!c.writing, notWriting: !c.writing,
+      realmBg: url(realmUrl), realmEmpty: !realmUrl, realmNote: c.writing ? 'Your realm art appears here' : 'Traveler\'s realm art · drop in via Tweaks',
+      playFreq: () => c.audio && this.toggleFreq(), freqDisabled: !c.audio, freqOpacity: c.audio ? 1 : .45,
+      freqGlyph: c.audio && this.state.playing ? '❚❚' : '▶',
+      freqNote: c.audio ? 'Fire Rose · Maya Harrington' : 'Sealed inside the Rose until the traveler uploads it',
+      prev: () => this.setState({ ch: Math.max(0, ch - 1) }), next: () => this.setState({ ch: Math.min(3, ch + 1) }),
+      prevVis: ch > 0 ? 'visible' : 'hidden', nextVis: ch < 3 ? 'visible' : 'hidden',
+      fTitle: this.state.fTitle, fLore: this.state.fLore, fLink: this.state.fLink,
+      setTitle: e => this.setState({ fTitle: e.target.value }), setLore: e => this.setState({ fLore: e.target.value }), setLink: e => this.setState({ fLink: e.target.value }),
+      hasArt: !!this.props.customDoorArtworkUrl, noArt: !this.props.customDoorArtworkUrl, artBg: url(this.props.customDoorArtworkUrl), btnBg: url(this.props.customButtonBgUrl),
+      edShort: 'GENESIS APP ' + ed + '/2', youPct: you + '%', holdersPct: holders + '%', vaultPct: vault + '%',
+      shownCount: 'SHOWING DOORS #1 – #' + (5 + extra), deeperLabel: extra >= 20 ? '↺ RESET PREVIEW' : '▼ PREVIEW DEEPER DOORS', deeper: () => this.setState({ extra: extra >= 20 ? 0 : extra + 5 }),
+      priceInput: price, setPrice: e => this.setState({ price: e.target.value }),
+      splitBar: R('div', { style: { display: 'flex', height: 10, borderRadius: 5, overflow: 'hidden', background: 'rgba(255,255,255,.08)' } }, seg(you, 'linear-gradient(90deg,#b3192f,#e8698a)'), seg(holders, 'linear-gradient(90deg,#2f6b57,#5fae8f)'), seg(vault, '#d4af37')),
+      youL: 'Creator ' + you + '%', holdersL: 'Upstream Lineage ' + holders + '%', vaultL: 'Founder Vault ' + vault + '%',
+      ledgerNote: '// one ' + fx(p) + ' ETH sale of Door #' + openN + ' · Genesis App ' + ed + '/2',
+      sovereignty: 'If a collector purchases the ' + gp + ' Master Genesis App, your art remains untouched. Every creator inside the tunnel retains 100% immutable ownership of their inner NFT and their ' + you + '% payout forever. The Genesis transfer simply reroutes the upstream revenue seat, completely protecting your sovereign creation.',
+      ...this.overlayVals({ ed, pages, openN, parent, shortW, fx, url, you, holders, vault, email, wallet }),
+      openN, openBuilder: () => this.openBuilder(), openExample: () => this.openExample(),
+      connect: () => this.connectWallet(),
+      walletLabel: wallet ? short : 'Connect Wallet', walletLabelLong: wallet ? 'Connected · ' + short : 'Connect wallet',
+      dotColor: wallet ? '#34d399' : '#d4af37', walletMsg: this.state.walletMsg || '',
+      requestHref: 'mailto:' + email + '?subject=' + subject + '&body=' + body,
+      portalOpacity: this.state.doorReady ? 1 : 0, portalY: this.state.doorReady ? '0px' : '18px',
+      ...this.chainVals(ed, openN, wallet),
+      ...this.auditVals(ed, openN),
+      doorsAddress: /^0x[a-fA-F0-9]{40}$/.test((this.props.doorsContractAddress || '').trim()) ? this.props.doorsContractAddress.trim() : '',
+      doorsHref: /^0x[a-fA-F0-9]{40}$/.test((this.props.doorsContractAddress || '').trim()) ? 'https://etherscan.io/address/' + this.props.doorsContractAddress.trim() : '',
+    };
+  }
+}
+</script>
+</body>
+</html>
