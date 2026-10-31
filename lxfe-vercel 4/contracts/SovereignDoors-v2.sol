@@ -16,7 +16,7 @@ import {ReentrancyGuard} from "@openzeppelin/contracts/utils/ReentrancyGuard.sol
  * NESTING   Claiming Door N in a universe mints it to its creator and unlocks Door N+1 inside it.
  *           Door #1's parent is that universe's Genesis token; Door N's parent is Door N-1.
  *
- * MONEY     Claim fee (default 0.04 ETH, owner-adjustable up to 8.88 ETH):
+ * MONEY     Claim fee (deployed at 0.88 ETH, owner-adjustable up to 8.88 ETH; founding fee 0.04 ETH):
  *              85% to the owner of the parent door (the door you live inside) · 15% Founder Vault
  *           Door sale through `buy`:
  *              70% seller (the creator on the first sale) · 15% owner of the parent door · 15% Founder Vault
@@ -65,7 +65,7 @@ contract SovereignDoors is ERC721, Ownable, Pausable, ReentrancyGuard {
     mapping(uint256 => uint256) public listingPrice;                  // tokenId => price in wei (0 = not listed)
     mapping(address => uint256) public pendingWithdrawals;            // credited, withdrawable balances
 
-    uint256 public claimFee = 0.04 ether;
+    uint256 public claimFee = 0.88 ether; // deployed value; owner lowers it with setClaimFee (founding fee 0.04 ETH)
     uint256 public totalOwed;
     string public contractURI;
 
