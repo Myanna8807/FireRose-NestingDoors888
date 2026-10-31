@@ -1037,7 +1037,7 @@ class Component extends DCLogic {
   feeText(par) {
     const s = this.state, live = s.chainState === 'ok' && s.chainFee !== '';
     if (live && s.chainFee === '0') return { btn: 'GAS ONLY', note: 'only network gas' };
-    const eth = live ? s.chainFeeEth : '0.088';
+    const eth = live ? s.chainFeeEth : '0.04';
     return { btn: eth + ' ETH', note: eth + ' ETH plus gas' + (live ? '' : ' (contract default)') + ': 85% to the owner of ' + par + ', the door it lives inside, and 15% to the Founder Vault' };
   }
   chainVals(ed, openN, wallet) {
@@ -1240,7 +1240,7 @@ class Component extends DCLogic {
       ],
       bErr: s.bErr || '', publish: () => this.publish(),
       publishLabel: this.addr() ? (s.chainState === 'wrong' ? 'MINTING OPENS WITH CONTRACT V2' : s.txBusy ? 'CONFIRM IN METAMASK…' : '✦ MINT & PUBLISH MY NFT PAGE INSIDE DOOR #' + openN + ' (' + this.feeText(parent(openN)).btn + ') →') : s.busy ? 'WAITING FOR YOUR WALLET SIGNATURE…' : '✦ MINT & PUBLISH MY NFT PAGE INSIDE DOOR #' + openN + ' (' + fx(bp) + ' ETH) →',
-      publishNote: this.addr() && s.chainState === 'wrong' ? 'Minting turns on once the SovereignDoors v2 contract address is set. Claiming will cost 0.088 ETH plus gas (contract default): 85% to the owner of ' + parent(openN) + ' and 15% to the Founder Vault.' : this.addr() ? 'Mints Door #' + openN + ' on Ethereum to the wallet that signs' + (wallet ? ' (' + shortW(wallet) + ')' : ' (connect your wallet first)') + '. Claiming costs ' + this.feeText(parent(openN)).note + '. When a collector buys your door through LXFE.io you receive 70%, and you can re-list or change its price any time. Artwork and audio must be IPFS links, so their provenance is permanent.' : 'Publishing saves your page into Door #' + openN + ' on this device' + (wallet ? ' and asks your wallet to sign it as proof of authorship (free, no gas)' : '') + '. On-chain minting and payment are finalized with the Founder once the Door contract is live. No ETH is charged here.',
+      publishNote: this.addr() && s.chainState === 'wrong' ? 'Minting turns on once the SovereignDoors v2 contract address is set. Claiming will cost 0.04 ETH plus gas (contract default): 85% to the owner of ' + parent(openN) + ' and 15% to the Founder Vault.' : this.addr() ? 'Mints Door #' + openN + ' on Ethereum to the wallet that signs' + (wallet ? ' (' + shortW(wallet) + ')' : ' (connect your wallet first)') + '. Claiming costs ' + this.feeText(parent(openN)).note + '. When a collector buys your door through LXFE.io you receive 70%, and you can re-list or change its price any time. Artwork and audio must be IPFS links, so their provenance is permanent.' : 'Publishing saves your page into Door #' + openN + ' on this device' + (wallet ? ' and asks your wallet to sign it as proof of authorship (free, no gas)' : '') + '. On-chain minting and payment are finalized with the Founder once the Door contract is live. No ETH is charged here.',
     };
   }
   renderVals() {

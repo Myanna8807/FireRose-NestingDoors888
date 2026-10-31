@@ -51,7 +51,7 @@ Fire Rose moves the rules out of a company's spreadsheet and into a public smart
 | Action | Price | Where it goes |
 |---|---|---|
 | **Collect a Genesis App** | 8.88 ETH | 85% seller · 15% Founder Vault |
-| **Claim an open door** | 0.088 ETH | 85% to the holder of the door it lives inside · 15% Founder Vault |
+| **Claim an open door** | 0.04 ETH | 85% to the holder of the door it lives inside · 15% Founder Vault |
 | **Collect a door** (resale on LXFE.io) | Set by its holder | **70%** seller (the creator, on the first sale) · **15%** holder of the door it lives inside · **15%** Founder Vault |
 
 - **Creator Royalties follow the door.** Whoever holds a door holds its lineage seat, and receives 15% each time the door nested inside it changes hands.
