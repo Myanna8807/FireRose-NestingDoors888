@@ -24,7 +24,7 @@ https://etherscan.io/address/0x67eb3572b5039b7a32ed48c0e8beb434642e96c3
 5. Optional, from the vault wallet on Etherscan → Write Contract: `list(1, 8880000000000000000)` lists Genesis 1/2 at 8.88 ETH.
 
 ## How money moves (v2)
-- Claim (default 0.88 ETH): 85% to the owner of the door it lives inside · 15% Founder Vault.
+- Claim (default 0.088 ETH): 85% to the owner of the door it lives inside · 15% Founder Vault.
 - Door sale via LXFE.io: 70% seller · 15% owner of the parent door · 15% Founder Vault.
 - Genesis sale via LXFE.io: 85% seller · 15% Founder Vault.
 - Everything is credited on-chain; each person presses Withdraw on /doors to collect.
